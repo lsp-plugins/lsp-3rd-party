@@ -22,7 +22,7 @@
 ARTIFACT_NAME               = lsp-3rd-party
 ARTIFACT_DESC               = 3rd party libraries/headers for building audio plugins
 ARTIFACT_VARS               = LSP_3RD_PARTY
-ARTIFACT_HEADERS            = 3rdparty
+ARTIFACT_HEADERS            = lsp-plug.in
 ARTIFACT_EXPORT_ALL         = 1
 ARTIFACT_VERSION            = 0.5.0
 
