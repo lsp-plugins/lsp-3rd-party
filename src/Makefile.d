@@ -1,7 +1,7 @@
 $(LSP_3RD_PARTY_BIN)/test/utest/headers.o: test/utest/headers.cpp \
- $(LSP_3RD_PARTY_INC)/3rdparty/ardour/inline-display.h \
- $(LSP_3RD_PARTY_INC)/3rdparty/ladspa/ladspa.h \
- $(LSP_3RD_PARTY_INC)/3rdparty/steinberg/vst2.h \
+ $(LSP_3RD_PARTY_INC)/lsp-plug.in/3rdparty/ardour/inline-display.h \
+ $(LSP_3RD_PARTY_INC)/lsp-plug.in/3rdparty/ladspa/ladspa.h \
+ $(LSP_3RD_PARTY_INC)/lsp-plug.in/3rdparty/steinberg/vst2.h \
  $(LSP_TEST_FW_INC)/lsp-plug.in/test-fw/utest.h \
  $(LSP_TEST_FW_INC)/lsp-plug.in/test-fw/version.h \
  $(LSP_COMMON_LIB_INC)/lsp-plug.in/common/status.h \
