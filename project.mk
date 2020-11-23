@@ -24,7 +24,7 @@ ARTIFACT_DESC               = 3rd party libraries/headers for building audio plu
 ARTIFACT_VARS               = LSP_3RD_PARTY
 ARTIFACT_HEADERS            = 3rdparty
 ARTIFACT_EXPORT_ALL         = 1
-ARTIFACT_VERSION            = 0.5.0-devel
+ARTIFACT_VERSION            = 0.5.0
 
 # List of dependencies
 DEPENDENCIES = \
