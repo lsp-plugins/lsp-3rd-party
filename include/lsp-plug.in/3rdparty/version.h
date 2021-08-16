@@ -26,7 +26,7 @@
 // Version of headers
 #define LSP_3RD_PARTY_MAJOR             0
 #define LSP_3RD_PARTY_MINOR             5
-#define LSP_3RD_PARTY_MICRO             1
+#define LSP_3RD_PARTY_MICRO             2
 
 #ifdef LSP_COMMON_LIB_BUILTIN
     #define LSP_3RD_PARTY_EXPORT
