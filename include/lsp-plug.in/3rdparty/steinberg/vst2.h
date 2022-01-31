@@ -112,6 +112,18 @@
     #define VSTCALLBACK
 #endif
 
+#ifdef __cplusplus
+    #define VST_SYMBOL_EXTERN extern "C"
+#else
+    #define VST_SYMBOL_EXTERN
+#endif
+
+#ifdef _WIN32
+    #define VST_SYMBOL_EXPORT VST_SYMBOL_EXTERN __declspec(dllexport)
+#else
+    #define VST_SYMBOL_EXPORT VST_SYMBOL_EXTERN __attribute__((visibility("default")))
+#endif
+
 #if defined (__GNUC__) && ((__GNUC__ >= 4) || ((__GNUC__ == 3) && (__GNUC_MINOR__ >= 1)))
     #define VST_EXPORT  __attribute__ ((visibility ("default")))
 #else
