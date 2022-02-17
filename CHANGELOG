@@ -3,6 +3,7 @@
 *******************************************************************************
 
 === 0.5.2 ===
+- Added support of building under LoongArch32 and LoongArch64 architectures.
 
 === 0.5.1 ===
 * Updated build system.

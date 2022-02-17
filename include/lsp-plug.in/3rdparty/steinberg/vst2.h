@@ -28,11 +28,6 @@
     #ifndef TARGET_API_MAC_CARBON
         #define TARGET_API_MAC_CARBON 1
     #endif
-    #if __ppc__
-        #ifndef VST_FORCE_DEPRECATED
-            #define VST_FORCE_DEPRECATED 0
-        #endif
-    #endif
 #endif
 
 // Define __cdecl modifier
@@ -63,6 +58,11 @@
             #define __cdecl
         #elif defined(__riscv) && (__riscv_xlen == 32)
             #define __cdecl
+        #elif defined(__loongarch64)
+            #define VST_64BIT_PLATFORM      1
+            #define __cdecl
+        #elif defined(__loongarch32)
+            #define __cdecl
         #endif /* __cdecl */
     #endif /* __cdecl */
 #endif /* __GNUC__ */
@@ -84,7 +84,7 @@
     #endif
 
     #ifndef VST_64BIT_PLATFORM
-        #define VST_64BIT_PLATFORM  ((__x86_64__) || (__aarch64__) || (__ppc64__) || (__s390x__) || (__zarch__) || (defined(__riscv) && (__riscv_xlen == 64)))
+        #define VST_64BIT_PLATFORM  ((__x86_64__) || (__aarch64__) || (__ppc64__) || (__s390x__) || (__zarch__) || (defined(__riscv) && (__riscv_xlen == 64)) || defined(__loongarch64))
     #endif /* VST_64BIT_PLATFORM */
 #else
     #ifndef VST_64BIT_PLATFORM
