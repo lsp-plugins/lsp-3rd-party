@@ -28,11 +28,6 @@
     #ifndef TARGET_API_MAC_CARBON
         #define TARGET_API_MAC_CARBON 1
     #endif
-    #if __ppc__
-        #ifndef VST_FORCE_DEPRECATED
-            #define VST_FORCE_DEPRECATED 0
-        #endif
-    #endif
 #endif
 
 // Define __cdecl modifier
@@ -58,6 +53,16 @@
             #define __cdecl
         #elif defined(__mips__) || defined(__mips) || defined(__MIPS__)
             #define __cdecl
+        #elif defined(__riscv) && (__riscv_xlen == 64)
+            #define VST_64BIT_PLATFORM      1
+            #define __cdecl
+        #elif defined(__riscv) && (__riscv_xlen == 32)
+            #define __cdecl
+        #elif defined(__loongarch64)
+            #define VST_64BIT_PLATFORM      1
+            #define __cdecl
+        #elif defined(__loongarch32)
+            #define __cdecl
         #endif /* __cdecl */
     #endif /* __cdecl */
 #endif /* __GNUC__ */
@@ -79,11 +84,11 @@
     #endif
 
     #ifndef VST_64BIT_PLATFORM
-        #define VST_64BIT_PLATFORM  (__x86_64__) || (__aarch64__) || (__ppc64__) || (__s390x__) || (__zarch__)
+        #define VST_64BIT_PLATFORM  ((__x86_64__) || (__aarch64__) || (__ppc64__) || (__s390x__) || (__zarch__) || (defined(__riscv) && (__riscv_xlen == 64)) || defined(__loongarch64))
     #endif /* VST_64BIT_PLATFORM */
 #else
     #ifndef VST_64BIT_PLATFORM
-        #define VST_64BIT_PLATFORM _WIN64 || __LP64__
+        #define VST_64BIT_PLATFORM (_WIN64 || __LP64__)
     #endif /* VST_64BIT_PLATFORM */
 #endif /* __GNUC__ */
 
@@ -105,6 +110,18 @@
     #define VSTCALLBACK __cdecl
 #else
     #define VSTCALLBACK
+#endif
+
+#ifdef __cplusplus
+    #define VST_SYMBOL_EXTERN extern "C"
+#else
+    #define VST_SYMBOL_EXTERN
+#endif
+
+#ifdef _WIN32
+    #define VST_SYMBOL_EXPORT VST_SYMBOL_EXTERN __declspec(dllexport)
+#else
+    #define VST_SYMBOL_EXPORT VST_SYMBOL_EXTERN __attribute__((visibility("default")))
 #endif
 
 #if defined (__GNUC__) && ((__GNUC__ >= 4) || ((__GNUC__ == 3) && (__GNUC_MINOR__ >= 1)))

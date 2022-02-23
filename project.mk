@@ -24,19 +24,4 @@ ARTIFACT_NAME               = lsp-3rd-party
 ARTIFACT_DESC               = 3rd party libraries/headers for building audio plugins
 ARTIFACT_HEADERS            = lsp-plug.in
 ARTIFACT_EXPORT_ALL         = 1
-ARTIFACT_VERSION            = 0.5.1
-
-# List of dependencies
-DEPENDENCIES = \
-  LIBPTHREAD \
-  LIBDL \
-  LSP_COMMON_LIB
-
-TEST_DEPENDENCIES = \
-  TEST_STDLIB \
-  LSP_TEST_FW
-
-# All possible dependencies
-ALL_DEPENDENCIES = \
-  $(DEPENDENCIES) \
-  $(TEST_DEPENDENCIES)
+ARTIFACT_VERSION            = 1.0.0
