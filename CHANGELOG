@@ -3,6 +3,7 @@
 *******************************************************************************
 
 === 1.0.1 ===
+* Updated build scripts.
 
 === 1.0.0 ===
 * Added support of building under LoongArch32 and LoongArch64 architectures.
