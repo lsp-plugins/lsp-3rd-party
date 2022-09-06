@@ -38,59 +38,49 @@
         #endif
     #elif defined(__x86_64__) || defined(__x86_64) || defined(__amd64__) || defined(__amd64) || defined(_M_AMD64)
         #define VST_64BIT_PLATFORM      1
-        #ifndef __cdecl
-            #define __cdecl
-        #endif
     #elif defined(__aarch64__)
         #define VST_64BIT_PLATFORM      1
-        #ifndef __cdecl
-            #define __cdecl
-        #endif
     #elif defined(__arm__) || defined(__arm) || defined(_M_ARM) || defined(_ARM)
-        #ifndef __cdecl
-            #define __cdecl
-        #endif
+        #define VST_64BIT_PLATFORM      0
     #elif defined(__PPC64__) || defined(__ppc64__) || defined(__ppc64) || defined(__powerpc64__) || defined(_ARCH_PPC64)
         #define VST_64BIT_PLATFORM      1
-        #ifndef __cdecl
-            #define __cdecl
-        #endif
     #elif defined(__PPC__) || defined(__ppc__) || defined(__powerpc__) || defined(__ppc) || defined(_M_PPC) || defined(_ARCH_PPC)
-        #ifndef __cdecl
-            #define __cdecl
-        #endif
+        #define VST_64BIT_PLATFORM      0
     #elif defined(__s390x__) || defined(__s390__) || defined(__zarch__)
         #define VST_64BIT_PLATFORM      1
-        #ifndef __cdecl
-            #define __cdecl
-        #endif
     #elif defined(__mips__) || defined(__mips) || defined(__MIPS__)
-        #ifndef __cdecl
-            #define __cdecl
-        #endif
     #elif defined(__riscv) && (__riscv_xlen == 64)
         #define VST_64BIT_PLATFORM      1
-        #ifndef __cdecl
-            #define __cdecl
-        #endif
     #elif defined(__riscv) && (__riscv_xlen == 32)
-        #ifndef __cdecl
-            #define __cdecl
-        #endif
+        #define VST_64BIT_PLATFORM      0
     #elif defined(__loongarch64)
         #define VST_64BIT_PLATFORM      1
-        #ifndef __cdecl
-            #define __cdecl
-        #endif
     #elif defined(__loongarch32)
-        #ifndef __cdecl
-            #define __cdecl
-        #endif
-    #endif /* __cdecl */
+        #define VST_64BIT_PLATFORM      0
+    #endif
+
 #endif /* __GNUC__ || __clang__ */
 
+#ifndef __cdecl
+    #define __cdecl
+#endif
+
 #ifndef VST_64BIT_PLATFORM
-    #define VST_64BIT_PLATFORM      0
+    #if defined(__WORDSIZE) && (__WORDSIZE == 64)
+        #define VST_64BIT_PLATFORM      1
+    #elif defined(__SIZE_WIDTH__) && (__SIZE_WIDTH__ == 64)
+        #define VST_64BIT_PLATFORM      1
+    #elif defined(__WORDSIZE) && (__WORDSIZE == 32)
+        #define VST_64BIT_PLATFORM      0
+    #elif defined(__SIZE_WIDTH__) && (__SIZE_WIDTH__ == 32)
+        #define VST_64BIT_PLATFORM      0
+    #endif /* __WORDSIZE, __SIZE_WIDTH__ */
+
+    #if defined(_WIN64) || defined(__LP64__)
+        #define VST_64BIT_PLATFORM      1
+    #else
+        #define VST_64BIT_PLATFORM      0
+    #endif
 #endif /* VST_64BIT_PLATFORM */
 
 #ifdef __cplusplus
