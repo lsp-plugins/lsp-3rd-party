@@ -31,41 +31,57 @@
 #endif
 
 // Define __cdecl modifier
-#ifdef __GNUC__
-    #ifndef __cdecl
-        #if defined(__i386__) || defined(__i386)
+#if defined(__GNUC__) || defined(__clang__)
+    #if defined(__i386__) || defined(__i386)
+        #ifndef __cdecl
             #define __cdecl __attribute__((__cdecl__))
-        #elif defined(__x86_64__) || defined(__x86_64) || defined(__amd64__) || defined(__amd64) || defined(_M_AMD64)
-            #define VST_64BIT_PLATFORM      1
-            #define __cdecl
-        #elif defined(__aarch64__)
-            #define VST_64BIT_PLATFORM      1
-            #define __cdecl
-        #elif defined(__arm__) || defined(__arm) || defined(_M_ARM) || defined(_ARM)
-            #define __cdecl
-        #elif defined(__PPC64__) || defined(__ppc64__) || defined(__ppc64) || defined(__powerpc64__) || defined(_ARCH_PPC64)
-            #define VST_64BIT_PLATFORM      1
-            #define __cdecl
-        #elif defined(__PPC__) || defined(__ppc__) || defined(__powerpc__) || defined(__ppc) || defined(_M_PPC) || defined(_ARCH_PPC)
-            #define __cdecl
-        #elif defined(__s390x__) || defined(__s390__) || defined(__zarch__)
-            #define VST_64BIT_PLATFORM      1
-            #define __cdecl
-        #elif defined(__mips__) || defined(__mips) || defined(__MIPS__)
-            #define __cdecl
-        #elif defined(__riscv) && (__riscv_xlen == 64)
-            #define VST_64BIT_PLATFORM      1
-            #define __cdecl
-        #elif defined(__riscv) && (__riscv_xlen == 32)
-            #define __cdecl
-        #elif defined(__loongarch64)
-            #define VST_64BIT_PLATFORM      1
-            #define __cdecl
-        #elif defined(__loongarch32)
-            #define __cdecl
-        #endif /* __cdecl */
-    #endif /* __cdecl */
-#endif /* __GNUC__ */
+        #endif
+    #elif defined(__x86_64__) || defined(__x86_64) || defined(__amd64__) || defined(__amd64) || defined(_M_AMD64)
+        #define VST_64BIT_PLATFORM      1
+    #elif defined(__aarch64__)
+        #define VST_64BIT_PLATFORM      1
+    #elif defined(__arm__) || defined(__arm) || defined(_M_ARM) || defined(_ARM)
+        #define VST_64BIT_PLATFORM      0
+    #elif defined(__PPC64__) || defined(__ppc64__) || defined(__ppc64) || defined(__powerpc64__) || defined(_ARCH_PPC64)
+        #define VST_64BIT_PLATFORM      1
+    #elif defined(__PPC__) || defined(__ppc__) || defined(__powerpc__) || defined(__ppc) || defined(_M_PPC) || defined(_ARCH_PPC)
+        #define VST_64BIT_PLATFORM      0
+    #elif defined(__s390x__) || defined(__s390__) || defined(__zarch__)
+        #define VST_64BIT_PLATFORM      1
+    #elif defined(__mips__) || defined(__mips) || defined(__MIPS__)
+    #elif defined(__riscv) && (__riscv_xlen == 64)
+        #define VST_64BIT_PLATFORM      1
+    #elif defined(__riscv) && (__riscv_xlen == 32)
+        #define VST_64BIT_PLATFORM      0
+    #elif defined(__loongarch64)
+        #define VST_64BIT_PLATFORM      1
+    #elif defined(__loongarch32)
+        #define VST_64BIT_PLATFORM      0
+    #endif
+
+#endif /* __GNUC__ || __clang__ */
+
+#ifndef __cdecl
+    #define __cdecl
+#endif
+
+#ifndef VST_64BIT_PLATFORM
+    #if defined(__WORDSIZE) && (__WORDSIZE == 64)
+        #define VST_64BIT_PLATFORM      1
+    #elif defined(__SIZE_WIDTH__) && (__SIZE_WIDTH__ == 64)
+        #define VST_64BIT_PLATFORM      1
+    #elif defined(__WORDSIZE) && (__WORDSIZE == 32)
+        #define VST_64BIT_PLATFORM      0
+    #elif defined(__SIZE_WIDTH__) && (__SIZE_WIDTH__ == 32)
+        #define VST_64BIT_PLATFORM      0
+    #endif /* __WORDSIZE, __SIZE_WIDTH__ */
+
+    #if defined(_WIN64) || defined(__LP64__)
+        #define VST_64BIT_PLATFORM      1
+    #else
+        #define VST_64BIT_PLATFORM      0
+    #endif
+#endif /* VST_64BIT_PLATFORM */
 
 #ifdef __cplusplus
     #define VST_C_EXTERN        extern "C"
@@ -74,7 +90,7 @@
 #endif /* __cplusplus */
 
 /** Test whether system runs in 64-bit mode */
-#ifdef __GNUC__
+#if defined(__GNUC__) || defined(__clang__)
     #ifndef VST_64BIT_PLATFORM
         #if defined(__WORDSIZE) && (__WORDSIZE == 64)
             #define VST_64BIT_PLATFORM      1
@@ -82,14 +98,6 @@
             #define VST_64BIT_PLATFORM      1
         #endif /* __WORDSIZE, __SIZE_WIDTH__ */
     #endif
-
-    #ifndef VST_64BIT_PLATFORM
-        #define VST_64BIT_PLATFORM  ((__x86_64__) || (__aarch64__) || (__ppc64__) || (__s390x__) || (__zarch__) || (defined(__riscv) && (__riscv_xlen == 64)) || defined(__loongarch64))
-    #endif /* VST_64BIT_PLATFORM */
-#else
-    #ifndef VST_64BIT_PLATFORM
-        #define VST_64BIT_PLATFORM (_WIN64 || __LP64__)
-    #endif /* VST_64BIT_PLATFORM */
 #endif /* __GNUC__ */
 
 #if TARGET_API_MAC_CARBON
@@ -118,14 +126,14 @@
     #define VST_SYMBOL_EXTERN
 #endif
 
-#ifdef _WIN32
+#if defined(__WINDOWS__) || defined(__WIN32__) || defined(__WIN64__) || defined(_WIN64) || defined(_WIN32) || defined(__WINNT) || defined(__WINNT__)
     #define VST_SYMBOL_EXPORT VST_SYMBOL_EXTERN __declspec(dllexport)
+#elif defined (__GNUC__) && ((__GNUC__ >= 4) || ((__GNUC__ == 3) && (__GNUC_MINOR__ >= 1)))
+    #define VST_SYMBOL_EXPORT VST_SYMBOL_EXTERN __attribute__((visibility("default")))
+#elif defined(__clang__)
+    #define VST_SYMBOL_EXPORT VST_SYMBOL_EXTERN __attribute__((visibility("default")))
 #else
-    #if defined (__GNUC__) && ((__GNUC__ >= 4) || ((__GNUC__ == 3) && (__GNUC_MINOR__ >= 1)))
-        #define VST_SYMBOL_EXPORT VST_SYMBOL_EXTERN __attribute__((visibility("default")))
-    #else
-        #define VST_SYMBOL_EXPORT
-    #endif
+    #define VST_SYMBOL_EXPORT VST_SYMBOL_EXTERN
 #endif
 
 #define VST_EXPORT  VST_SYMBOL_EXPORT
@@ -3871,7 +3879,7 @@ VST_C_EXTERN typedef AEffect*  (*VstPluginMainProc)(audioMasterCallback audioMas
  * @param audioMaster audio master callback parameter
  * @return
  */
-#define VST_MAIN(audioMaster) VST_C_EXTERN VST_EXPORT AEffect* VSTPluginMain(audioMasterCallback audioMaster)
+#define VST_MAIN(audioMaster) VST_EXPORT AEffect* VSTPluginMain(audioMasterCallback audioMaster)
 
 //-------------------------------------------------------------------------------------------------------
 // Restore compilation options
