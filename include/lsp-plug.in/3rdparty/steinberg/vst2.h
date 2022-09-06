@@ -126,14 +126,14 @@
     #define VST_SYMBOL_EXTERN
 #endif
 
-#ifdef _WIN32
+#if defined(__WINDOWS__) || defined(__WIN32__) || defined(__WIN64__) || defined(_WIN64) || defined(_WIN32) || defined(__WINNT) || defined(__WINNT__)
     #define VST_SYMBOL_EXPORT VST_SYMBOL_EXTERN __declspec(dllexport)
+#elif defined (__GNUC__) && ((__GNUC__ >= 4) || ((__GNUC__ == 3) && (__GNUC_MINOR__ >= 1)))
+    #define VST_SYMBOL_EXPORT VST_SYMBOL_EXTERN __attribute__((visibility("default")))
+#elif defined(__clang__)
+    #define VST_SYMBOL_EXPORT VST_SYMBOL_EXTERN __attribute__((visibility("default")))
 #else
-    #if defined (__GNUC__) && ((__GNUC__ >= 4) || ((__GNUC__ == 3) && (__GNUC_MINOR__ >= 1)))
-        #define VST_SYMBOL_EXPORT VST_SYMBOL_EXTERN __attribute__((visibility("default")))
-    #else
-        #define VST_SYMBOL_EXPORT
-    #endif
+    #define VST_SYMBOL_EXPORT VST_SYMBOL_EXTERN
 #endif
 
 #define VST_EXPORT  VST_SYMBOL_EXPORT
@@ -3879,7 +3879,7 @@ VST_C_EXTERN typedef AEffect*  (*VstPluginMainProc)(audioMasterCallback audioMas
  * @param audioMaster audio master callback parameter
  * @return
  */
-#define VST_MAIN(audioMaster) VST_C_EXTERN VST_EXPORT AEffect* VSTPluginMain(audioMasterCallback audioMaster)
+#define VST_MAIN(audioMaster) VST_EXPORT AEffect* VSTPluginMain(audioMasterCallback audioMaster)
 
 //-------------------------------------------------------------------------------------------------------
 // Restore compilation options
