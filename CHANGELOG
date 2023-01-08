@@ -3,7 +3,8 @@
 *******************************************************************************
 
 === 1.0.6 ===
-* Added CLAP plugin format headers version 1.1.4.
+* Added CLAP plugin format headers version 1.1.6.
+* Moved VST 2.x headers to another locations.
 
 === 1.0.5 ===
 * Updated build scripts.

@@ -21,7 +21,7 @@
 
 #include <lsp-plug.in/3rdparty/ardour/inline-display.h>
 #include <lsp-plug.in/3rdparty/ladspa/ladspa.h>
-#include <lsp-plug.in/3rdparty/steinberg/vst2.h>
+#include <steinberg/vst2.h>
 
 #include <lsp-plug.in/test-fw/utest.h>
 
