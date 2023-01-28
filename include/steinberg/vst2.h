@@ -144,6 +144,9 @@
 #define VST_2_4_EXTENSIONS 1
 #define DECLARE_VST_DEPRECATED(x)       x
 
+#define VST_VERSION_MICRO_MAX           99
+#define VST_VERSION_MINOR_MAX           9
+
 //-------------------------------------------------------------------------------------------------------
 // Simple type definitions
 //-------------------------------------------------------------------------------------------------------
