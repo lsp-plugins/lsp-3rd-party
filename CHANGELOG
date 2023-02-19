@@ -4,6 +4,8 @@
 
 === 1.0.7 ===
 * Added LV2 plugin format headers version 1.18.10.
+* Moved location of Ardour-related LV2 extensions.
+* Moved location of LADSPA headers.
 
 === 1.0.6 ===
 * Added CLAP plugin format headers version 1.1.6.

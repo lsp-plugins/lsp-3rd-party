@@ -19,8 +19,10 @@
  * along with lsp-3rd-party. If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include <lsp-plug.in/3rdparty/ardour/inline-display.h>
-#include <lsp-plug.in/3rdparty/ladspa/ladspa.h>
+#include <ardour/inline-display.h>
+#include <clap/clap.h>
+#include <ladspa/ladspa.h>
+#include <lv2/core/lv2.h>
 #include <steinberg/vst2.h>
 
 #include <lsp-plug.in/test-fw/utest.h>
