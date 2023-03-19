@@ -7,6 +7,7 @@
 * Moved location of Ardour-related LV2 extensions.
 * Moved location of LADSPA headers.
 * Updated build scripts.
+* Updated module versions in dependencies.
 
 === 1.0.6 ===
 * Added CLAP plugin format headers version 1.1.6.
