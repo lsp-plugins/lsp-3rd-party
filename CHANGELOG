@@ -3,6 +3,7 @@
 *******************************************************************************
 
 === 1.0.10 ===
+* Updated CLAP plugin format headers up to version 1.1.8.
 * Updated build scripts.
 
 === 1.0.9 ===
