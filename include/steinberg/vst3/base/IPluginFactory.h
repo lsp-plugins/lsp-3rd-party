@@ -43,24 +43,24 @@ namespace Steinberg
             /**
              * Fill a PFactoryInfo structure with information about the plug-in vendor.
              */
-            virtual tresult PLUGIN_API getFactoryInfo (PFactoryInfo* info) = 0;
+            virtual tresult PLUGIN_API getFactoryInfo(PFactoryInfo* info) = 0;
 
             /**
              * Returns the number of exported classes by this factory. If you are using the CPluginFactory
              * implementation provided by the SDK, it returns the number of classes you registered with
              * CPluginFactory::registerClass.
              */
-            virtual int32 PLUGIN_API countClasses () = 0;
+            virtual int32 PLUGIN_API countClasses() = 0;
 
             /**
              * Fill a PClassInfo structure with information about the class at the specified index.
              */
-            virtual tresult PLUGIN_API getClassInfo (int32 index, PClassInfo* info) = 0;
+            virtual tresult PLUGIN_API getClassInfo(int32 index, PClassInfo *info) = 0;
 
             /**
              * Create a new class instance.
              */
-            virtual tresult PLUGIN_API createInstance (FIDString cid, FIDString _iid, void** obj) = 0;
+            virtual tresult PLUGIN_API createInstance(FIDString cid, FIDString _iid, void **obj) = 0;
 
             static const FUID iid;
     };

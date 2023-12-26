@@ -30,30 +30,41 @@ namespace Steinberg
     {
         enum FactoryFlags
         {
-            /** Nothing */
+            /**
+             * Nothing
+             */
             kNoFlags                    = 0,
 
-            /** The number of exported classes can change each time the Module is loaded. If this flag
-               is set, the host does not cache class information. This leads to a longer startup time
-               because the host always has to load the Module to get the current class information. */
+            /**
+             * The number of exported classes can change each time the Module is loaded. If this flag
+             * is set, the host does not cache class information. This leads to a longer startup time
+             * because the host always has to load the Module to get the current class information.
+             */
             kClassesDiscardable         = 1 << 0,
 
-            /** This flag is deprecated, do not use anymore, resp. it will get ignored from
-               Cubase/Nuendo 12 and later. */
+            /**
+             * This flag is deprecated, do not use anymore, resp. it will get ignored from
+             * Cubase/Nuendo 12 and later.
+             * @deprecated
+             */
             kLicenseCheck               = 1 << 1,
 
-            /** Component will not be unloaded until process exit */
+            /**
+             * Component will not be unloaded until process exit
+             */
             kComponentNonDiscardable    = 1 << 3,
 
-            /** Components have entirely unicode encoded strings (True for VST 3 plug-ins so far). */
+            /**
+             * Components have entirely unicode encoded strings (True for VST 3 plug-ins so far).
+             */
             kUnicode                    = 1 << 4
         };
 
         enum
         {
-            kURLSize = 256,
-            kEmailSize = 128,
-            kNameSize = 64
+            kURLSize            = 256,
+            kEmailSize          = 128,
+            kNameSize           = 64
         };
 
         char8 vendor[kNameSize];    ///< e.g. "Steinberg Media Technologies"

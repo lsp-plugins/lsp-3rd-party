@@ -38,7 +38,7 @@ namespace Steinberg
             /**
              * Returns the class info (version 2) for a given index.
              */
-            virtual tresult PLUGIN_API getClassInfo2 (int32 index, PClassInfo2* info) = 0;
+            virtual tresult PLUGIN_API getClassInfo2(int32 index, PClassInfo2 *info) = 0;
 
             static const FUID iid;
     };

@@ -30,7 +30,7 @@ namespace Steinberg
     {
         enum ClassCardinality
         {
-            kManyInstances = 0x7FFFFFFF
+            kManyInstances  = 0x7FFFFFFF
         };
 
         enum

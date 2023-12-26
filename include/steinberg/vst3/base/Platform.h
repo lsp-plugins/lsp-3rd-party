@@ -135,19 +135,19 @@ enum
 #elif __APPLE__
     // Apple platform
     #include <TargetConditionals.h>
-    #define SMTG_OS_LINUX          0
-    #define SMTG_OS_POSIX          0
-    #define SMTG_OS_MACOS          1
-    #define SMTG_OS_WINDOWS        0
-    #define SMTG_OS_WINDOWS_ARM    0
-    #define SMTG_OS_IOS            TARGET_OS_IPHONE
-    #define SMTG_OS_OSX            TARGET_OS_MAC && !TARGET_OS_IPHONE
+    #define SMTG_OS_LINUX           0
+    #define SMTG_OS_POSIX           1
+    #define SMTG_OS_MACOS           1
+    #define SMTG_OS_WINDOWS         0
+    #define SMTG_OS_WINDOWS_ARM     0
+    #define SMTG_OS_IOS             TARGET_OS_IPHONE
+    #define SMTG_OS_OSX             TARGET_OS_MAC && !TARGET_OS_IPHONE
 
-    #define SMTG_CPU_X86        TARGET_CPU_X86
-    #define SMTG_CPU_X86_64        TARGET_CPU_X86_64
-    #define SMTG_CPU_ARM        TARGET_CPU_ARM
-    #define SMTG_CPU_ARM_64        TARGET_CPU_ARM64
-    #define SMTG_CPU_ARM_64EC     0
+    #define SMTG_CPU_X86            TARGET_CPU_X86
+    #define SMTG_CPU_X86_64         TARGET_CPU_X86_64
+    #define SMTG_CPU_ARM            TARGET_CPU_ARM
+    #define SMTG_CPU_ARM_64         TARGET_CPU_ARM64
+    #define SMTG_CPU_ARM_64EC       0
 
     #if !SMTG_OS_IOS
         #ifndef __CF_USE_FRAMEWORK_INCLUDES__

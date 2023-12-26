@@ -21,12 +21,37 @@
 #include <steinberg/vst3/base/Platform.h>
 #include <steinberg/vst3/base/IPluginFactory.h>
 
+#if SMTG_OS_WINDOWS
+
+    #define STMG_INIT_FUNCTION  \
+        SMTG_EXPORT_SYMBOL bool InitDll()
+    #define STMG_FINI_FUNCTION  \
+        SMTG_EXPORT_SYMBOL bool ExitDll()
+
+#elif SMTG_OS_MACOS || SMTG_OS_IOS || SMTG_OS_OSX
+
+    #include <CoreFoundation/CoreFoundation.h>
+
+    #define STMG_INIT_FUNCTION  \
+        SMTG_EXPORT_SYMBOL bool bundleEntry (CFBundleRef)
+    #define STMG_FINI_FUNCTION  \
+        SMTG_EXPORT_SYMBOL bool bundleExit (void)
+
+#else /* SMTG_OS_LINUX || SMTG_OS_POSIX */
+
+    #define STMG_INIT_FUNCTION  \
+        SMTG_EXPORT_SYMBOL bool ModuleEntry (void*)
+    #define STMG_FINI_FUNCTION  \
+        SMTG_EXPORT_SYMBOL bool ModuleExit (void)
+
+#endif
+
 /**
  *  Plug-in entry point.
  *  Any plug-in must define and export this function.
  *  @example A typical implementation of GetPluginFactory looks like this:
  *
- * SMTG_EXPORT_SYMBOL IPluginFactory* PLUGIN_API GetPluginFactory ()
+ * STMG_GET_PLUGIN_FACTORY_FUNCTION
  * {
  *     if (!gPluginFactory)
  *     {
@@ -56,11 +81,12 @@
  *     return gPluginFactory;
  * }
  */
-extern "C"
-{
-    SMTG_EXPORT_SYMBOL Steinberg::IPluginFactory* PLUGIN_API GetPluginFactory ();
+#define STMG_GET_PLUGIN_FACTORY_FUNCTION \
+    SMTG_EXPORT_SYMBOL ::Steinberg::IPluginFactory* PLUGIN_API GetPluginFactory ()
 
-    typedef Steinberg::IPluginFactory* (PLUGIN_API *GetFactoryProc) ();
-}
+namespace Steinberg
+{
+    typedef IPluginFactory * (PLUGIN_API *GetFactoryProc)();
+} /* namespace Steinberg */
 
 #endif /* _3RD_PARTY_INCLUDE_STEINBERG_VST3_BASE_GETPLUGINFACTORY_H_ */

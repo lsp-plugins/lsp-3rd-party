@@ -38,12 +38,12 @@ namespace Steinberg
             /**
              * Returns the unicode class info for a given index.
              */
-            virtual tresult PLUGIN_API getClassInfoUnicode (int32 index, PClassInfoW* info) = 0;
+            virtual tresult PLUGIN_API getClassInfoUnicode(int32 index, PClassInfoW* info) = 0;
 
             /**
              * Receives information about host
              */
-            virtual tresult PLUGIN_API setHostContext (FUnknown* context) = 0;
+            virtual tresult PLUGIN_API setHostContext(FUnknown* context) = 0;
 
             static const FUID iid;
     };

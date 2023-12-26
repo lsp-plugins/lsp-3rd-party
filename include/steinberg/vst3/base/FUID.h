@@ -142,17 +142,12 @@ namespace Steinberg
         }
     #endif
 
-    namespace FUnknownPrivate
+    SMTG_ALWAYS_INLINE bool iidEqual(const void* iid1, const void* iid2)
     {
-        SMTG_ALWAYS_INLINE bool iidEqual (const void* iid1, const void* iid2)
-        {
-            const uint64* p1 = reinterpret_cast<const uint64*> (iid1);
-            const uint64* p2 = reinterpret_cast<const uint64*> (iid2);
-            return p1[0] == p2[0] && p1[1] == p2[1];
-        }
-
-        int32 PLUGIN_API atomicAdd (int32& value, int32 amount);
-    } /* namespace FUnknownPrivate */
+        const uint64* p1 = reinterpret_cast<const uint64*> (iid1);
+        const uint64* p2 = reinterpret_cast<const uint64*> (iid2);
+        return p1[0] == p2[0] && p1[1] == p2[1];
+    }
 
     /**
      * Handling 16 Byte Globally Unique Identifiers.
@@ -182,9 +177,9 @@ namespace Steinberg
             bool isValid () const;
 
             FUID& operator = (const FUID& f);
-            bool operator == (const FUID& f) const { return ::Steinberg::FUnknownPrivate::iidEqual (data, f.data); }
+            bool operator == (const FUID& f) const { return ::Steinberg::iidEqual (data, f.data); }
             bool operator < (const FUID& f) const { return memcmp (data, f.data, sizeof (TUID)) < 0; }
-            bool operator != (const FUID& f) const   { return !::Steinberg::FUnknownPrivate::iidEqual (data, f.data); }
+            bool operator != (const FUID& f) const   { return !::Steinberg::iidEqual (data, f.data); }
 
             uint32 getLong1 () const;
             uint32 getLong2 () const;
@@ -272,7 +267,7 @@ namespace Steinberg
         {
             static_assert (
                 std::is_same<typename std::remove_cv<T>::type, FUID>::value,
-                "Do not compare a FUID with a TUID directly. Either convert the TUID to a FUID and compare them or use FUnknownPrivate::iidEqual");
+                "Do not compare a FUID with a TUID directly. Either convert the TUID to a FUID and compare them or use iidEqual");
             return f1.operator== (f2);
         }
     #endif
