@@ -277,7 +277,6 @@ enum
         #define SMTG_HAS_CPP11_CONSTEXPR SMTG_CPP11
         #define SMTG_HAS_CPP14_CONSTEXPR SMTG_CPP14
     #endif /* __cplusplus */
-    #pragma error unknown platform
 #endif
 
 #if !SMTG_RENAME_ASSERT

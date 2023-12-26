@@ -18,8 +18,7 @@
 #ifndef _3RDPARTY_STEINBERG_VST3_BASE_FTYPES_H_
 #define _3RDPARTY_STEINBERG_VST3_BASE_FTYPES_H_
 
-#include <steinberg/vst3/base/fplatform.h>
-
+#include <steinberg/vst3/base/Platform.h>
 #include <cstdint>
 
 #ifdef UNICODE_OFF

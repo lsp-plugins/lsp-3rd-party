@@ -17,7 +17,7 @@
 
 #pragma once
 
-#include "ftypes.h"
+#include <steinberg/vst3/base/Types.h>
 
 //----------------------------------------------------------------------------
 /** string methods defines unicode / ASCII */

@@ -15,13 +15,12 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef _3RDPARTY_STEINBERG_VST3_BASE_FUNKNOWN_H_
-#define _3RDPARTY_STEINBERG_VST3_BASE_FUNKNOWN_H_
+#ifndef _3RD_PARTY_INCLUDE_STEINBERG_VST3_BASE_FUID_H_
+#define _3RD_PARTY_INCLUDE_STEINBERG_VST3_BASE_FUID_H_
 
-#include <steinberg/vst3/base/fplatform.h>
-#include <steinberg/vst3/base/ftypes.h>
-#include <steinberg/vst3/base/smartpointer.h>
-
+#include <steinberg/vst3/base/IPtr.h>
+#include <steinberg/vst3/base/Platform.h>
+#include <steinberg/vst3/base/Types.h>
 #include <cstring>
 
 #if SMTG_CPP11_STDLIBSUPPORT
@@ -81,75 +80,6 @@
     INLINE_UID (x.getLong1 (), x.getLong2 (), x.getLong3 (), x.getLong4 ())
 
 //------------------------------------------------------------------------
-//  FUnknown implementation macros
-//------------------------------------------------------------------------
-
-#define DECLARE_FUNKNOWN_METHODS                                                                            \
-    public:                                                                                                 \
-        virtual ::Steinberg::tresult PLUGIN_API queryInterface (const ::Steinberg::TUID _iid, void** obj) SMTG_OVERRIDE; \
-        virtual ::Steinberg::uint32 PLUGIN_API addRef () SMTG_OVERRIDE;                                     \
-        virtual ::Steinberg::uint32 PLUGIN_API release () SMTG_OVERRIDE;                                    \
-    protected:                                                                                              \
-        ::Steinberg::int32 __funknownRefCount;                                                              \
-    public:
-
-//------------------------------------------------------------------------
-
-#define DELEGATE_REFCOUNT(ClassName)                                                    \
-    public:                                                                                    \
-        virtual ::Steinberg::uint32 PLUGIN_API addRef() SMTG_OVERRIDE  { return ClassName::addRef ();  }    \
-        virtual ::Steinberg::uint32 PLUGIN_API release() SMTG_OVERRIDE { return ClassName::release (); }
-
-//------------------------------------------------------------------------
-#define IMPLEMENT_REFCOUNT(ClassName)                                               \
-    ::Steinberg::uint32 PLUGIN_API ClassName::addRef()                              \
-    {                                                                               \
-        return ::Steinberg::FUnknownPrivate::atomicAdd(__funknownRefCount, 1);      \
-    }                                                                               \
-    ::Steinberg::uint32 PLUGIN_API ClassName::release()                             \
-    {                                                                               \
-        if (::Steinberg::FUnknownPrivate::atomicAdd(__funknownRefCount, -1) == 0)   \
-        {                                                                           \
-            delete this;                                                            \
-            return 0;                                                               \
-        }                                                                           \
-        return __funknownRefCount;                                                  \
-    }
-
-//------------------------------------------------------------------------
-#define FUNKNOWN_CTOR    { __funknownRefCount = 1; }
-#if SMTG_FUNKNOWN_DTOR_ASSERT
-    #include <cassert>
-    #define FUNKNOWN_DTOR { assert (__funknownRefCount == 0); }
-#else
-    #define FUNKNOWN_DTOR
-#endif
-
-//------------------------------------------------------------------------
-#define QUERY_INTERFACE(iid, obj, InterfaceIID, InterfaceName)  \
-    if (::Steinberg::FUnknownPrivate::iidEqual (iid, InterfaceIID)) \
-    {                                                               \
-        addRef();                                                   \
-        *obj = static_cast< InterfaceName* >(this);                 \
-        return ::Steinberg::kResultOk;                              \
-    }
-
-//------------------------------------------------------------------------
-#define IMPLEMENT_QUERYINTERFACE(ClassName, InterfaceName, ClassIID)                                \
-    ::Steinberg::tresult PLUGIN_API ClassName::queryInterface (const ::Steinberg::TUID _iid, void** obj)\
-    {                                                                                                   \
-        QUERY_INTERFACE (_iid, obj, ::Steinberg::FUnknown::iid, InterfaceName)                          \
-        QUERY_INTERFACE (_iid, obj, ClassIID, InterfaceName)                                            \
-        *obj = nullptr;                                                                                 \
-        return ::Steinberg::kNoInterface;                                                               \
-    }
-
-//------------------------------------------------------------------------
-#define IMPLEMENT_FUNKNOWN_METHODS(ClassName,InterfaceName,ClassIID) \
-    IMPLEMENT_REFCOUNT (ClassName)                                   \
-    IMPLEMENT_QUERYINTERFACE (ClassName, InterfaceName, ClassIID)
-
-//------------------------------------------------------------------------
 //  Result Codes
 //------------------------------------------------------------------------
 namespace Steinberg
@@ -198,9 +128,6 @@ namespace Steinberg
             kOutOfMemory
         };
     #endif
-
-    //------------------------------------------------------------------------
-    typedef int64 LARGE_INT; // obsolete
 
     /**
      * Plain UID type
@@ -350,194 +277,9 @@ namespace Steinberg
         }
     #endif
 
-    //------------------------------------------------------------------------
-    // FUnknown
-    //------------------------------------------------------------------------
-    /**
-     * The basic interface of all interfaces.
-     *   - The FUnknown::queryInterface method is used to retrieve pointers to other
-     *     interfaces of the object.
-     *   - FUnknown::addRef and FUnknown::release manage the lifetime of the object.
-     *     If no more references exist, the object is destroyed in memory.
-     *
-     *     Interfaces are identified by 16 byte Globally Unique Identifiers.
-     *     The SDK provides a class called FUID for this purpose.
-     */
-#ifdef __GNUC__
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wno-non-virtual-dtor"
-#endif /* __GNUC__ */
-    class FUnknown
-    {
-        public:
-
-            /**
-             * Query for a pointer to the specified interface.
-             * @return kResultOk on success or kNoInterface if the object does not implement the interface.
-             * The object has to call addRef when returning an interface.
-             * @param _iid : (in) 16 Byte interface identifier (-> FUID)
-             * @param obj : (out) On return, *obj points to the requested interface */
-            virtual tresult PLUGIN_API queryInterface(const TUID _iid, void** obj) = 0;
-
-            /** Adds a reference and returns the new reference count.
-             * @note The initial reference count after creating an object is 1.
-             */
-            virtual uint32 PLUGIN_API addRef() = 0;
-
-            /** Releases a reference and returns the new reference count.
-             * @note If the reference count reaches zero, the object will be destroyed in memory.
-             */
-            virtual uint32 PLUGIN_API release() = 0;
-
-            static const FUID iid;
-    };
-#ifdef __GNUC__
-#pragma GCC diagnostic pop
-#endif /* __GNUC__ */
-
-    DECLARE_CLASS_IID (FUnknown, 0x00000000, 0x00000000, 0xC0000000, 0x00000046)
-
-    /**
-     * FUnknownPtr - automatic interface conversion and smart pointer in one.
-     * This template class can be used for interface conversion like this:
-     *   IPtr<IPath> path = owned (FHostCreate (IPath, hostClasses));
-     *   FUnknownPtr<IPath2> path2 (path); // does a query interface for IPath2
-     *   if (path2)
-     *       ...
-     */
-    template <class I>
-    class FUnknownPtr : public IPtr<I>
-    {
-        public:
-            inline FUnknownPtr (FUnknown* unknown); // query interface
-            inline FUnknownPtr (const FUnknownPtr& p) : IPtr<I> (p) {}
-            inline FUnknownPtr () {}
-
-            inline FUnknownPtr& operator= (const FUnknownPtr& p)
-            {
-                IPtr<I>::operator= (p);
-                return *this;
-            }
-            inline I* operator= (FUnknown* unknown);
-            inline I* getInterface () { return this->ptr; }
-
-        #if SMTG_CPP11_STDLIBSUPPORT
-            inline FUnknownPtr (FUnknownPtr&& p) SMTG_NOEXCEPT : IPtr<I> (std::move (p)) {}
-            inline FUnknownPtr& operator= (FUnknownPtr&& p) SMTG_NOEXCEPT
-            {
-                IPtr<I>::operator= (std::move (p));
-                return *this;
-            }
-        #endif /* SMTG_CPP11_STDLIBSUPPORT */
-    };
-
-    #if SMTG_CPP11_STDLIBSUPPORT
-
-        namespace FUnknownPrivate
-        {
-            template <typename T>
-            struct Void : std::false_type
-            {
-                using Type = void;
-            };
-
-            template <typename T>
-            using VoidT = typename Void<T>::Type;
-
-            /**
-             *  This type trait detects if a class has an @c iid member variable. It is used to detect if
-             *  the FUID and DECLARE_CLASS_IID method or the U::UID method is used.
-             */
-            template <typename T, typename U = void>
-            struct HasIIDType : std::false_type
-            {
-            };
-
-            template <typename T>
-            struct HasIIDType<T, FUnknownPrivate::VoidT<typename T::IID>> : std::true_type
-            {
-            };
-
-        } /* namespace FUnknownPrivate */
-
-        /** @return the TUID for an interface which uses the U::UID method. */
-        template <typename T,
-                  typename std::enable_if<FUnknownPrivate::HasIIDType<T>::value>::type* = nullptr>
-        const TUID& getTUID ()
-        {
-            return T::IID::toTUID ();
-        }
-
-        /** @return the TUID for an interface which uses the FUID and DECLARE_CLASS_IID method. */
-        template <typename T,
-                  typename std::enable_if<!FUnknownPrivate::HasIIDType<T>::value>::type* = nullptr>
-        const TUID& getTUID ()
-        {
-            return T::iid.toTUID ();
-        }
-
-    #else // SMTG_CPP11_STDLIBSUPPORT
-
-        template<typename T>
-        const TUID& getTUID ()
-        {
-            return T::iid.toTUID ();
-        }
-
-    #endif // SMTG_CPP11_STDLIBSUPPORT
-
-    template <class I>
-    inline FUnknownPtr<I>::FUnknownPtr (FUnknown* unknown)
-    {
-        if (unknown && unknown->queryInterface (getTUID<I> (), (void**)&this->ptr) != kResultOk)
-            this->ptr = 0;
-    }
-
-    template <class I>
-    inline I* FUnknownPtr<I>::operator= (FUnknown* unknown)
-    {
-        I* newPtr = 0;
-        if (unknown && unknown->queryInterface (getTUID<I> (), (void**)&newPtr) == kResultOk)
-        {
-            OPtr<I> rel (newPtr);
-            return IPtr<I>::operator= (newPtr);
-        }
-
-        return IPtr<I>::operator= (0);
-    }
-
-    /**
-     * Release an interface using automatic object.
-     * @deprecated This class is obsolete and is only kept for compatibility.
-     * @see The replacement for FReleaser is OPtr.
-     * @example Usage example with FReleaser:
-     *   void someFunction ()
-     *   {
-     *       IPath* path = pathCreateMethod ();
-     *       FReleaser releaser (path);
-     *       .... do something with path...
-     *       .... path not used anymore, releaser will destroy it when leaving function scope
-     *   }
-     * @example Usage example with OPtr:
-     *   void someFunction ()
-     *   {
-     *       OPtr<IPath> path = pathCreateMethod ();
-     *       .... do something with path...
-     *       .... path not used anymore, OPtr will destroy it when leaving function scope
-     *   }
-     */
-    struct FReleaser
-    {
-        FReleaser (FUnknown* u) : u (u) {}
-        ~FReleaser ()
-        {
-            if (u)
-                u->release ();
-        }
-        FUnknown* u;
-    };
-
 } /* namespace Steinberg */
 
-#endif /* _3RDPARTY_STEINBERG_VST3_BASE_FUNKNOWN_H_ */
 
+
+
+#endif /* _3RD_PARTY_INCLUDE_STEINBERG_VST3_BASE_FUID_H_ */

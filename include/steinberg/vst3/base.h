@@ -20,10 +20,30 @@
 
 #include <steinberg/vst3/version.h>
 
-#include <steinberg/vst3/base/fplatform.h>
-#include <steinberg/vst3/base/ftypes.h>
-#include <steinberg/vst3/base/smartpointer.h>
+// Platform-specific macros and type definitions
+#include <steinberg/vst3/base/Platform.h>
+#include <steinberg/vst3/base/Types.h>
 
+// Smart pointers
+#include <steinberg/vst3/base/IPtr.h>
+#include <steinberg/vst3/base/OPtr.h>
+#include <steinberg/vst3/base/FUnknownPtr.h>
 
+// Miscellaneous data structures
+#include <steinberg/vst3/base/FUID.h>
+#include <steinberg/vst3/base/PFactoryInfo.h>
+#include <steinberg/vst3/base/PClassInfo.h>
+#include <steinberg/vst3/base/PClassInfo2.h>
+#include <steinberg/vst3/base/PClassInfoW.h>
+
+// Interfaces
+#include <steinberg/vst3/base/FUnknown.h>
+#include <steinberg/vst3/base/IPluginBase.h>
+#include <steinberg/vst3/base/IPluginFactory.h>
+#include <steinberg/vst3/base/IPluginFactory2.h>
+#include <steinberg/vst3/base/IPluginFactory3.h>
+
+// Utility funcitons
+#include <steinberg/vst3/base/GetPluginFactory.h>
 
 #endif /* _3RD_PARTY_INCLUDE_STEINBERG_VST3_BASE_H_ */
