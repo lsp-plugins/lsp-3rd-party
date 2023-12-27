@@ -45,5 +45,6 @@
 
 // Utility funcitons
 #include <steinberg/vst3/base/GetPluginFactory.h>
+#include <steinberg/vst3/base/StrDefs.h>
 
 #endif /* _3RD_PARTY_INCLUDE_STEINBERG_VST3_BASE_H_ */

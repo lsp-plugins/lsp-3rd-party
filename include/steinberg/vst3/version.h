@@ -23,4 +23,12 @@
 #define VST3_VERSION_MINOR      7
 #define VST3_VERSION_MICRO      9
 
+#define VST3_STRINGIFY1(x)      #x
+#define VST3_STRINGIFY(x)       VST3_STRINGIFY1(x)
+
+#define VST3_SDK_VERSION        "VST " \
+                                VST3_STRINGIFY(VST3_VERSION_MAJOR) "." \
+                                VST3_STRINGIFY(VST3_VERSION_MINOR) "." \
+                                VST3_STRINGIFY(VST3_VERSION_MICRO)
+
 #endif /* _3RD_PARTY_INCLUDE_STEINBERG_VST3_VERSION_H_ */
