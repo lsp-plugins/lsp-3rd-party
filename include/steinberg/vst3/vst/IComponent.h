@@ -13,7 +13,7 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+ */
 
 #ifndef _3RD_PARTY_STEINBERG_VST3_VST_IVSTCOMPONENT_H_
 #define _3RD_PARTY_STEINBERG_VST3_VST_IVSTCOMPONENT_H_
@@ -42,58 +42,58 @@ namespace Steinberg
         #include <steinberg/vst3/base/WarningsPush.h>
         class IComponent : public IPluginBase
         {
-        public:
-            /**
-             * Called before initializing the component to get information about the controller class.
-             */
-            virtual tresult PLUGIN_API getControllerClassId(TUID classId) = 0;
+            public:
+                /**
+                 * Called before initializing the component to get information about the controller class.
+                 */
+                virtual tresult PLUGIN_API getControllerClassId(TUID classId) = 0;
 
-            /**
-             * Called before 'initialize' to set the component usage (optional).
-             * @see @ref IoModes
-             */
-            virtual tresult PLUGIN_API setIoMode(IoMode mode) = 0;
+                /**
+                 * Called before 'initialize' to set the component usage (optional).
+                 * @see @ref IoModes
+                 */
+                virtual tresult PLUGIN_API setIoMode(IoMode mode) = 0;
 
-            /**
-             * Called after the plug-in is initialized. See @ref MediaTypes, BusDirections
-             */
-            virtual int32 PLUGIN_API getBusCount(MediaType type, BusDirection dir) = 0;
+                /**
+                 * Called after the plug-in is initialized. See @ref MediaTypes, BusDirections
+                 */
+                virtual int32 PLUGIN_API getBusCount(MediaType type, BusDirection dir) = 0;
 
-            /**
-             * Called after the plug-in is initialized. See @ref MediaTypes, BusDirections
-             */
-            virtual tresult PLUGIN_API getBusInfo(MediaType type, BusDirection dir, int32 index, BusInfo & bus /*out*/) = 0;
+                /**
+                 * Called after the plug-in is initialized. See @ref MediaTypes, BusDirections
+                 */
+                virtual tresult PLUGIN_API getBusInfo(MediaType type, BusDirection dir, int32 index, BusInfo & bus /*out*/) = 0;
 
-            /**
-             * Retrieves routing information (to be implemented when more than one regular input or output bus exists).
-             * The inInfo always refers to an input bus while the returned outInfo must refer to an output bus!
-             */
-            virtual tresult PLUGIN_API getRoutingInfo(RoutingInfo & inInfo, RoutingInfo & outInfo /*out*/) = 0;
+                /**
+                 * Retrieves routing information (to be implemented when more than one regular input or output bus exists).
+                 * The inInfo always refers to an input bus while the returned outInfo must refer to an output bus!
+                 */
+                virtual tresult PLUGIN_API getRoutingInfo(RoutingInfo & inInfo, RoutingInfo & outInfo /*out*/) = 0;
 
-            /**
-             * Called upon (de-)activating a bus in the host application. The plug-in should only processed
-             * an activated bus, the host could provide less see \ref AudioBusBuffers in the process call
-             * (see @ref IAudioProcessor::process) if last busses are not activated. An already activated bus
-             * does not need to be reactivated after a IAudioProcessor::setBusArrangements call.
-             */
-            virtual tresult PLUGIN_API activateBus(MediaType type, BusDirection dir, int32 index, TBool state) = 0;
+                /**
+                 * Called upon (de-)activating a bus in the host application. The plug-in should only processed
+                 * an activated bus, the host could provide less see \ref AudioBusBuffers in the process call
+                 * (see @ref IAudioProcessor::process) if last busses are not activated. An already activated bus
+                 * does not need to be reactivated after a IAudioProcessor::setBusArrangements call.
+                 */
+                virtual tresult PLUGIN_API activateBus(MediaType type, BusDirection dir, int32 index, TBool state) = 0;
 
-            /**
-             * Activates / deactivates the component.
-             */
-            virtual tresult PLUGIN_API setActive(TBool state) = 0;
+                /**
+                 * Activates / deactivates the component.
+                 */
+                virtual tresult PLUGIN_API setActive(TBool state) = 0;
 
-            /**
-             * Sets complete state of component.
-             */
-            virtual tresult PLUGIN_API setState(IBStream *state) = 0;
+                /**
+                 * Sets complete state of component.
+                 */
+                virtual tresult PLUGIN_API setState(IBStream *state) = 0;
 
-            /**
-             * Retrieves complete state of component.
-             */
-            virtual tresult PLUGIN_API getState (IBStream *state) = 0;
+                /**
+                 * Retrieves complete state of component.
+                 */
+                virtual tresult PLUGIN_API getState (IBStream *state) = 0;
 
-            static const FUID iid;
+                static const FUID iid;
         };
         #include <steinberg/vst3/base/WarningsPop.h>
 

@@ -30,7 +30,7 @@ namespace Steinberg
     {
         //----VST 3.0--------------------------------
         DEF_CLASS_IID (IComponent)
-//        DEF_CLASS_IID (IAudioProcessor)
+        DEF_CLASS_IID (IAudioProcessor)
 //        DEF_CLASS_IID (IUnitData)
 //        DEF_CLASS_IID (IProgramListData)
 //
@@ -42,10 +42,10 @@ namespace Steinberg
 //        DEF_CLASS_IID (IComponentHandler)
 //        DEF_CLASS_IID (IUnitHandler)
 //
-//        DEF_CLASS_IID (IParamValueQueue)
-//        DEF_CLASS_IID (IParameterChanges)
+        DEF_CLASS_IID (IParamValueQueue)
+        DEF_CLASS_IID (IParameterChanges)
 //
-//        DEF_CLASS_IID (IEventList)
+        DEF_CLASS_IID (IEventList)
 //        DEF_CLASS_IID (IMessage)
 //
 //        DEF_CLASS_IID (IHostApplication)
@@ -60,13 +60,13 @@ namespace Steinberg
         //----VST 3.1----------------------------------
 //        DEF_CLASS_IID (IComponentHandler2)
 //        DEF_CLASS_IID (IEditController2)
-//        DEF_CLASS_IID (IAudioPresentationLatency)
+        DEF_CLASS_IID (IAudioPresentationLatency)
 //        DEF_CLASS_IID (IVst3ToVst2Wrapper)
 //        DEF_CLASS_IID (IVst3ToAUWrapper)
 
         //----VST 3.5----------------------------------
-//        DEF_CLASS_IID (INoteExpressionController)
-//        DEF_CLASS_IID (IKeyswitchController)
+        DEF_CLASS_IID (INoteExpressionController)
+        DEF_CLASS_IID (IKeyswitchController)
 //        DEF_CLASS_IID (IContextMenuTarget)
 //        DEF_CLASS_IID (IContextMenu)
 //        DEF_CLASS_IID (IComponentHandler3)
@@ -102,7 +102,7 @@ namespace Steinberg
 
         //----VST 3.7-----------------------------------
 //        DEF_CLASS_IID (IParameterFunctionName)
-//        DEF_CLASS_IID (IProcessContextRequirements)
+        DEF_CLASS_IID (IProcessContextRequirements)
 //        DEF_CLASS_IID (IProgress)
 //        DEF_CLASS_IID (ITestPlugProvider2)
 

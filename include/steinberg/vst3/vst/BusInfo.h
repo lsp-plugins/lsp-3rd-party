@@ -13,13 +13,12 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+ */
 
 #ifndef _3RD_PARTY_STEINBERG_VST3_VST_BUSINFO_H_
 #define _3RD_PARTY_STEINBERG_VST3_VST_BUSINFO_H_
 
 #include <steinberg/vst3/vst/Types.h>
-
 #include <steinberg/vst3/base/PFactoryInfo.h>
 
 #include <steinberg/vst3/base/AlignPush.h>

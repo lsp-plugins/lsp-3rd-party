@@ -24,10 +24,25 @@
 #include <steinberg/vst3/vst/Types.h>
 
 // Miscellaneous data structures
+#include <steinberg/vst3/vst/PlugType.h>
+#include <steinberg/vst3/vst/KeySwitchInfo.h>
+#include <steinberg/vst3/vst/NoteExpression.h>
+#include <steinberg/vst3/vst/Event.h>
 #include <steinberg/vst3/vst/BusInfo.h>
-#include <steinberg/vst3/vst/IComponent.h>
 #include <steinberg/vst3/vst/RoutingInfo.h>
+#include <steinberg/vst3/vst/Speaker.h>
+#include <steinberg/vst3/vst/ProcessContext.h>
+#include <steinberg/vst3/vst/ProcessData.h>
 
 // Interfaces
+#include <steinberg/vst3/vst/IComponent.h>
+#include <steinberg/vst3/vst/IEventList.h>
+#include <steinberg/vst3/vst/IParamValueQueue.h>
+#include <steinberg/vst3/vst/IParameterChanges.h>
+#include <steinberg/vst3/vst/IAudioProcessor.h>
+#include <steinberg/vst3/vst/IAudioPresentationLatency.h>
+#include <steinberg/vst3/vst/IProcessContextRequirements.h>
+#include <steinberg/vst3/vst/IKeySwitchController.h>
+#include <steinberg/vst3/vst/INoteExpressionController.h>
 
 #endif /* _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_H_ */
