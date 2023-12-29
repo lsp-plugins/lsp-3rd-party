@@ -15,39 +15,39 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef _3RD_PARTY_INCLUDE_STEINBERG_VST3_BASE_IPLUGINFACTORY3_H_
-#define _3RD_PARTY_INCLUDE_STEINBERG_VST3_BASE_IPLUGINFACTORY3_H_
+#ifndef _3RD_PARTY_INCLUDE_STEINBERG_VST3_BASE_ISIZABLESTREAM_H_
+#define _3RD_PARTY_INCLUDE_STEINBERG_VST3_BASE_ISIZABLESTREAM_H_
 
 #include <steinberg/vst3/base/FUnknown.h>
-#include <steinberg/vst3/base/PFactoryInfo.h>
-#include <steinberg/vst3/base/PClassInfoW.h>
-#include <steinberg/vst3/base/IPluginFactory2.h>
+#include <steinberg/vst3/base/IBStream.h>
 
 namespace Steinberg
 {
     /**
-     * Class factory supporting PClassInfoW (Version 3)
+     * Stream with a size.
+     * Extends IBStream when stream type supports it (like file and memory stream).
      */
     #include <steinberg/vst3/base/WarningsPush.h>
-    class IPluginFactory3 : public IPluginFactory2
+    class ISizeableStream: public FUnknown
     {
         public:
             /**
-             * Returns the unicode class info for a given index.
+             * Return the stream size
              */
-            virtual tresult PLUGIN_API getClassInfoUnicode(int32 index, PClassInfoW* info) = 0;
+            virtual tresult PLUGIN_API getStreamSize (int64& size) = 0;
 
             /**
-             * Receives information about host
+             * Set the steam size. File streams can only be resized if they are write enabled.
              */
-            virtual tresult PLUGIN_API setHostContext(FUnknown* context) = 0;
+            virtual tresult PLUGIN_API setStreamSize (int64 size) = 0;
 
             static const FUID iid;
     };
     #include <steinberg/vst3/base/WarningsPop.h>
 
-    DECLARE_CLASS_IID (IPluginFactory3, 0x4555A2AB, 0xC1234E57, 0x9B122910, 0x36878931)
+    DECLARE_CLASS_IID (ISizeableStream, 0x04F9549E, 0xE02F4E6E, 0x87E86A87, 0x47F4E17F)
 
 } /* namespace Steinberg */
 
-#endif /* _3RD_PARTY_INCLUDE_STEINBERG_VST3_BASE_IPLUGINFACTORY3_H_ */
+
+#endif /* _3RD_PARTY_INCLUDE_STEINBERG_VST3_BASE_ISIZABLESTREAM_H_ */

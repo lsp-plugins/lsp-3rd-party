@@ -25,13 +25,10 @@
 
 namespace Steinberg
 {
-#ifdef __GNUC__
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wall"
-#endif /* __GNUC__ */
     /**
      * Class factory supporting PClassInfo2: IPluginFactory2 (version 2)
      */
+    #include <steinberg/vst3/base/WarningsPush.h>
     class IPluginFactory2 : public IPluginFactory
     {
         public:
@@ -42,10 +39,7 @@ namespace Steinberg
 
             static const FUID iid;
     };
-
-#ifdef __GNUC__
-#pragma GCC diagnostic pop
-#endif /* __GNUC__ */
+    #include <steinberg/vst3/base/WarningsPop.h>
 
     DECLARE_CLASS_IID (IPluginFactory2, 0x0007B650, 0xF24B4C0B, 0xA464EDB9, 0xF00B2ABB)
 

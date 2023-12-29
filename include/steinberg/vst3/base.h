@@ -38,6 +38,8 @@
 
 // Interfaces
 #include <steinberg/vst3/base/FUnknown.h>
+#include <steinberg/vst3/base/IBStream.h>
+#include <steinberg/vst3/base/ISizableStream.h>
 #include <steinberg/vst3/base/IPluginBase.h>
 #include <steinberg/vst3/base/IPluginFactory.h>
 #include <steinberg/vst3/base/IPluginFactory2.h>

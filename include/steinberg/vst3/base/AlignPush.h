@@ -15,11 +15,26 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef _3RDPARTY_STEINBERG_VST3_H_
-#define _3RDPARTY_STEINBERG_VST3_H_
+#if SMTG_OS_MACOS
+    #pragma GCC diagnostic ignored "-Wunknown-warning-option"
+    #pragma GCC diagnostic ignored "-Wpragma-pack"
+    #if SMTG_PLATFORM_64
+        #pragma pack(push, 16)
+    #else
+        #pragma pack(push, 1)
+    #endif
+#elif defined __BORLANDC__
+    #pragma -a8
+#elif SMTG_OS_WINDOWS
+    //! @brief warning C4103: alignment changed after including header, may be due to missing #pragma pack(pop)
+    #ifdef _MSC_VER
+        #pragma warning(disable : 4103)
+    #endif
+    #pragma pack(push)
+    #if SMTG_PLATFORM_64
+        #pragma pack(16)
+    #else
+        #pragma pack(8)
+    #endif
+#endif
 
-#include <steinberg/vst3/version.h>
-#include <steinberg/vst3/base.h>
-#include <steinberg/vst3/vst.h>
-
-#endif /* _3RDPARTY_STEINBERG_VST3_H_ */

@@ -25,10 +25,6 @@
 
 namespace Steinberg
 {
-#ifdef __GNUC__
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wall"
-#endif /* __GNUC__ */
     /**
      * Class factory that any plug-in defines for creating class instances: IPluginFactory.
      *
@@ -37,6 +33,7 @@ namespace Steinberg
      * to get information about the classes exported by the plug-in and a
      * mechanism to create instances of these classes (that usually define the IPluginBase interface).
      */
+    #include <steinberg/vst3/base/WarningsPush.h>
     class IPluginFactory : public FUnknown
     {
         public:

@@ -15,11 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef _3RDPARTY_STEINBERG_VST3_H_
-#define _3RDPARTY_STEINBERG_VST3_H_
-
-#include <steinberg/vst3/version.h>
-#include <steinberg/vst3/base.h>
-#include <steinberg/vst3/vst.h>
-
-#endif /* _3RDPARTY_STEINBERG_VST3_H_ */
+#ifdef __GNUC__
+    #pragma GCC diagnostic push
+    #pragma GCC diagnostic ignored "-Wall"
+#endif /* __GNUC__ */

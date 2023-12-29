@@ -35,6 +35,7 @@ namespace Steinberg
      * A list of supported host context interfaces should be included in the documentation
      * of a specific category.
      */
+    #include <steinberg/vst3/base/WarningsPush.h>
     class IPluginBase: public FUnknown
     {
     public:
@@ -55,6 +56,7 @@ namespace Steinberg
 
         static const FUID iid;
     };
+    #include <steinberg/vst3/base/WarningsPop.h>
 
     DECLARE_CLASS_IID (IPluginBase, 0x22888DDB, 0x156E45AE, 0x8358B348, 0x08190625)
 

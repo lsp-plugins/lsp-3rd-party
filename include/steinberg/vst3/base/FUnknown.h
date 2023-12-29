@@ -93,10 +93,7 @@
 
 namespace Steinberg
 {
-#ifdef __GNUC__
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wall"
-#endif /* __GNUC__ */
+    #include <steinberg/vst3/base/WarningsPush.h>
     /**
      * The basic interface of all interfaces.
      *   - The FUnknown::queryInterface method is used to retrieve pointers to other
@@ -107,6 +104,7 @@ namespace Steinberg
      *     Interfaces are identified by 16 byte Globally Unique Identifiers.
      *     The SDK provides a class called FUID for this purpose.
      */
+    #include <steinberg/vst3/base/WarningsPush.h>
     class FUnknown
     {
         public:
@@ -131,9 +129,7 @@ namespace Steinberg
 
             static const FUID iid;
     };
-#ifdef __GNUC__
-#pragma GCC diagnostic pop
-#endif /* __GNUC__ */
+    #include <steinberg/vst3/base/WarningsPop.h>
 
     DECLARE_CLASS_IID (FUnknown, 0x00000000, 0x00000000, 0xC0000000, 0x00000046)
 
