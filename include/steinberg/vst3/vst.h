@@ -25,9 +25,9 @@
 
 // Miscellaneous data structures
 #include <steinberg/vst3/vst/BusInfo.h>
+#include <steinberg/vst3/vst/IComponent.h>
 #include <steinberg/vst3/vst/RoutingInfo.h>
 
 // Interfaces
-#include <steinberg/vst3/vst/IVstComponent.h>
 
 #endif /* _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_H_ */
