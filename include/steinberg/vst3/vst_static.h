@@ -34,12 +34,12 @@ namespace Steinberg
 //        DEF_CLASS_IID (IUnitData)
 //        DEF_CLASS_IID (IProgramListData)
 //
-//        DEF_CLASS_IID (IEditController)
+        DEF_CLASS_IID (IEditController)
 //        DEF_CLASS_IID (IUnitInfo)
 //
 //        DEF_CLASS_IID (IConnectionPoint)
 //
-//        DEF_CLASS_IID (IComponentHandler)
+        DEF_CLASS_IID (IComponentHandler)
 //        DEF_CLASS_IID (IUnitHandler)
 //
         DEF_CLASS_IID (IParamValueQueue)
@@ -58,8 +58,8 @@ namespace Steinberg
 //        DEF_CLASS_IID (IParameterFinder)
 
         //----VST 3.1----------------------------------
-//        DEF_CLASS_IID (IComponentHandler2)
-//        DEF_CLASS_IID (IEditController2)
+        DEF_CLASS_IID (IComponentHandler2)
+        DEF_CLASS_IID (IEditController2)
         DEF_CLASS_IID (IAudioPresentationLatency)
 //        DEF_CLASS_IID (IVst3ToVst2Wrapper)
 //        DEF_CLASS_IID (IVst3ToAUWrapper)
@@ -70,7 +70,7 @@ namespace Steinberg
 //        DEF_CLASS_IID (IContextMenuTarget)
 //        DEF_CLASS_IID (IContextMenu)
 //        DEF_CLASS_IID (IComponentHandler3)
-//        DEF_CLASS_IID (IEditControllerHostEditing)
+        DEF_CLASS_IID (IEditControllerHostEditing)
 //        DEF_CLASS_IID (IXmlRepresentationController)
 
         //----VST 3.6----------------------------------
@@ -86,7 +86,7 @@ namespace Steinberg
 //        DEF_CLASS_IID (IAutomationState)
 
         //----VST 3.6.8--------------------------------
-//        DEF_CLASS_IID (IComponentHandlerBusActivation)
+        DEF_CLASS_IID (IComponentHandlerBusActivation)
 //        DEF_CLASS_IID (IVst3ToAAXWrapper)
 
         //----VST 3.6.11--------------------------------
@@ -103,14 +103,14 @@ namespace Steinberg
         //----VST 3.7-----------------------------------
 //        DEF_CLASS_IID (IParameterFunctionName)
         DEF_CLASS_IID (IProcessContextRequirements)
-//        DEF_CLASS_IID (IProgress)
+        DEF_CLASS_IID (IProgress)
 //        DEF_CLASS_IID (ITestPlugProvider2)
 
         //----VST 3.7.5---------------------------------
 //        DEF_CLASS_IID (IPluginCompatibility)
 
         //----VST 3.7.9---------------------------------
-//        DEF_CLASS_IID (IComponentHandlerSystemTime)
+        DEF_CLASS_IID (IComponentHandlerSystemTime)
 //        DEF_CLASS_IID (IDataExchangeHandler)
 //        DEF_CLASS_IID (IDataExchangeReceiver)
 

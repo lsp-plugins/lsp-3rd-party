@@ -15,12 +15,17 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef _3RDPARTY_STEINBERG_VST3_H_
-#define _3RDPARTY_STEINBERG_VST3_H_
+#ifndef _3RD_PARTY_INCLUDE_STEINBERG_VST3_GUI_H_
+#define _3RD_PARTY_INCLUDE_STEINBERG_VST3_GUI_H_
 
 #include <steinberg/vst3/version.h>
-#include <steinberg/vst3/base.h>
-#include <steinberg/vst3/vst.h>
-#include <steinberg/vst3/gui.h>
 
-#endif /* _3RDPARTY_STEINBERG_VST3_H_ */
+#include <steinberg/vst3/gui/ViewRect.h>
+#include <steinberg/vst3/gui/IPlugFrame.h>
+#include <steinberg/vst3/gui/IPlugView.h>
+#include <steinberg/vst3/gui/IPlugViewContentScaleSupport.h>
+#include <steinberg/vst3/gui/IEventHandler.h>
+#include <steinberg/vst3/gui/ITimerHandler.h>
+#include <steinberg/vst3/gui/IRunLoop.h>
+
+#endif /* _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_H_ */

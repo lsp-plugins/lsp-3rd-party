@@ -15,47 +15,37 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_EVENTLIST_H_
-#define _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_EVENTLIST_H_
+#ifndef _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_ICOMPONENTHANDLERSYSTEMTIME_H_
+#define _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_ICOMPONENTHANDLERSYSTEMTIME_H_
 
 #include <steinberg/vst3/base/FUnknown.h>
-#include <steinberg/vst3/vst/Event.h>
+#include <steinberg/vst3/vst/Types.h>
+#include <steinberg/vst3/vst/ParameterInfo.h>
 
 namespace Steinberg
 {
     namespace Vst
     {
         /**
-         * List of events to process: Vst::IEventList
-         * @see ProcessData, Event
+         * Extended plug-in interface IComponentHandler for an edit controller
          */
         #include <steinberg/vst3/base/WarningsPush.h>
-        class IEventList : public FUnknown
+        class IComponentHandlerSystemTime: public FUnknown
         {
             public:
                 /**
-                 * Returns the count of events.
+                 * Get the current systemTime (the same as the one used in ProcessContext::systemTime).
                  */
-                virtual int32 PLUGIN_API getEventCount () = 0;
-
-                /**
-                 * Gets parameter by index.
-                 */
-                virtual tresult PLUGIN_API getEvent (int32 index, Event & e /*out*/) = 0;
-
-                /**
-                 * Adds a new event.
-                 */
-                virtual tresult PLUGIN_API addEvent (Event & e /*in*/) = 0;
+                virtual tresult PLUGIN_API getSystemTime(int64 & systemTime) = 0;
 
             public:
                 static const FUID iid;
         };
         #include <steinberg/vst3/base/WarningsPop.h>
 
-        DECLARE_CLASS_IID (IEventList, 0x3A2C4214, 0x346349FE, 0xB2C4F397, 0xB9695A44)
+        DECLARE_CLASS_IID (IComponentHandlerSystemTime, 0xF9E53056, 0xD1554CD5, 0xB7695E1B, 0x7B0F7745)
 
     } /* namespace Vst */
 } /* namespace Steinberg */
 
-#endif /* _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_EVENTLIST_H_ */
+#endif /* _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_ICOMPONENTHANDLERSYSTEMTIME_H_ */

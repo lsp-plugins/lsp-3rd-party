@@ -23,6 +23,7 @@
 // Platform-specific macros and type definitions
 #include <steinberg/vst3/base/Platform.h>
 #include <steinberg/vst3/base/Types.h>
+#include <steinberg/vst3/base/TypeSizeCheck.h>
 
 // Smart pointers
 #include <steinberg/vst3/base/IPtr.h>

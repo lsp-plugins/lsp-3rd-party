@@ -33,6 +33,7 @@
 #include <steinberg/vst3/vst/Speaker.h>
 #include <steinberg/vst3/vst/ProcessContext.h>
 #include <steinberg/vst3/vst/ProcessData.h>
+#include <steinberg/vst3/vst/ParameterInfo.h>
 
 // Interfaces
 #include <steinberg/vst3/vst/IComponent.h>
@@ -44,5 +45,15 @@
 #include <steinberg/vst3/vst/IProcessContextRequirements.h>
 #include <steinberg/vst3/vst/IKeySwitchController.h>
 #include <steinberg/vst3/vst/INoteExpressionController.h>
+#include <steinberg/vst3/vst/IParameterFinder.h>
+#include <steinberg/vst3/vst/IComponentHandler.h>
+#include <steinberg/vst3/vst/IComponentHandler2.h>
+#include <steinberg/vst3/vst/IComponentHandlerBusActivation.h>
+#include <steinberg/vst3/vst/IProgress.h>
+#include <steinberg/vst3/vst/IEditController.h>
+#include <steinberg/vst3/vst/IEditController2.h>
+#include <steinberg/vst3/vst/IMidiMapping.h>
+#include <steinberg/vst3/vst/IEditControllerHostEditing.h>
+#include <steinberg/vst3/vst/IComponentHandlerSystemTime.h>
 
 #endif /* _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_H_ */

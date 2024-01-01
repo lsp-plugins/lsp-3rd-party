@@ -3,7 +3,7 @@
  *           (C) 2023 Vladimir Sadovnikov <sadko4u@gmail.com>
  *
  * This file is part of lsp-plugins-comp-delay
- * Created on: 27 дек. 2023 г.
+ * Created on: 29 дек. 2023 г.
  *
  * lsp-plugins-comp-delay is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
@@ -19,12 +19,20 @@
  * along with lsp-plugins-comp-delay. If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef _3RD_PARTY_INCLUDE_STEINBERG_VST3_STATIC_H_
-#define _3RD_PARTY_INCLUDE_STEINBERG_VST3_STATIC_H_
+#ifndef _3RD_PARTY_INCLUDE_STEINBERG_VST3_GUI_STATIC_H_
+#define _3RD_PARTY_INCLUDE_STEINBERG_VST3_GUI_STATIC_H_
 
-#include <steinberg/vst3/version.h>
-#include <steinberg/vst3/base_static.h>
-#include <steinberg/vst3/vst_static.h>
-#include <steinberg/vst3/gui_static.h>
+#include <steinberg/vst3/gui.h>
 
-#endif /* _3RD_PARTY_INCLUDE_STEINBERG_VST3_STATIC_H_ */
+namespace Steinberg
+{
+    DEF_CLASS_IID(IPlugView)
+    DEF_CLASS_IID(IPlugFrame)
+    DEF_CLASS_IID(IPlugViewContentScaleSupport)
+
+    DEF_CLASS_IID(IEventHandler)
+    DEF_CLASS_IID(ITimerHandler)
+    DEF_CLASS_IID(IRunLoop)
+} /* namespace Steinberg */
+
+#endif /* _3RD_PARTY_INCLUDE_STEINBERG_VST3_GUI_STATIC_H_ */

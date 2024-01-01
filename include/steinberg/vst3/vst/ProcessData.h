@@ -41,7 +41,7 @@ namespace Steinberg
             kDistributable          = 1 << 0,
 
             /**
-             * Component supports simple IO mode (or works in simple mode anyway) see \ref vst3IoMode
+             * Component supports simple IO mode (or works in simple mode anyway) see @ref vst3IoMode
              */
             kSimpleModeSupported    = 1 << 1
         };

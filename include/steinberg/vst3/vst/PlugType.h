@@ -73,7 +73,7 @@ namespace Steinberg
             SMTG_CONSTEXPR const CString kSurround              = "Surround";       ///< used for Surround only plug-in [optional]
 
         } /* namespace PlugType */
-    } // namespace Vst
+    } /* namespace Vst */
 } /* namespace Steinberg */
 
 
