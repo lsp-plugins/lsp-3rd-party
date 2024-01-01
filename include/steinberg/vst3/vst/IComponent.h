@@ -1,4 +1,5 @@
 /*
+ * Copyright 2023, Steinberg Media Technologies GmbH, All Rights Reserved
  * Copyright 2023 Linux Studio Plugins Project <lsp.plugin@gmail.com>
  *
  * This program is free software: you can redistribute it and/or modify
@@ -13,7 +14,7 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
+*/
 
 #ifndef _3RD_PARTY_STEINBERG_VST3_VST_IVSTCOMPONENT_H_
 #define _3RD_PARTY_STEINBERG_VST3_VST_IVSTCOMPONENT_H_
@@ -91,8 +92,9 @@ namespace Steinberg
                 /**
                  * Retrieves complete state of component.
                  */
-                virtual tresult PLUGIN_API getState (IBStream *state) = 0;
+                virtual tresult PLUGIN_API getState(IBStream *state) = 0;
 
+            public:
                 static const FUID iid;
         };
         #include <steinberg/vst3/base/WarningsPop.h>

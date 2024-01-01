@@ -1,23 +1,20 @@
 /*
- * Copyright (C) 2023 Linux Studio Plugins Project <https://lsp-plug.in/>
- *           (C) 2023 Vladimir Sadovnikov <sadko4u@gmail.com>
+ * Copyright 2023, Steinberg Media Technologies GmbH, All Rights Reserved
+ * Copyright 2023 Linux Studio Plugins Project <lsp.plugin@gmail.com>
  *
- * This file is part of lsp-plugins-comp-delay
- * Created on: 29 дек. 2023 г.
- *
- * lsp-plugins-comp-delay is free software: you can redistribute it and/or modify
- * it under the terms of the GNU Lesser General Public License as published by
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * any later version.
  *
- * lsp-plugins-comp-delay is distributed in the hope that it will be useful,
+ * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU Lesser General Public License for more details.
+ * GNU General Public License for more details.
  *
- * You should have received a copy of the GNU Lesser General Public License
- * along with lsp-plugins-comp-delay. If not, see <https://www.gnu.org/licenses/>.
- */
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
 
 #ifndef _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_STATIC_H_
 #define _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_STATIC_H_
@@ -49,7 +46,7 @@ namespace Steinberg
 //        DEF_CLASS_IID (IMessage)
 //
 //        DEF_CLASS_IID (IHostApplication)
-//        DEF_CLASS_IID (IAttributeList)
+        DEF_CLASS_IID (IAttributeList)
 
         //----VST 3.0.1--------------------------------
 //        DEF_CLASS_IID (IMidiMapping)
@@ -77,7 +74,7 @@ namespace Steinberg
 //        DEF_CLASS_IID (IInterAppAudioHost)
 //        DEF_CLASS_IID (IInterAppAudioConnectionNotification)
 //        DEF_CLASS_IID (IInterAppAudioPresetManager)
-//        DEF_CLASS_IID (IStreamAttributes)
+        DEF_CLASS_IID (IStreamAttributes)
 
         //----VST 3.6.5--------------------------------
 //        DEF_CLASS_IID (ChannelContext::IInfoListener)

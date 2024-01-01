@@ -1,4 +1,5 @@
 /*
+ * Copyright 2023, Steinberg Media Technologies GmbH, All Rights Reserved
  * Copyright 2023 Linux Studio Plugins Project <lsp.plugin@gmail.com>
  *
  * This program is free software: you can redistribute it and/or modify
@@ -38,6 +39,10 @@
 // Interfaces
 #include <steinberg/vst3/vst/IComponent.h>
 #include <steinberg/vst3/vst/IEventList.h>
+#include <steinberg/vst3/vst/IMessage.h>
+#include <steinberg/vst3/vst/IAttributeList.h>
+#include <steinberg/vst3/vst/IStreamAttributes.h>
+#include <steinberg/vst3/vst/IConnectionPoint.h>
 #include <steinberg/vst3/vst/IParamValueQueue.h>
 #include <steinberg/vst3/vst/IParameterChanges.h>
 #include <steinberg/vst3/vst/IAudioProcessor.h>

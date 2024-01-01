@@ -1,4 +1,5 @@
 /*
+ * Copyright 2023, Steinberg Media Technologies GmbH, All Rights Reserved
  * Copyright 2023 Linux Studio Plugins Project <lsp.plugin@gmail.com>
  *
  * This program is free software: you can redistribute it and/or modify
@@ -13,7 +14,7 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
+*/
 
 #ifndef _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_IAUDIOPROCESSOR_H_
 #define _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_IAUDIOPROCESSOR_H_
@@ -131,6 +132,7 @@ namespace Steinberg
                  */
                 virtual uint32 PLUGIN_API getTailSamples() = 0;
 
+            public:
                 static const FUID iid;
         };
         #include <steinberg/vst3/base/WarningsPop.h>

@@ -16,37 +16,49 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_ICOMPONENTHANDLERSYSTEMTIME_H_
-#define _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_ICOMPONENTHANDLERSYSTEMTIME_H_
+#ifndef _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_IMESSAGE_H_
+#define _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_IMESSAGE_H_
 
 #include <steinberg/vst3/base/FUnknown.h>
-#include <steinberg/vst3/vst/Types.h>
-#include <steinberg/vst3/vst/ParameterInfo.h>
+#include <steinberg/vst3/vst/IAttributeList.h>
 
 namespace Steinberg
 {
     namespace Vst
     {
         /**
-         * Extended plug-in interface IComponentHandler for an edit controller
-         */
+         * Private plug-in message
+         *
+         * Messages are sent from a VST controller component to a VST editor component and vice versa.
+         * @see @ref IAttributeList, @ref IConnectionPoint, @ref vst3Communication
+        */
         #include <steinberg/vst3/base/WarningsPush.h>
-        class IComponentHandlerSystemTime: public FUnknown
+        class IMessage: public FUnknown
         {
             public:
                 /**
-                 * Get the current systemTime (the same as the one used in ProcessContext::systemTime).
+                 * Returns the message ID (for example "TextMessage").
                  */
-                virtual tresult PLUGIN_API getSystemTime(int64 & systemTime) = 0;
+                virtual FIDString PLUGIN_API getMessageID() = 0;
+
+                /**
+                 * Sets a message ID (for example "TextMessage").
+                 */
+                virtual void PLUGIN_API setMessageID(FIDString id /*in*/) = 0;
+
+                /**
+                 * Returns the attribute list associated to the message.
+                 */
+                virtual IAttributeList * PLUGIN_API getAttributes() = 0;
 
             public:
                 static const FUID iid;
         };
         #include <steinberg/vst3/base/WarningsPop.h>
 
-        DECLARE_CLASS_IID (IComponentHandlerSystemTime, 0xF9E53056, 0xD1554CD5, 0xB7695E1B, 0x7B0F7745)
+        DECLARE_CLASS_IID (IMessage, 0x936F033B, 0xC6C047DB, 0xBB0882F8, 0x13C1E613)
 
     } /* namespace Vst */
 } /* namespace Steinberg */
 
-#endif /* _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_ICOMPONENTHANDLERSYSTEMTIME_H_ */
+#endif /* _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_IMESSAGE_H_ */

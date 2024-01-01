@@ -16,34 +16,46 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef _3RD_PARTY_INCLUDE_STEINBERG_VST3_BASE_IPLUGINFACTORY2_H_
-#define _3RD_PARTY_INCLUDE_STEINBERG_VST3_BASE_IPLUGINFACTORY2_H_
+#ifndef _3RD_PARTY_INCLUDE_STEINBERG_VST3_BASE_IDEPENDENT_H_
+#define _3RD_PARTY_INCLUDE_STEINBERG_VST3_BASE_IDEPENDENT_H_
 
 #include <steinberg/vst3/base/FUnknown.h>
-#include <steinberg/vst3/base/PFactoryInfo.h>
-#include <steinberg/vst3/base/PClassInfo2.h>
-#include <steinberg/vst3/base/IPluginFactory.h>
 
 namespace Steinberg
 {
     /**
-     * Class factory supporting PClassInfo2: IPluginFactory2 (version 2)
+     * A dependent will get notified about changes of a model.
+     *   - notify changes of a model
+     *
+     * @see IUpdateHandler
      */
     #include <steinberg/vst3/base/WarningsPush.h>
-    class IPluginFactory2 : public IPluginFactory
+    class IDependent: public FUnknown
     {
         public:
-            /**
-             * Returns the class info (version 2) for a given index.
-             */
-            virtual tresult PLUGIN_API getClassInfo2(int32 index, PClassInfo2 *info) = 0;
+            enum ChangeMessage
+            {
+                kWillChange,
+                kChanged,
+                kDestroyed,
+                kWillDestroy,
 
+                kStdChangeMessageLast = kWillDestroy
+            };
+
+        public:
+            /**
+             * Inform the dependent, that the passed FUnknown has changed.
+             */
+            virtual void PLUGIN_API update(FUnknown *changedUnknown, int32 message) = 0;
+
+        public:
             static const FUID iid;
     };
     #include <steinberg/vst3/base/WarningsPop.h>
 
-    DECLARE_CLASS_IID (IPluginFactory2, 0x0007B650, 0xF24B4C0B, 0xA464EDB9, 0xF00B2ABB)
+    DECLARE_CLASS_IID (IDependent, 0xF52B7AAE, 0xDE72416d, 0x8AF18ACE, 0x9DD7BD5E)
 
 } /* namespace Steinberg */
 
-#endif /* _3RD_PARTY_INCLUDE_STEINBERG_VST3_BASE_IPLUGINFACTORY2_H_ */
+#endif /* _3RD_PARTY_INCLUDE_STEINBERG_VST3_BASE_IDEPENDENT_H_ */

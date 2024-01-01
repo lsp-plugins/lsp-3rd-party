@@ -1,4 +1,5 @@
 /*
+ * Copyright 2023, Steinberg Media Technologies GmbH, All Rights Reserved
  * Copyright 2023 Linux Studio Plugins Project <lsp.plugin@gmail.com>
  *
  * This program is free software: you can redistribute it and/or modify
@@ -108,14 +109,13 @@ namespace Steinberg
     class FUnknown
     {
         public:
-
             /**
              * Query for a pointer to the specified interface.
              * @return kResultOk on success or kNoInterface if the object does not implement the interface.
              * The object has to call addRef when returning an interface.
              * @param _iid : (in) 16 Byte interface identifier (-> FUID)
              * @param obj : (out) On return, *obj points to the requested interface */
-            virtual tresult PLUGIN_API queryInterface(const TUID _iid, void** obj) = 0;
+            virtual tresult PLUGIN_API queryInterface(const TUID _iid, void **obj) = 0;
 
             /** Adds a reference and returns the new reference count.
              * @note The initial reference count after creating an object is 1.
@@ -127,6 +127,7 @@ namespace Steinberg
              */
             virtual uint32 PLUGIN_API release() = 0;
 
+        public:
             static const FUID iid;
     };
     #include <steinberg/vst3/base/WarningsPop.h>

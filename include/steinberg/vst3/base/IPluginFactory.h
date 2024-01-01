@@ -1,4 +1,5 @@
 /*
+ * Copyright 2023, Steinberg Media Technologies GmbH, All Rights Reserved
  * Copyright 2023 Linux Studio Plugins Project <lsp.plugin@gmail.com>
  *
  * This program is free software: you can redistribute it and/or modify
@@ -17,7 +18,6 @@
 
 #ifndef _3RD_PARTY_INCLUDE_STEINBERG_VST3_BASE_IPLUGINFACTORY_H_
 #define _3RD_PARTY_INCLUDE_STEINBERG_VST3_BASE_IPLUGINFACTORY_H_
-
 
 #include <steinberg/vst3/base/FUnknown.h>
 #include <steinberg/vst3/base/PFactoryInfo.h>

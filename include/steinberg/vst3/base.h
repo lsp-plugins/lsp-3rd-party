@@ -1,4 +1,5 @@
 /*
+ * Copyright 2023, Steinberg Media Technologies GmbH, All Rights Reserved
  * Copyright 2023 Linux Studio Plugins Project <lsp.plugin@gmail.com>
  *
  * This program is free software: you can redistribute it and/or modify
@@ -39,6 +40,8 @@
 
 // Interfaces
 #include <steinberg/vst3/base/FUnknown.h>
+#include <steinberg/vst3/base/IDependent.h>
+#include <steinberg/vst3/base/IUpdateHandler.h>
 #include <steinberg/vst3/base/IBStream.h>
 #include <steinberg/vst3/base/ISizableStream.h>
 #include <steinberg/vst3/base/IPluginBase.h>

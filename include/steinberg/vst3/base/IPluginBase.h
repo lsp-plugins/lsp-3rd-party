@@ -1,4 +1,5 @@
 /*
+ * Copyright 2023, Steinberg Media Technologies GmbH, All Rights Reserved
  * Copyright 2023 Linux Studio Plugins Project <lsp.plugin@gmail.com>
  *
  * This program is free software: you can redistribute it and/or modify
@@ -14,7 +15,6 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-
 
 #ifndef _3RD_PARTY_INCLUDE_STEINBERG_VST3_BASE_IPLUGINBASE_H_
 #define _3RD_PARTY_INCLUDE_STEINBERG_VST3_BASE_IPLUGINBASE_H_
@@ -38,23 +38,24 @@ namespace Steinberg
     #include <steinberg/vst3/base/WarningsPush.h>
     class IPluginBase: public FUnknown
     {
-    public:
-        /**
-         * The host passes a number of interfaces as context to initialize the plug-in class.
-         * @param context, passed by the host, is mandatory and should implement IHostApplication
-         * @note Extensive memory allocations etc. should be performed in this method rather than in
-         * the class' constructor! If the method does NOT return kResultOk, the object is released
-         * immediately. In this case terminate is not called!
-         */
-        virtual tresult PLUGIN_API initialize (FUnknown *context) = 0;
+        public:
+            /**
+             * The host passes a number of interfaces as context to initialize the plug-in class.
+             * @param context, passed by the host, is mandatory and should implement IHostApplication
+             * @note Extensive memory allocations etc. should be performed in this method rather than in
+             * the class' constructor! If the method does NOT return kResultOk, the object is released
+             * immediately. In this case terminate is not called!
+             */
+            virtual tresult PLUGIN_API initialize(FUnknown *context) = 0;
 
-        /**
-         * This function is called before the plug-in is unloaded and can be used for
-         * cleanups. You have to release all references to any host application interfaces.
-         */
-        virtual tresult PLUGIN_API terminate () = 0;
+            /**
+             * This function is called before the plug-in is unloaded and can be used for
+             * cleanups. You have to release all references to any host application interfaces.
+             */
+            virtual tresult PLUGIN_API terminate() = 0;
 
-        static const FUID iid;
+        public:
+            static const FUID iid;
     };
     #include <steinberg/vst3/base/WarningsPop.h>
 

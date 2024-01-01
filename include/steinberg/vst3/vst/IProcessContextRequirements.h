@@ -1,4 +1,5 @@
 /*
+ * Copyright 2023, Steinberg Media Technologies GmbH, All Rights Reserved
  * Copyright 2023 Linux Studio Plugins Project <lsp.plugin@gmail.com>
  *
  * This program is free software: you can redistribute it and/or modify
@@ -13,7 +14,7 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
+*/
 
 #ifndef _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_IPROCESSCONTEXTREQUIREMENTS_H_
 #define _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_IPROCESSCONTEXTREQUIREMENTS_H_
@@ -41,74 +42,76 @@ namespace Steinberg
          * may not be as accurate as when using this interface.
          */
         #include <steinberg/vst3/base/WarningsPush.h>
-        class IProcessContextRequirements : public FUnknown
+        class IProcessContextRequirements: public FUnknown
         {
-        public:
-            enum Flags
-            {
-                /**
-                 * kSystemTimeValid
-                 */
-                kNeedSystemTime             = 1 <<  0,
+            public:
+                enum Flags
+                {
+                    /**
+                     * kSystemTimeValid
+                     */
+                    kNeedSystemTime             = 1 <<  0,
 
-                /**
-                 * kContTimeValid
-                 */
-                kNeedContinousTimeSamples   = 1 <<  1,
+                    /**
+                     * kContTimeValid
+                     */
+                    kNeedContinousTimeSamples   = 1 <<  1,
 
-                /**
-                 * kProjectTimeMusicValid
-                 */
-                kNeedProjectTimeMusic       = 1 <<  2,
+                    /**
+                     * kProjectTimeMusicValid
+                     */
+                    kNeedProjectTimeMusic       = 1 <<  2,
 
-                /**
-                 * kBarPositionValid
-                 */
-                kNeedBarPositionMusic       = 1 <<  3,
+                    /**
+                     * kBarPositionValid
+                     */
+                    kNeedBarPositionMusic       = 1 <<  3,
 
-                /**
-                 * kCycleValid
-                 */
-                kNeedCycleMusic             = 1 <<  4,
+                    /**
+                     * kCycleValid
+                     */
+                    kNeedCycleMusic             = 1 <<  4,
 
-                /**
-                 * kClockValid
-                 */
-                kNeedSamplesToNextClock     = 1 <<  5,
+                    /**
+                     * kClockValid
+                     */
+                    kNeedSamplesToNextClock     = 1 <<  5,
 
-                /**
-                 * kTempoValid
-                 */
-                kNeedTempo                  = 1 <<  6,
+                    /**
+                     * kTempoValid
+                     */
+                    kNeedTempo                  = 1 <<  6,
 
-                /**
-                 * kTimeSigValid
-                 */
-                kNeedTimeSignature          = 1 <<  7,
+                    /**
+                     * kTimeSigValid
+                     */
+                    kNeedTimeSignature          = 1 <<  7,
 
-                /**
-                 * kChordValid
-                 */
-                kNeedChord                  = 1 <<  8,
+                    /**
+                     * kChordValid
+                     */
+                    kNeedChord                  = 1 <<  8,
 
-                /**
-                 * kSmpteValid
-                 */
-                kNeedFrameRate              = 1 <<  9,
+                    /**
+                     * kSmpteValid
+                     */
+                    kNeedFrameRate              = 1 <<  9,
 
-                /**
-                 * kPlaying, kCycleActive, kRecording
-                 */
-                kNeedTransportState         = 1 << 10,
-            };
+                    /**
+                     * kPlaying, kCycleActive, kRecording
+                     */
+                    kNeedTransportState         = 1 << 10,
+                };
 
-            virtual uint32 PLUGIN_API getProcessContextRequirements() = 0;
+            public:
+                virtual uint32 PLUGIN_API getProcessContextRequirements() = 0;
 
-            static const FUID iid;
+            public:
+                static const FUID iid;
         };
         #include <steinberg/vst3/base/WarningsPop.h>
 
-        DECLARE_CLASS_IID (IProcessContextRequirements, 0x2A654303, 0xEF764E3D, 0x95B5FE83, 0x730EF6D0)
+        DECLARE_CLASS_IID(IProcessContextRequirements, 0x2A654303, 0xEF764E3D, 0x95B5FE83, 0x730EF6D0)
 
     } /* namespace Vst */
 } /* namespace Steinberg */

@@ -16,47 +16,51 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_EVENTLIST_H_
-#define _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_EVENTLIST_H_
+#ifndef _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_IVSTMESSAGE_H_
+#define _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_IVSTMESSAGE_H_
 
 #include <steinberg/vst3/base/FUnknown.h>
-#include <steinberg/vst3/vst/Event.h>
+#include <steinberg/vst3/vst/IMessage.h>
 
 namespace Steinberg
 {
     namespace Vst
     {
         /**
-         * List of events to process: Vst::IEventList
-         * @see ProcessData, Event
+         * Connect a component with another one: Vst::IConnectionPoint
+         *
+         * This interface is used for the communication of separate components.
+         * @note that some hosts will place a proxy object between the components so that they are not directly connected.
+         *
+         * @see @ref vst3Communication
          */
         #include <steinberg/vst3/base/WarningsPush.h>
-        class IEventList : public FUnknown
+        class IConnectionPoint: public FUnknown
         {
             public:
                 /**
-                 * Returns the count of events.
+                 * Connects this instance with another connection point.
                  */
-                virtual int32 PLUGIN_API getEventCount () = 0;
+                virtual tresult PLUGIN_API connect(IConnectionPoint *other) = 0;
 
                 /**
-                 * Gets parameter by index.
+                 * Disconnects a given connection point from this.
                  */
-                virtual tresult PLUGIN_API getEvent (int32 index, Event & e /*out*/) = 0;
+                virtual tresult PLUGIN_API disconnect(IConnectionPoint *other) = 0;
 
                 /**
-                 * Adds a new event.
+                 * Called when a message has been sent from the connection point to this.
                  */
-                virtual tresult PLUGIN_API addEvent (Event & e /*in*/) = 0;
+                virtual tresult PLUGIN_API notify(IMessage *message) = 0;
 
             public:
                 static const FUID iid;
         };
         #include <steinberg/vst3/base/WarningsPop.h>
 
-        DECLARE_CLASS_IID (IEventList, 0x3A2C4214, 0x346349FE, 0xB2C4F397, 0xB9695A44)
+        DECLARE_CLASS_IID(IConnectionPoint, 0x70A4156F, 0x6E6E4026, 0x989148BF, 0xAA60D8D1)
 
     } /* namespace Vst */
 } /* namespace Steinberg */
 
-#endif /* _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_EVENTLIST_H_ */
+#endif /* _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_IVSTMESSAGE_H_ */
