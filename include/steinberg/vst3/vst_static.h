@@ -33,9 +33,9 @@ namespace Steinberg
 //
         DEF_CLASS_IID (IEditController)
 //        DEF_CLASS_IID (IUnitInfo)
-//
-//        DEF_CLASS_IID (IConnectionPoint)
-//
+
+        DEF_CLASS_IID (IConnectionPoint)
+
         DEF_CLASS_IID (IComponentHandler)
 //        DEF_CLASS_IID (IUnitHandler)
 //
@@ -43,8 +43,8 @@ namespace Steinberg
         DEF_CLASS_IID (IParameterChanges)
 //
         DEF_CLASS_IID (IEventList)
-//        DEF_CLASS_IID (IMessage)
-//
+        DEF_CLASS_IID (IMessage)
+
 //        DEF_CLASS_IID (IHostApplication)
         DEF_CLASS_IID (IAttributeList)
 
