@@ -108,13 +108,13 @@ namespace Steinberg
                  * Gets from host a handler which allows the Plugin-in to communicate with the host.
                  * Note: This is mandatory if the host is using the IEditController!
                  */
-                virtual tresult PLUGIN_API setComponentHandler (IComponentHandler* handler) = 0;
+                virtual tresult PLUGIN_API setComponentHandler(IComponentHandler *handler) = 0;
 
                 /**
                  * Creates the editor view of the plug-in, currently only "editor" is supported, see @ref ViewType.
                  * The life time of the editor view will never exceed the life time of this controller instance.
                  */
-                virtual IPlugView* PLUGIN_API createView (FIDString name) = 0;
+                virtual IPlugView* PLUGIN_API createView(FIDString name) = 0;
 
             public:
                 static const FUID iid;

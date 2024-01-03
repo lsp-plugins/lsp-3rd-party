@@ -95,9 +95,9 @@ namespace Steinberg
     typedef char8 tchar;
 #endif
 
-    typedef const char8* CStringA;
-    typedef const char16* CStringW;
-    typedef const tchar* CString;
+    typedef const char8 *CStringA;
+    typedef const char16 *CStringW;
+    typedef const tchar *CString;
     inline bool strEmpty (const tchar* str) { return (!str || *str == 0); }
     inline bool str8Empty (const char8* str) { return (!str || *str == 0); }
     inline bool str16Empty (const char16* str) { return (!str || *str == 0); }

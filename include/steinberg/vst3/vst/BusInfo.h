@@ -153,7 +153,6 @@ namespace Steinberg
                  * The data is in the same format as the audio data [-1..1].
                  * A host has to prevent unintended routing to speakers to prevent damage.
                  * Only valid for audio media type busses.
-                 * [released: 3.7.0]
                  */
                 kIsControlVoltage = 1 << 1
             };
