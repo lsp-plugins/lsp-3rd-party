@@ -35,6 +35,7 @@
 #include <steinberg/vst3/vst/ProcessContext.h>
 #include <steinberg/vst3/vst/ProcessData.h>
 #include <steinberg/vst3/vst/ParameterInfo.h>
+#include <steinberg/vst3/vst/UnitInfo.h>
 
 // Interfaces
 #include <steinberg/vst3/vst/IComponent.h>
@@ -60,5 +61,10 @@
 #include <steinberg/vst3/vst/IMidiMapping.h>
 #include <steinberg/vst3/vst/IEditControllerHostEditing.h>
 #include <steinberg/vst3/vst/IComponentHandlerSystemTime.h>
+#include <steinberg/vst3/vst/IUnitHandler.h>
+#include <steinberg/vst3/vst/IUnitHandler2.h>
+#include <steinberg/vst3/vst/IUnitInfo.h>
+#include <steinberg/vst3/vst/IProgramListData.h>
+#include <steinberg/vst3/vst/IUnitData.h>
 
 #endif /* _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_H_ */

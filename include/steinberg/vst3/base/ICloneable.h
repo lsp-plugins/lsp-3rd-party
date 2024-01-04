@@ -16,30 +16,33 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef _3RD_PARTY_INCLUDE_STEINBERG_VST3_BASE_STATIC_H_
-#define _3RD_PARTY_INCLUDE_STEINBERG_VST3_BASE_STATIC_H_
+#ifndef _3RD_PARTY_INCLUDE_STEINBERG_VST3_BASE_ICLONEABLE_H_
+#define _3RD_PARTY_INCLUDE_STEINBERG_VST3_BASE_ICLONEABLE_H_
 
-#include <steinberg/vst3/base.h>
+#include <steinberg/vst3/base/FUnknown.h>
 
 namespace Steinberg
 {
-    // Core IDs
-    DEF_CLASS_IID (IPluginBase)
-    DEF_CLASS_IID (IPluginFactory)
-    DEF_CLASS_IID (IPluginFactory2)
-    DEF_CLASS_IID (IPluginFactory3)
+    /**
+     * Interface allowing an object to be copied.
+     */
+    #include <steinberg/vst3/base/WarningsPush.h>
+    class ICloneable: public FUnknown
+    {
+        public:
+            /**
+             * Create exact copy of the object
+             */
+            virtual FUnknown* PLUGIN_API clone() = 0;
 
-    DEF_CLASS_IID (FUnknown)
+        public:
+            static const FUID iid;
+    };
+    #include <steinberg/vst3/base/WarningsPop.h>
 
-    DEF_CLASS_IID (ICloneable)
-    DEF_CLASS_IID (IDependent)
-    DEF_CLASS_IID (IUpdateHandler)
-
-    DEF_CLASS_IID (IBStream)
-    DEF_CLASS_IID (ISizeableStream)
+    DECLARE_CLASS_IID (ICloneable, 0xD45406B9, 0x3A2D4443, 0x9DAD9BA9, 0x85A1454B)
 
 } /* namespace Steinberg */
 
 
-
-#endif /* _3RD_PARTY_INCLUDE_STEINBERG_VST3_BASE_STATIC_H_ */
+#endif /* _3RD_PARTY_INCLUDE_STEINBERG_VST3_BASE_ICLONEABLE_H_ */

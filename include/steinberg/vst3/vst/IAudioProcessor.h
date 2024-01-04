@@ -67,14 +67,14 @@ namespace Steinberg
                  * @param numOuts number of /ref SpeakerArrangement in outputs array
                  * @return kResultTrue when Arrangements is supported and is the current one, else kResultFalse.
                  */
-                virtual tresult PLUGIN_API setBusArrangements(SpeakerArrangement* inputs, int32 numIns, SpeakerArrangement* outputs, int32 numOuts) = 0;
+                virtual tresult PLUGIN_API setBusArrangements(SpeakerArrangement *inputs, int32 numIns, SpeakerArrangement *outputs, int32 numOuts) = 0;
 
                 /**
                  * Gets the bus arrangement for a given direction (input/output) and index.
                  * @note IComponent::getBusInfo() and IAudioProcessor::getBusArrangement() should be always return the same
                  * information about the busses arrangements.
                  */
-                virtual tresult PLUGIN_API getBusArrangement(BusDirection dir, int32 index, SpeakerArrangement& arr) = 0;
+                virtual tresult PLUGIN_API getBusArrangement(BusDirection dir, int32 index, SpeakerArrangement & arr) = 0;
 
                 /**
                  * Asks if a given sample size is supported see @ref SymbolicSampleSizes.
@@ -97,7 +97,7 @@ namespace Steinberg
                 /**
                  * Called in disable state (setActive not called with true) before setProcessing is called and processing will begin.
                  */
-                virtual tresult PLUGIN_API setupProcessing(ProcessSetup& setup) = 0;
+                virtual tresult PLUGIN_API setupProcessing(ProcessSetup & setup) = 0;
 
                 /**
                  * Informs the plug-in about the processing state. This will be called before any process calls

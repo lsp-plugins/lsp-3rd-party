@@ -41,6 +41,7 @@
 // Interfaces
 #include <steinberg/vst3/base/FUnknown.h>
 #include <steinberg/vst3/base/IDependent.h>
+#include <steinberg/vst3/base/ICloneable.h>
 #include <steinberg/vst3/base/IUpdateHandler.h>
 #include <steinberg/vst3/base/IBStream.h>
 #include <steinberg/vst3/base/ISizableStream.h>

@@ -28,20 +28,20 @@ namespace Steinberg
         //----VST 3.0--------------------------------
         DEF_CLASS_IID (IComponent)
         DEF_CLASS_IID (IAudioProcessor)
-//        DEF_CLASS_IID (IUnitData)
-//        DEF_CLASS_IID (IProgramListData)
-//
+        DEF_CLASS_IID (IUnitData)
+        DEF_CLASS_IID (IProgramListData)
+
         DEF_CLASS_IID (IEditController)
-//        DEF_CLASS_IID (IUnitInfo)
+        DEF_CLASS_IID (IUnitInfo)
 
         DEF_CLASS_IID (IConnectionPoint)
 
         DEF_CLASS_IID (IComponentHandler)
-//        DEF_CLASS_IID (IUnitHandler)
-//
+        DEF_CLASS_IID (IUnitHandler)
+
         DEF_CLASS_IID (IParamValueQueue)
         DEF_CLASS_IID (IParameterChanges)
-//
+
         DEF_CLASS_IID (IEventList)
         DEF_CLASS_IID (IMessage)
 
@@ -79,7 +79,7 @@ namespace Steinberg
         //----VST 3.6.5--------------------------------
 //        DEF_CLASS_IID (ChannelContext::IInfoListener)
 //        DEF_CLASS_IID (IPrefetchableSupport)
-//        DEF_CLASS_IID (IUnitHandler2)
+        DEF_CLASS_IID (IUnitHandler2)
 //        DEF_CLASS_IID (IAutomationState)
 
         //----VST 3.6.8--------------------------------
