@@ -16,32 +16,31 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef _3RD_PARTY_INCLUDE_STEINBERG_VST3_GUI_ITIMERHANDLER_H_
-#define _3RD_PARTY_INCLUDE_STEINBERG_VST3_GUI_ITIMERHANDLER_H_
+#ifndef _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_IVST3TOVST2WRAPPER_H_
+#define _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_IVST3TOVST2WRAPPER_H_
 
 #include <steinberg/vst3/base/FUnknown.h>
 
 namespace Steinberg
 {
-    typedef uint64      TimerInterval;
-
-    /**
-     * Linux timer handler interface
-     * @see IRunLoop
-     */
-    #include <steinberg/vst3/base/WarningsPush.h>
-    class ITimerHandler: public FUnknown
+    namespace Vst
     {
-        public:
-            virtual void PLUGIN_API onTimer() = 0;
+        /**
+         * VST 3 to VST 2 Wrapper interface.
+         * Informs the plug-in that a VST 3 to VST 2 wrapper is used between the plug-in and the real host.
+         * Implemented by the VST 2 Wrapper.
+         */
+        #include <steinberg/vst3/base/WarningsPush.h>
+        class IVst3ToVst2Wrapper: public FUnknown
+        {
+            public:
+                static const FUID iid;
+        };
+        #include <steinberg/vst3/base/WarningsPop.h>
 
-        public:
-            static const FUID iid;
-    };
-    #include <steinberg/vst3/base/WarningsPop.h>
+        DECLARE_CLASS_IID (IVst3ToVst2Wrapper, 0x29633AEC, 0x1D1C47E2, 0xBB85B97B, 0xD36EAC61)
 
-    DECLARE_CLASS_IID (ITimerHandler, 0x10BDD94F, 0x41424774, 0x821FAD8F, 0xECA72CA9)
-
+    } /* namespace Vst */
 } /* namespace Steinberg */
 
-#endif /* _3RD_PARTY_INCLUDE_STEINBERG_VST3_GUI_ITIMERHANDLER_H_ */
+#endif /* _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_IVST3TOVST2WRAPPER_H_ */

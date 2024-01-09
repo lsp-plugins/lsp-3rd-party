@@ -45,7 +45,7 @@ namespace Steinberg
         DEF_CLASS_IID (IEventList)
         DEF_CLASS_IID (IMessage)
 
-//        DEF_CLASS_IID (IHostApplication)
+        DEF_CLASS_IID (IHostApplication)
         DEF_CLASS_IID (IAttributeList)
 
         //----VST 3.0.1--------------------------------
@@ -58,8 +58,8 @@ namespace Steinberg
         DEF_CLASS_IID (IComponentHandler2)
         DEF_CLASS_IID (IEditController2)
         DEF_CLASS_IID (IAudioPresentationLatency)
-//        DEF_CLASS_IID (IVst3ToVst2Wrapper)
-//        DEF_CLASS_IID (IVst3ToAUWrapper)
+        DEF_CLASS_IID (IVst3ToVst2Wrapper)
+        DEF_CLASS_IID (IVst3ToAUWrapper)
 
         //----VST 3.5----------------------------------
         DEF_CLASS_IID (INoteExpressionController)
@@ -84,7 +84,7 @@ namespace Steinberg
 
         //----VST 3.6.8--------------------------------
         DEF_CLASS_IID (IComponentHandlerBusActivation)
-//        DEF_CLASS_IID (IVst3ToAAXWrapper)
+        DEF_CLASS_IID (IVst3ToAAXWrapper)
 
         //----VST 3.6.11--------------------------------
 //        DEF_CLASS_IID (INoteExpressionPhysicalUIMapping)
@@ -92,7 +92,7 @@ namespace Steinberg
         //----VST 3.6.12--------------------------------
 //        DEF_CLASS_IID (IMidiLearn)
 //        DEF_CLASS_IID (IPlugInterfaceSupport)
-//        DEF_CLASS_IID (IVst3WrapperMPESupport)
+        DEF_CLASS_IID (IVst3WrapperMPESupport)
 
         //----VST 3.6.13--------------------------------
 //        DEF_CLASS_IID (ITestPlugProvider)

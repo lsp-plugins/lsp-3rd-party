@@ -66,5 +66,10 @@
 #include <steinberg/vst3/vst/IUnitInfo.h>
 #include <steinberg/vst3/vst/IProgramListData.h>
 #include <steinberg/vst3/vst/IUnitData.h>
+#include <steinberg/vst3/vst/IHostApplication.h>
+#include <steinberg/vst3/vst/IVst3ToVst2Wrapper.h>
+#include <steinberg/vst3/vst/IVst3ToAUWrapper.h>
+#include <steinberg/vst3/vst/IVst3ToAAXWrapper.h>
+#include <steinberg/vst3/vst/IVst3WrapperMPESupport.h>
 
 #endif /* _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_H_ */
