@@ -49,10 +49,10 @@ namespace Steinberg
         DEF_CLASS_IID (IAttributeList)
 
         //----VST 3.0.1--------------------------------
-//        DEF_CLASS_IID (IMidiMapping)
+        DEF_CLASS_IID (IMidiMapping)
 
         //----VST 3.0.2--------------------------------
-//        DEF_CLASS_IID (IParameterFinder)
+        DEF_CLASS_IID (IParameterFinder)
 
         //----VST 3.1----------------------------------
         DEF_CLASS_IID (IComponentHandler2)
@@ -64,9 +64,9 @@ namespace Steinberg
         //----VST 3.5----------------------------------
         DEF_CLASS_IID (INoteExpressionController)
         DEF_CLASS_IID (IKeyswitchController)
-//        DEF_CLASS_IID (IContextMenuTarget)
-//        DEF_CLASS_IID (IContextMenu)
-//        DEF_CLASS_IID (IComponentHandler3)
+        DEF_CLASS_IID (IContextMenuTarget)
+        DEF_CLASS_IID (IContextMenu)
+        DEF_CLASS_IID (IComponentHandler3)
         DEF_CLASS_IID (IEditControllerHostEditing)
 //        DEF_CLASS_IID (IXmlRepresentationController)
 

@@ -1,22 +1,19 @@
 /*
- * Copyright (C) 2024 Linux Studio Plugins Project <https://lsp-plug.in/>
- *           (C) 2024 Vladimir Sadovnikov <sadko4u@gmail.com>
+ * Copyright 2023, Steinberg Media Technologies GmbH, All Rights Reserved
+ * Copyright 2023 Linux Studio Plugins Project <lsp.plugin@gmail.com>
  *
- * This file is part of lsp-plugins-comp-delay
- * Created on: 1 янв. 2024 г.
- *
- * lsp-plugins-comp-delay is free software: you can redistribute it and/or modify
- * it under the terms of the GNU Lesser General Public License as published by
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * any later version.
  *
- * lsp-plugins-comp-delay is distributed in the hope that it will be useful,
+ * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU Lesser General Public License for more details.
+ * GNU General Public License for more details.
  *
- * You should have received a copy of the GNU Lesser General Public License
- * along with lsp-plugins-comp-delay. If not, see <https://www.gnu.org/licenses/>.
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 #ifndef _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_IATTRIBUTELIST_H_
@@ -46,43 +43,43 @@ namespace Steinberg
                 /**
                  * Sets integer value.
                  */
-                virtual tresult PLUGIN_API setInt (AttrID id, int64 value) = 0;
+                virtual tresult PLUGIN_API setInt(AttrID id, int64 value) = 0;
 
                 /**
                  * Gets integer value.
                  */
-                virtual tresult PLUGIN_API getInt (AttrID id, int64& value) = 0;
+                virtual tresult PLUGIN_API getInt(AttrID id, int64& value) = 0;
 
                 /**
                  * Sets float value.
                  */
-                virtual tresult PLUGIN_API setFloat (AttrID id, double value) = 0;
+                virtual tresult PLUGIN_API setFloat(AttrID id, double value) = 0;
 
                 /**
                  * Gets float value.
                  */
-                virtual tresult PLUGIN_API getFloat (AttrID id, double& value) = 0;
+                virtual tresult PLUGIN_API getFloat(AttrID id, double& value) = 0;
 
                 /**
                  * Sets string value (UTF16) (must be null-terminated!).
                  */
-                virtual tresult PLUGIN_API setString (AttrID id, const TChar * string) = 0;
+                virtual tresult PLUGIN_API setString(AttrID id, const TChar * string) = 0;
 
                 /**
                  * Gets string value (UTF16). Note that Size is in Byte, not the string Length!
                  * Do not forget to multiply the length by sizeof (TChar)!
                  */
-                virtual tresult PLUGIN_API getString (AttrID id, TChar* string, uint32 sizeInBytes) = 0;
+                virtual tresult PLUGIN_API getString(AttrID id, TChar* string, uint32 sizeInBytes) = 0;
 
                 /**
                  * Sets binary data.
                  */
-                virtual tresult PLUGIN_API setBinary (AttrID id, const void *data, uint32 sizeInBytes) = 0;
+                virtual tresult PLUGIN_API setBinary(AttrID id, const void *data, uint32 sizeInBytes) = 0;
 
                 /**
                  * Gets binary data.
                  */
-                virtual tresult PLUGIN_API getBinary (AttrID id, const void *& data, uint32& sizeInBytes) = 0;
+                virtual tresult PLUGIN_API getBinary(AttrID id, const void *& data, uint32& sizeInBytes) = 0;
 
             public:
                 static const FUID iid;

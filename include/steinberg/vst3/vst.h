@@ -54,6 +54,7 @@
 #include <steinberg/vst3/vst/IParameterFinder.h>
 #include <steinberg/vst3/vst/IComponentHandler.h>
 #include <steinberg/vst3/vst/IComponentHandler2.h>
+#include <steinberg/vst3/vst/IComponentHandler3.h>
 #include <steinberg/vst3/vst/IComponentHandlerBusActivation.h>
 #include <steinberg/vst3/vst/IProgress.h>
 #include <steinberg/vst3/vst/IEditController.h>
@@ -71,5 +72,8 @@
 #include <steinberg/vst3/vst/IVst3ToAUWrapper.h>
 #include <steinberg/vst3/vst/IVst3ToAAXWrapper.h>
 #include <steinberg/vst3/vst/IVst3WrapperMPESupport.h>
+#include <steinberg/vst3/vst/IContextMenuItem.h>
+#include <steinberg/vst3/vst/IContextMenuTarget.h>
+#include <steinberg/vst3/vst/IContextMenu.h>
 
 #endif /* _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_H_ */

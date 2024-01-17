@@ -14,43 +14,41 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+ */
 
-#ifndef _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_IHOSTAPPLICATION_H_
-#define _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_IHOSTAPPLICATION_H_
+#ifndef _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_ICONTEXTMENUTARGET_H_
+#define _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_ICONTEXTMENUTARGET_H_
 
-#include <steinberg/vst3/base/FUnknown.h>
-#include <steinberg/vst3/vst/IMessage.h>
+#include <steinberg/vst3/gui/IPlugView.h>
 
 namespace Steinberg
 {
     namespace Vst
     {
         /**
-         * Basic VST host application interface.
+         * Context Menu Item Target interface: Vst::IContextMenuTarget
+         *
+         * A receiver of a menu item should implement this interface, which will be called
+         * after the user has selected this menu item.
+         *
+         * @see IComponentHandler3 for more information.
          */
         #include <steinberg/vst3/base/WarningsPush.h>
-        class IHostApplication: public FUnknown
+        class IContextMenuTarget: public FUnknown
         {
             public:
-                /**
-                 * Gets host application name.
-                 */
-                virtual tresult PLUGIN_API getName(String128 name) = 0;
-
-                /**
-                 * Creates host object (e.g. Vst::IMessage).
-                 */
-                virtual tresult PLUGIN_API createInstance(TUID cid, TUID _iid, void** obj) = 0;
+                /** Called when an menu item was executed. */
+                virtual tresult PLUGIN_API executeMenuItem(int32 tag) = 0;
 
             public:
                 static const FUID iid;
         };
         #include <steinberg/vst3/base/WarningsPop.h>
 
-        DECLARE_CLASS_IID (IHostApplication, 0x58E595CC, 0xDB2D4969, 0x8B6AAF8C, 0x36A664E5)
+        DECLARE_CLASS_IID (IContextMenuTarget, 0x3CDF2E75, 0x85D34144, 0xBF86D36B, 0xD7C4894D)
 
     } /* namespace Vst */
 } /* namespace Steinberg */
 
-#endif /* _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_IHOSTAPPLICATION_H_ */
+
+#endif /* _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_ICONTEXTMENUTARGET_H_ */
