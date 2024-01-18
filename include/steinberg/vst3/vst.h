@@ -38,6 +38,7 @@
 #include <steinberg/vst3/vst/UnitInfo.h>
 
 // Interfaces
+#include <steinberg/vst3/vst/RepresentationInfo.h>
 #include <steinberg/vst3/vst/IComponent.h>
 #include <steinberg/vst3/vst/IEventList.h>
 #include <steinberg/vst3/vst/IMessage.h>
@@ -75,5 +76,7 @@
 #include <steinberg/vst3/vst/IContextMenuItem.h>
 #include <steinberg/vst3/vst/IContextMenuTarget.h>
 #include <steinberg/vst3/vst/IContextMenu.h>
+#include <steinberg/vst3/vst/IPlugInterfaceSupport.h>
+#include <steinberg/vst3/vst/IXmlRepresentationController.h>
 
 #endif /* _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_H_ */

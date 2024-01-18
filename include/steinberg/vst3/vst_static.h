@@ -68,7 +68,7 @@ namespace Steinberg
         DEF_CLASS_IID (IContextMenu)
         DEF_CLASS_IID (IComponentHandler3)
         DEF_CLASS_IID (IEditControllerHostEditing)
-//        DEF_CLASS_IID (IXmlRepresentationController)
+        DEF_CLASS_IID (IXmlRepresentationController)
 
         //----VST 3.6----------------------------------
 //        DEF_CLASS_IID (IInterAppAudioHost)
@@ -91,7 +91,7 @@ namespace Steinberg
 
         //----VST 3.6.12--------------------------------
 //        DEF_CLASS_IID (IMidiLearn)
-//        DEF_CLASS_IID (IPlugInterfaceSupport)
+        DEF_CLASS_IID (IPlugInterfaceSupport)
         DEF_CLASS_IID (IVst3WrapperMPESupport)
 
         //----VST 3.6.13--------------------------------
