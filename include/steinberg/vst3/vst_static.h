@@ -103,13 +103,10 @@ namespace Steinberg
         DEF_CLASS_IID (IProgress)
 //        DEF_CLASS_IID (ITestPlugProvider2)
 
-        //----VST 3.7.5---------------------------------
-//        DEF_CLASS_IID (IPluginCompatibility)
-
         //----VST 3.7.9---------------------------------
         DEF_CLASS_IID (IComponentHandlerSystemTime)
-//        DEF_CLASS_IID (IDataExchangeHandler)
-//        DEF_CLASS_IID (IDataExchangeReceiver)
+        DEF_CLASS_IID (IDataExchangeHandler)
+        DEF_CLASS_IID (IDataExchangeReceiver)
 
     } /* namespace Vst */
 } /* namespace Steinberg */

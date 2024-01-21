@@ -23,7 +23,7 @@
 
 namespace Steinberg
 {
-    // Core IDs
+    //----VST 3.0--------------------------------
     DEF_CLASS_IID (IPluginBase)
     DEF_CLASS_IID (IPluginFactory)
     DEF_CLASS_IID (IPluginFactory2)
@@ -37,6 +37,9 @@ namespace Steinberg
 
     DEF_CLASS_IID (IBStream)
     DEF_CLASS_IID (ISizeableStream)
+
+    //----VST 3.7.5---------------------------------
+    DEF_CLASS_IID (IPluginCompatibility)
 
 } /* namespace Steinberg */
 

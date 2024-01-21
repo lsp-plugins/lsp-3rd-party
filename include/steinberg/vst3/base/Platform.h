@@ -81,7 +81,8 @@ enum
 
     #define SMTG_OS_WINDOWS_ARM    (SMTG_CPU_ARM_64EC || SMTG_CPU_ARM_64 || SMTG_CPU_ARM)
 
-    #define BYTEORDER kLittleEndian
+    #define BYTEORDER           kLittleEndian
+    #define VST3_BYTEORDER      kLittleEndian
 
     #define COM_COMPATIBLE    1
     #define PLUGIN_API __stdcall
@@ -164,9 +165,11 @@ enum
         #define SMTG_PLATFORM_64 0
     #endif
     #if defined (__BIG_ENDIAN__)
-        #define BYTEORDER kBigEndian
+        #define BYTEORDER       kBigEndian
+        #define VST3_BYTEORDER  kBigEndian
     #else
-        #define BYTEORDER kLittleEndian
+        #define BYTEORDER       kLittleEndian
+        #define VST3_BYTEORDER  kLittleEndian
     #endif
 
     #define COM_COMPATIBLE    0
@@ -243,9 +246,11 @@ enum
 
     #include <endian.h>
     #if __BYTE_ORDER == __LITTLE_ENDIAN
-        #define BYTEORDER kLittleEndian
+        #define BYTEORDER           kLittleEndian
+        #define VST3_BYTEORDER      kLittleEndian
     #else
-        #define BYTEORDER kBigEndian
+        #define BYTEORDER           kBigEndian
+        #define VST3_BYTEORDER      kBigEndian
     #endif
 
     #define COM_COMPATIBLE  0
@@ -325,5 +330,9 @@ enum
 #endif
 
 #define SMTG_DEPRECATED_MSG(msg) SMTG_DEPRECATED_ATTRIBUTE(msg)
+
+#ifndef VST3_BYTEORDER
+    #define VST3_BYTEORDER BYTEORDER
+#endif /* VST3_BYTEORDER */
 
 #endif /* _3RDPARTY_STEINBERG_VST3_BASE_FLPATFORM_H_ */

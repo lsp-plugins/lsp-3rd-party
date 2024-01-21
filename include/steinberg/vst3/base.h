@@ -49,6 +49,7 @@
 #include <steinberg/vst3/base/IPluginFactory.h>
 #include <steinberg/vst3/base/IPluginFactory2.h>
 #include <steinberg/vst3/base/IPluginFactory3.h>
+#include <steinberg/vst3/base/IPluginCompatibility.h>
 
 // Utility funcitons
 #include <steinberg/vst3/base/GetPluginFactory.h>

@@ -40,7 +40,7 @@ namespace Steinberg
             int32 stepCount;        ///< number of discrete steps (0: continuous, 1: toggle, discrete value otherwise
                                     ///< (corresponding to max - min, for example: 127 for a min = 0 and a max = 127) - see \ref vst3ParameterIntro)
             ParamValue defaultNormalizedValue;  ///< default normalized value [0,1] (in case of discrete value: defaultNormalizedValue = defDiscreteValue / stepCount)
-            UnitID unitId;          ///< id of unit this parameter belongs to (see \ref vst3Units)
+            UnitID unitId;          ///< id of unit this parameter belongs to (see @ref vst3Units)
 
             int32 flags;            ///< ParameterFlags (see below)
             enum ParameterFlags
