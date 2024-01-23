@@ -81,5 +81,10 @@
 #include <steinberg/vst3/vst/IXmlRepresentationController.h>
 #include <steinberg/vst3/vst/IDataExchangeHandler.h>
 #include <steinberg/vst3/vst/IDataExchangeReceiver.h>
+#include <steinberg/vst3/vst/IInterAppAudioPresetManager.h>
+#include <steinberg/vst3/vst/IInterAppAudioHost.h>
+#include <steinberg/vst3/vst/IInterAppAudioConnectionNotification.h>
+#include <steinberg/vst3/vst/IMidiLearn.h>
+#include <steinberg/vst3/vst/IParameterFunctionName.h>
 
 #endif /* _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_H_ */

@@ -30,7 +30,7 @@ namespace Steinberg
      * Class factory supporting PClassInfo2: IPluginFactory2 (version 2)
      */
     #include <steinberg/vst3/base/WarningsPush.h>
-    class IPluginFactory2 : public IPluginFactory
+    class IPluginFactory2: public IPluginFactory
     {
         public:
             /**
@@ -38,6 +38,7 @@ namespace Steinberg
              */
             virtual tresult PLUGIN_API getClassInfo2(int32 index, PClassInfo2 *info) = 0;
 
+        public:
             static const FUID iid;
     };
     #include <steinberg/vst3/base/WarningsPop.h>

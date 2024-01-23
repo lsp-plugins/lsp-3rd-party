@@ -34,13 +34,13 @@ namespace Steinberg
      * mechanism to create instances of these classes (that usually define the IPluginBase interface).
      */
     #include <steinberg/vst3/base/WarningsPush.h>
-    class IPluginFactory : public FUnknown
+    class IPluginFactory: public FUnknown
     {
         public:
             /**
              * Fill a PFactoryInfo structure with information about the plug-in vendor.
              */
-            virtual tresult PLUGIN_API getFactoryInfo(PFactoryInfo* info) = 0;
+            virtual tresult PLUGIN_API getFactoryInfo(PFactoryInfo *info) = 0;
 
             /**
              * Returns the number of exported classes by this factory. If you are using the CPluginFactory
@@ -59,6 +59,7 @@ namespace Steinberg
              */
             virtual tresult PLUGIN_API createInstance(FIDString cid, FIDString _iid, void **obj) = 0;
 
+        public:
             static const FUID iid;
     };
     #include <steinberg/vst3/base/WarningsPop.h>

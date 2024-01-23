@@ -71,9 +71,9 @@ namespace Steinberg
         DEF_CLASS_IID (IXmlRepresentationController)
 
         //----VST 3.6----------------------------------
-//        DEF_CLASS_IID (IInterAppAudioHost)
-//        DEF_CLASS_IID (IInterAppAudioConnectionNotification)
-//        DEF_CLASS_IID (IInterAppAudioPresetManager)
+        DEF_CLASS_IID (IInterAppAudioHost)
+        DEF_CLASS_IID (IInterAppAudioConnectionNotification)
+        DEF_CLASS_IID (IInterAppAudioPresetManager)
         DEF_CLASS_IID (IStreamAttributes)
 
         //----VST 3.6.5--------------------------------
@@ -90,7 +90,7 @@ namespace Steinberg
 //        DEF_CLASS_IID (INoteExpressionPhysicalUIMapping)
 
         //----VST 3.6.12--------------------------------
-//        DEF_CLASS_IID (IMidiLearn)
+        DEF_CLASS_IID (IMidiLearn)
         DEF_CLASS_IID (IPlugInterfaceSupport)
         DEF_CLASS_IID (IVst3WrapperMPESupport)
 
@@ -98,7 +98,7 @@ namespace Steinberg
 //        DEF_CLASS_IID (ITestPlugProvider)
 
         //----VST 3.7-----------------------------------
-//        DEF_CLASS_IID (IParameterFunctionName)
+        DEF_CLASS_IID (IParameterFunctionName)
         DEF_CLASS_IID (IProcessContextRequirements)
         DEF_CLASS_IID (IProgress)
 //        DEF_CLASS_IID (ITestPlugProvider2)

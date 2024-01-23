@@ -30,19 +30,20 @@ namespace Steinberg
      * Class factory supporting PClassInfoW (Version 3)
      */
     #include <steinberg/vst3/base/WarningsPush.h>
-    class IPluginFactory3 : public IPluginFactory2
+    class IPluginFactory3: public IPluginFactory2
     {
         public:
             /**
              * Returns the unicode class info for a given index.
              */
-            virtual tresult PLUGIN_API getClassInfoUnicode(int32 index, PClassInfoW* info) = 0;
+            virtual tresult PLUGIN_API getClassInfoUnicode(int32 index, PClassInfoW *info) = 0;
 
             /**
              * Receives information about host
              */
-            virtual tresult PLUGIN_API setHostContext(FUnknown* context) = 0;
+            virtual tresult PLUGIN_API setHostContext(FUnknown *context) = 0;
 
+        public:
             static const FUID iid;
     };
     #include <steinberg/vst3/base/WarningsPop.h>
