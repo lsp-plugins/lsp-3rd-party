@@ -77,10 +77,10 @@ namespace Steinberg
         DEF_CLASS_IID (IStreamAttributes)
 
         //----VST 3.6.5--------------------------------
-//        DEF_CLASS_IID (ChannelContext::IInfoListener)
-//        DEF_CLASS_IID (IPrefetchableSupport)
+        DEF_CLASS_IID (ChannelContext::IInfoListener)
+        DEF_CLASS_IID (IPrefetchableSupport)
         DEF_CLASS_IID (IUnitHandler2)
-//        DEF_CLASS_IID (IAutomationState)
+        DEF_CLASS_IID (IAutomationState)
 
         //----VST 3.6.8--------------------------------
         DEF_CLASS_IID (IComponentHandlerBusActivation)

@@ -38,6 +38,8 @@
 #include <steinberg/vst3/vst/UnitInfo.h>
 #include <steinberg/vst3/vst/RepresentationInfo.h>
 #include <steinberg/vst3/vst/DataExchangeBlock.h>
+#include <steinberg/vst3/vst/ChannelContext.h>
+#include <steinberg/vst3/vst/PrefetchableSupport.h>
 
 // Interfaces
 #include <steinberg/vst3/vst/IComponent.h>
@@ -86,5 +88,8 @@
 #include <steinberg/vst3/vst/IInterAppAudioConnectionNotification.h>
 #include <steinberg/vst3/vst/IMidiLearn.h>
 #include <steinberg/vst3/vst/IParameterFunctionName.h>
+#include <steinberg/vst3/vst/IInfoListener.h>
+#include <steinberg/vst3/vst/IPrefetchableSupport.h>
+#include <steinberg/vst3/vst/IAutomationState.h>
 
 #endif /* _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_H_ */
