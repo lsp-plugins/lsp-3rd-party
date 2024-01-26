@@ -649,7 +649,7 @@ namespace Steinberg
             /**
              * Returns number of channels used in speaker arrangement.
              */
-            inline int32 getChannelCount (SpeakerArrangement arr)
+            inline int32 getChannelCount(SpeakerArrangement arr)
             {
                 int32 count = 0;
                 while (arr)
@@ -665,7 +665,7 @@ namespace Steinberg
              * Returns the index of a given speaker in a speaker arrangement (-1 if speaker is not part of the
              * arrangement).
              */
-            inline int32 getSpeakerIndex (Speaker speaker, SpeakerArrangement arrangement)
+            inline int32 getSpeakerIndex(Speaker speaker, SpeakerArrangement arrangement)
             {
                 // check if speaker is present in arrangement
                 if ((arrangement & speaker) == 0)
@@ -686,7 +686,7 @@ namespace Steinberg
             /**
              * Returns the speaker for a given index in a speaker arrangement (return 0 when out of range).
              */
-            inline Speaker getSpeaker (const SpeakerArrangement& arr, int32 index)
+            inline Speaker getSpeaker(const SpeakerArrangement& arr, int32 index)
             {
                 SpeakerArrangement arrTmp = arr;
 
@@ -709,7 +709,7 @@ namespace Steinberg
              * Returns true if arrSubSet is a subset speaker of arr (means each speaker of arrSubSet is
              * included in arr).
              */
-            inline bool isSubsetOf (const SpeakerArrangement& arrSubSet, const SpeakerArrangement& arr)
+            inline bool isSubsetOf(const SpeakerArrangement& arrSubSet, const SpeakerArrangement& arr)
             {
                 return (arrSubSet == (arrSubSet & arr));
             }
@@ -717,7 +717,7 @@ namespace Steinberg
             /**
              * Returns true if arrangement is a Auro configuration.
              */
-            inline bool isAuro (const SpeakerArrangement& arr)
+            inline bool isAuro(const SpeakerArrangement& arr)
             {
                 if (arr == k90 || arr == k91 || arr == k100 || arr == k101 || arr == k110 || arr == k111 ||
                     arr == k130 || arr == k131)
@@ -730,7 +730,7 @@ namespace Steinberg
             /**
              * Returns true if arrangement contains top (upper layer) speakers
              */
-            inline bool hasTopSpeakers (const SpeakerArrangement& arr)
+            inline bool hasTopSpeakers(const SpeakerArrangement& arr)
             {
                 return arr & (kSpeakerTc | kSpeakerTfl | kSpeakerTfc | kSpeakerTfr |
                     kSpeakerTrl | kSpeakerTrc | kSpeakerTrr | kSpeakerTsl | kSpeakerTsr);
@@ -739,7 +739,7 @@ namespace Steinberg
             /**
              * Returns true if arrangement contains bottom (lower layer) speakers
              */
-            inline bool hasBottomSpeakers (const SpeakerArrangement& arr)
+            inline bool hasBottomSpeakers(const SpeakerArrangement& arr)
             {
                 return arr & (kSpeakerBfl | kSpeakerBfc | kSpeakerBfr | kSpeakerBsl |
                     kSpeakerBsr | kSpeakerBrr | kSpeakerBrl | kSpeakerBrc);
@@ -748,7 +748,7 @@ namespace Steinberg
             /**
              * Returns true if arrangement contains middle layer (at ears level) speakers
              */
-            inline bool hasMiddleSpeakers (const SpeakerArrangement& arr)
+            inline bool hasMiddleSpeakers(const SpeakerArrangement& arr)
             {
                 return arr & (kSpeakerL | kSpeakerR | kSpeakerC | kSpeakerLs |
                     kSpeakerRs | kSpeakerLc | kSpeakerRc | kSpeakerCs |
@@ -759,7 +759,7 @@ namespace Steinberg
             /**
              * Returns true if arrangement contains LFE speakers
              */
-            inline bool hasLfe (const SpeakerArrangement& arr)
+            inline bool hasLfe(const SpeakerArrangement& arr)
             {
                 return arr & (kSpeakerLfe | kSpeakerLfe2);
             }
@@ -767,7 +767,7 @@ namespace Steinberg
             /**
              * Returns true if arrangement is a 3D configuration ((top or bottom) and middle)
              */
-            inline bool is3D (const SpeakerArrangement& arr)
+            inline bool is3D(const SpeakerArrangement& arr)
             {
                 bool top = hasTopSpeakers (arr);
                 bool bottom = hasBottomSpeakers (arr);
@@ -781,7 +781,7 @@ namespace Steinberg
             /**
              * Returns true if arrangement is a Ambisonic configuration.
              */
-            inline bool isAmbisonics (const SpeakerArrangement& arr)
+            inline bool isAmbisonics(const SpeakerArrangement& arr)
             {
                 if (arr == kAmbi1stOrderACN || arr == kAmbi2cdOrderACN || arr == kAmbi3rdOrderACN ||
                     arr == kAmbi4thOrderACN || arr == kAmbi5thOrderACN || arr == kAmbi6thOrderACN ||
@@ -818,7 +818,7 @@ namespace Steinberg
              * Returns the speaker arrangement associated to a string representation.
              * Returns kEmpty if no associated arrangement is known.
              */
-            inline SpeakerArrangement getSpeakerArrangementFromString (CString arrStr)
+            inline SpeakerArrangement getSpeakerArrangementFromString(CString arrStr)
             {
                 if (!strcmp8 (arrStr, kStringMono))
                     return kMono;
@@ -1025,7 +1025,7 @@ namespace Steinberg
              * Returns the string representation of a given speaker arrangement.
              * Returns kStringEmpty if arr is unknown.
              */
-            inline CString getSpeakerArrangementString (SpeakerArrangement arr, bool withSpeakersName)
+            inline CString getSpeakerArrangementString(SpeakerArrangement arr, bool withSpeakersName)
             {
                 switch (arr)
                 {
@@ -1153,7 +1153,7 @@ namespace Steinberg
             /**
              * Returns a CString representation of a given speaker in a given arrangement
              */
-            inline CString getSpeakerShortName (const SpeakerArrangement& arr, int32 index)
+            inline CString getSpeakerShortName(const SpeakerArrangement & arr, int32 index)
             {
                 SpeakerArrangement arrTmp = arr;
 

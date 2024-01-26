@@ -87,7 +87,7 @@ namespace Steinberg
         DEF_CLASS_IID (IVst3ToAAXWrapper)
 
         //----VST 3.6.11--------------------------------
-//        DEF_CLASS_IID (INoteExpressionPhysicalUIMapping)
+        DEF_CLASS_IID (INoteExpressionPhysicalUIMapping)
 
         //----VST 3.6.12--------------------------------
         DEF_CLASS_IID (IMidiLearn)
@@ -95,13 +95,13 @@ namespace Steinberg
         DEF_CLASS_IID (IVst3WrapperMPESupport)
 
         //----VST 3.6.13--------------------------------
-//        DEF_CLASS_IID (ITestPlugProvider)
+        DEF_CLASS_IID (ITestPlugProvider)
 
         //----VST 3.7-----------------------------------
         DEF_CLASS_IID (IParameterFunctionName)
         DEF_CLASS_IID (IProcessContextRequirements)
         DEF_CLASS_IID (IProgress)
-//        DEF_CLASS_IID (ITestPlugProvider2)
+        DEF_CLASS_IID (ITestPlugProvider2)
 
         //----VST 3.7.9---------------------------------
         DEF_CLASS_IID (IComponentHandlerSystemTime)

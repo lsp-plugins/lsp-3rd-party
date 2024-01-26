@@ -16,39 +16,34 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef _3RD_PARTY_INCLUDE_STEINBERG_VST3_BASE_ISIZABLESTREAM_H_
-#define _3RD_PARTY_INCLUDE_STEINBERG_VST3_BASE_ISIZABLESTREAM_H_
+#ifndef _3RD_PARTY_INCLUDE_STEINBERG_VST3_BASE_ISTRINGRESULT_H_
+#define _3RD_PARTY_INCLUDE_STEINBERG_VST3_BASE_ISTRINGRESULT_H_
 
+#include <steinberg/vst3/base/Types.h>
 #include <steinberg/vst3/base/FUnknown.h>
-#include <steinberg/vst3/base/IBStream.h>
 
 namespace Steinberg
 {
     /**
-     * Stream with a size.
-     * Extends IBStream when stream type supports it (like file and memory stream).
+     * Interface to return an ascii string of variable size.
+     *
+     * In order to manage memory allocation and deallocation properly,
+     * this interface is used to transfer a string as result parameter of
+     * a method requires a string of unknown size.
      */
     #include <steinberg/vst3/base/WarningsPush.h>
-    class ISizeableStream: public FUnknown
+    class IStringResult: public FUnknown
     {
         public:
-            /**
-             * Return the stream size
-             */
-            virtual tresult PLUGIN_API getStreamSize (int64& size) = 0;
+            virtual void PLUGIN_API setText(const char8 *text) = 0;
 
-            /**
-             * Set the steam size. File streams can only be resized if they are write enabled.
-             */
-            virtual tresult PLUGIN_API setStreamSize (int64 size) = 0;
-
+        public:
             static const FUID iid;
     };
     #include <steinberg/vst3/base/WarningsPop.h>
 
-    DECLARE_CLASS_IID (ISizeableStream, 0x04F9549E, 0xE02F4E6E, 0x87E86A87, 0x47F4E17F)
+    DECLARE_CLASS_IID (IStringResult, 0x550798BC, 0x872049DB, 0x84920A15, 0x3B50B7A8)
 
 } /* namespace Steinberg */
 
-
-#endif /* _3RD_PARTY_INCLUDE_STEINBERG_VST3_BASE_ISIZABLESTREAM_H_ */
+#endif /* _3RD_PARTY_INCLUDE_STEINBERG_VST3_BASE_ISTRINGRESULT_H_ */

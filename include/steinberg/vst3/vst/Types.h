@@ -133,7 +133,7 @@ namespace Steinberg
         static SMTG_CONSTEXPR const uint32 SDKVersion_3_1_0     = VST_3_1_0_VERSION;
         static SMTG_CONSTEXPR const uint32 SDKVersion_3_0_0     = VST_3_0_0_VERSION;
 
-    } // namespace Vst
+    } /* namespace Vst */
 } /* namespace Steinberg */
 
 

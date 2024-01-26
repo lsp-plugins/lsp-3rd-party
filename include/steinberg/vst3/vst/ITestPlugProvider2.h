@@ -16,49 +16,45 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_IMESSAGE_H_
-#define _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_IMESSAGE_H_
+#ifndef _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_ITESTPLUGPROVIDER2_H_
+#define _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_ITESTPLUGPROVIDER2_H_
 
 #include <steinberg/vst3/base/FUnknown.h>
-#include <steinberg/vst3/vst/IAttributeList.h>
+#include <steinberg/vst3/base/IStringResult.h>
+#include <steinberg/vst3/base/IString.h>
+#include <steinberg/vst3/base/IPluginFactory.h>
+
+#include <steinberg/vst3/vst/IComponent.h>
+#include <steinberg/vst3/vst/IEditController.h>
+#include <steinberg/vst3/vst/ITestPlugProvider.h>
 
 namespace Steinberg
 {
     namespace Vst
     {
         /**
-         * Private plug-in message
-         *
-         * Messages are sent from a VST controller component to a VST editor component and vice versa.
-         * @see @ref IAttributeList, @ref IConnectionPoint, @ref vst3Communication
-        */
+         * Test Helper extension.
+         */
         #include <steinberg/vst3/base/WarningsPush.h>
-        class IMessage: public FUnknown
+        class ITestPlugProvider2: public ITestPlugProvider
         {
             public:
                 /**
-                 * Returns the message ID (for example "TextMessage").
+                 * Get the plugin factory.
+                 *
+                 * The reference count of the returned factory object is not increased when calling this
+                 * function.
                  */
-                virtual FIDString PLUGIN_API getMessageID() = 0;
-
-                /**
-                 * Sets a message ID (for example "TextMessage").
-                 */
-                virtual void PLUGIN_API setMessageID(FIDString id /*in*/) = 0;
-
-                /**
-                 * Returns the attribute list associated to the message.
-                 */
-                virtual IAttributeList * PLUGIN_API getAttributes() = 0;
+                virtual IPluginFactory * PLUGIN_API getPluginFactory() = 0;
 
             public:
                 static const FUID iid;
         };
         #include <steinberg/vst3/base/WarningsPop.h>
 
-        DECLARE_CLASS_IID(IMessage, 0x936F033B, 0xC6C047DB, 0xBB0882F8, 0x13C1E613)
+        DECLARE_CLASS_IID (ITestPlugProvider2, 0xC7C75364, 0x7B8343AC, 0xA4495B0A, 0x3E5A46C7)
 
     } /* namespace Vst */
 } /* namespace Steinberg */
 
-#endif /* _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_IMESSAGE_H_ */
+#endif /* _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_ITESTPLUGPROVIDER2_H_ */

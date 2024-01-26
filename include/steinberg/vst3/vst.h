@@ -14,7 +14,7 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+ */
 
 #ifndef _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_H_
 #define _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_H_
@@ -40,6 +40,7 @@
 #include <steinberg/vst3/vst/DataExchangeBlock.h>
 #include <steinberg/vst3/vst/ChannelContext.h>
 #include <steinberg/vst3/vst/PrefetchableSupport.h>
+#include <steinberg/vst3/vst/PhysicalUIMapList.h>
 
 // Interfaces
 #include <steinberg/vst3/vst/IComponent.h>
@@ -91,5 +92,8 @@
 #include <steinberg/vst3/vst/IInfoListener.h>
 #include <steinberg/vst3/vst/IPrefetchableSupport.h>
 #include <steinberg/vst3/vst/IAutomationState.h>
+#include <steinberg/vst3/vst/INoteExpressionPhysicalUIMapping.h>
+#include <steinberg/vst3/vst/ITestPlugProvider.h>
+#include <steinberg/vst3/vst/ITestPlugProvider2.h>
 
 #endif /* _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_H_ */

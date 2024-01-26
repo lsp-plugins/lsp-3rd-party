@@ -45,6 +45,8 @@
 #include <steinberg/vst3/base/IUpdateHandler.h>
 #include <steinberg/vst3/base/IBStream.h>
 #include <steinberg/vst3/base/ISizableStream.h>
+#include <steinberg/vst3/base/IStringResult.h>
+#include <steinberg/vst3/base/IString.h>
 #include <steinberg/vst3/base/IPluginBase.h>
 #include <steinberg/vst3/base/IPluginFactory.h>
 #include <steinberg/vst3/base/IPluginFactory2.h>

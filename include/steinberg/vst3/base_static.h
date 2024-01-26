@@ -14,7 +14,7 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+ */
 
 #ifndef _3RD_PARTY_INCLUDE_STEINBERG_VST3_BASE_STATIC_H_
 #define _3RD_PARTY_INCLUDE_STEINBERG_VST3_BASE_STATIC_H_
@@ -37,6 +37,9 @@ namespace Steinberg
 
     DEF_CLASS_IID (IBStream)
     DEF_CLASS_IID (ISizeableStream)
+
+    DEF_CLASS_IID (IStringResult)
+    DEF_CLASS_IID (IString)
 
     //----VST 3.7.5---------------------------------
     DEF_CLASS_IID (IPluginCompatibility)

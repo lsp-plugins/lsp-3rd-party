@@ -31,45 +31,46 @@ namespace Steinberg
     #include <steinberg/vst3/base/WarningsPush.h>
     class IBStream: public FUnknown
     {
-    public:
-        enum IStreamSeekMode
-        {
-            kIBSeekSet = 0, ///< set absolute seek position
-            kIBSeekCur,     ///< set seek position relative to current position
-            kIBSeekEnd      ///< set seek position relative to stream end
-        };
+        public:
+            enum IStreamSeekMode
+            {
+                kIBSeekSet = 0, ///< set absolute seek position
+                kIBSeekCur,     ///< set seek position relative to current position
+                kIBSeekEnd      ///< set seek position relative to stream end
+            };
 
-        /**
-         * Reads binary data from stream.
-         * @param buffer destination buffer
-         * @param numBytes amount of bytes to be read
-         * @param numBytesRead result how many bytes have been read from stream (set to 0 if this is of no interest)
-         */
-        virtual tresult PLUGIN_API read (void* buffer, int32 numBytes, int32* numBytesRead = nullptr) = 0;
+            /**
+             * Reads binary data from stream.
+             * @param buffer destination buffer
+             * @param numBytes amount of bytes to be read
+             * @param numBytesRead result how many bytes have been read from stream (set to 0 if this is of no interest)
+             */
+            virtual tresult PLUGIN_API read(void* buffer, int32 numBytes, int32* numBytesRead = nullptr) = 0;
 
-        /**
-         * Writes binary data to stream.
-         * @param buffer source buffer
-         * @param numBytes amount of bytes to write
-         * @param numBytesWritten result - how many bytes have been written to stream (set to 0 if this is of no interest)
-         */
-        virtual tresult PLUGIN_API write (void* buffer, int32 numBytes, int32* numBytesWritten = nullptr) = 0;
+            /**
+             * Writes binary data to stream.
+             * @param buffer source buffer
+             * @param numBytes amount of bytes to write
+             * @param numBytesWritten result - how many bytes have been written to stream (set to 0 if this is of no interest)
+             */
+            virtual tresult PLUGIN_API write(void* buffer, int32 numBytes, int32* numBytesWritten = nullptr) = 0;
 
-        /**
-         * Sets stream read-write position.
-         * @param pos new stream position (dependent on mode)
-         * @param mode value of enum IStreamSeekMode
-         * @param result new seek position (set to 0 if this is of no interest)
-         */
-        virtual tresult PLUGIN_API seek (int64 pos, int32 mode, int64* result = nullptr) = 0;
+            /**
+             * Sets stream read-write position.
+             * @param pos new stream position (dependent on mode)
+             * @param mode value of enum IStreamSeekMode
+             * @param result new seek position (set to 0 if this is of no interest)
+             */
+            virtual tresult PLUGIN_API seek(int64 pos, int32 mode, int64* result = nullptr) = 0;
 
-        /**
-         * Gets current stream read-write position.
-         * @param pos is assigned the current position if function succeeds
-         */
-        virtual tresult PLUGIN_API tell (int64* pos) = 0;
+            /**
+             * Gets current stream read-write position.
+             * @param pos is assigned the current position if function succeeds
+             */
+            virtual tresult PLUGIN_API tell(int64* pos) = 0;
 
-        static const FUID iid;
+        public:
+            static const FUID iid;
     };
     #include <steinberg/vst3/base/WarningsPop.h>
 
