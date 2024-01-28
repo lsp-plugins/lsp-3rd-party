@@ -14,15 +14,14 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+ */
 
-#ifndef _3RDPARTY_STEINBERG_VST3_H_
-#define _3RDPARTY_STEINBERG_VST3_H_
+#ifndef _3RD_PARTY_INCLUDE_STEINBERG_VST3_TEST_H_
+#define _3RD_PARTY_INCLUDE_STEINBERG_VST3_TEST_H_
 
-#include <steinberg/vst3/version.h>
-#include <steinberg/vst3/base.h>
-#include <steinberg/vst3/vst.h>
-#include <steinberg/vst3/gui.h>
-#include <steinberg/vst3/test.h>
+#include <steinberg/vst3/test/ITestResult.h>
+#include <steinberg/vst3/test/ITest.h>
+#include <steinberg/vst3/test/ITestSuite.h>
+#include <steinberg/vst3/test/ITestFactory.h>
 
-#endif /* _3RDPARTY_STEINBERG_VST3_H_ */
+#endif /* _3RD_PARTY_INCLUDE_STEINBERG_VST3_TEST_H_ */

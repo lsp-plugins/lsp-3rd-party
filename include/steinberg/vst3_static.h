@@ -26,5 +26,6 @@
 #include <steinberg/vst3/base_static.h>
 #include <steinberg/vst3/vst_static.h>
 #include <steinberg/vst3/gui_static.h>
+#include <steinberg/vst3/test_static.h>
 
 #endif /* _3RD_PARTY_INCLUDE_STEINBERG_VST3_STATIC_H_ */

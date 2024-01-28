@@ -94,7 +94,6 @@
 
 namespace Steinberg
 {
-    #include <steinberg/vst3/base/WarningsPush.h>
     /**
      * The basic interface of all interfaces.
      *   - The FUnknown::queryInterface method is used to retrieve pointers to other
