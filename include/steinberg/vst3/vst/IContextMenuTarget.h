@@ -41,11 +41,9 @@ namespace Steinberg
                 virtual tresult PLUGIN_API executeMenuItem(int32 tag) = 0;
 
             public:
-                static const FUID iid;
+                static const TUID iid;
         };
         #include <steinberg/vst3/base/WarningsPop.h>
-
-        DECLARE_CLASS_IID (IContextMenuTarget, 0x3CDF2E75, 0x85D34144, 0xBF86D36B, 0xD7C4894D)
 
     } /* namespace Vst */
 } /* namespace Steinberg */

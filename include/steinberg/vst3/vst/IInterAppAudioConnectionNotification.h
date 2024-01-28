@@ -39,11 +39,9 @@ namespace Steinberg
                 virtual void PLUGIN_API onInterAppAudioConnectionStateChange(TBool newState) = 0;
 
             public:
-                static const FUID iid;
+                static const TUID iid;
         };
         #include <steinberg/vst3/base/WarningsPop.h>
-
-        DECLARE_CLASS_IID (IInterAppAudioConnectionNotification, 0x6020C72D, 0x5FC24AA1, 0xB0950DB5, 0xD7D6D5CF)
 
     } /* namespace Vst */
 } /* namespace Steinberg */

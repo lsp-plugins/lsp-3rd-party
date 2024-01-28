@@ -39,11 +39,9 @@ namespace Steinberg
             virtual tresult PLUGIN_API getClassInfo2(int32 index, PClassInfo2 *info) = 0;
 
         public:
-            static const FUID iid;
+            static const TUID iid;
     };
     #include <steinberg/vst3/base/WarningsPop.h>
-
-    DECLARE_CLASS_IID (IPluginFactory2, 0x0007B650, 0xF24B4C0B, 0xA464EDB9, 0xF00B2ABB)
 
 } /* namespace Steinberg */
 

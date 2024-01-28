@@ -43,11 +43,9 @@ namespace Steinberg
              */
             virtual tresult PLUGIN_API findParameter (int32 xPos, int32 yPos, ParamID & resultTag /*out*/) = 0;
 
-            static const FUID iid;
+            static const TUID iid;
         };
         #include <steinberg/vst3/base/WarningsPop.h>
-
-        DECLARE_CLASS_IID (IParameterFinder, 0x0F618302, 0x215D4587, 0xA512073C, 0x77B9D383)
 
     } /* namespace Vst */
 } /* namespace Steinberg */

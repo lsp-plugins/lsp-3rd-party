@@ -36,11 +36,9 @@ namespace Steinberg
             virtual FUnknown* PLUGIN_API clone() = 0;
 
         public:
-            static const FUID iid;
+            static const TUID iid;
     };
     #include <steinberg/vst3/base/WarningsPop.h>
-
-    DECLARE_CLASS_IID (ICloneable, 0xD45406B9, 0x3A2D4443, 0x9DAD9BA9, 0x85A1454B)
 
 } /* namespace Steinberg */
 

@@ -52,11 +52,9 @@ namespace Steinberg
                 virtual IAttributeList * PLUGIN_API getAttributes() = 0;
 
             public:
-                static const FUID iid;
+                static const TUID iid;
         };
         #include <steinberg/vst3/base/WarningsPop.h>
-
-        DECLARE_CLASS_IID(IMessage, 0x936F033B, 0xC6C047DB, 0xBB0882F8, 0x13C1E613)
 
     } /* namespace Vst */
 } /* namespace Steinberg */

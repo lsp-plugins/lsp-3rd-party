@@ -88,11 +88,10 @@ namespace Steinberg
                 virtual tresult PLUGIN_API finish(ID id) = 0;
 
             public:
-                static const FUID iid;
+                static const TUID iid;
         };
         #include <steinberg/vst3/base/WarningsPop.h>
 
-        DECLARE_CLASS_IID (IProgress, 0x00C9DC5B, 0x9D904254, 0x91A388C8, 0xB4E91B69)
     } /* namespace Vst */
 } /* namespace Steinberg */
 

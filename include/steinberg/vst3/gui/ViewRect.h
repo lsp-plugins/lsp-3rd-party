@@ -33,9 +33,6 @@ namespace Steinberg
         int32 top;
         int32 right;
         int32 bottom;
-
-        inline int32 getWidth () const  { return right - left; }
-        inline int32 getHeight () const { return bottom - top; }
     };
 
     SMTG_TYPE_SIZE_CHECK(ViewRect, 16, 16, 16, 16)

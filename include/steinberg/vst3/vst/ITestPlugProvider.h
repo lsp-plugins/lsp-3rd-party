@@ -62,8 +62,8 @@ namespace Steinberg
                 /**
                  * Release the component and/or controller
                  */
-                virtual tresult PLUGIN_API releasePlugIn(IComponent* component,
-                                                         IEditController* controller) = 0;
+                virtual tresult PLUGIN_API releasePlugIn(IComponent *component,
+                                                         IEditController *controller) = 0;
 
                 /**
                  * Get the sub categories of the plug-in
@@ -73,14 +73,12 @@ namespace Steinberg
                 /**
                  * Get the component UID of the plug-in
                  */
-                virtual tresult PLUGIN_API getComponentUID (FUID& uid) const = 0;
+                virtual tresult PLUGIN_API getComponentUID(TUID uid) const = 0;
 
             public:
-                static const FUID iid;
+                static const TUID iid;
         };
         #include <steinberg/vst3/base/WarningsPop.h>
-
-        DECLARE_CLASS_IID (ITestPlugProvider, 0x86BE70EE, 0x4E99430F, 0x978F1E6E, 0xD68FB5BA)
 
     } /* namespace Vst */
 } /* namespace Steinberg */

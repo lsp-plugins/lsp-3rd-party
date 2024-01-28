@@ -39,14 +39,12 @@ namespace Steinberg
              * Called to inform the host about the resize of a given view.
              * Afterwards the host has to call IPlugView::onSize ().
              */
-            virtual tresult PLUGIN_API resizeView (IPlugView *view, ViewRect *newSize) = 0;
+            virtual tresult PLUGIN_API resizeView(IPlugView *view, ViewRect *newSize) = 0;
 
         public:
-            static const FUID iid;
+            static const TUID iid;
     };
     #include <steinberg/vst3/base/WarningsPop.h>
-
-    DECLARE_CLASS_IID (IPlugFrame, 0x367FAF01, 0xAFA94693, 0x8D4DA2A0, 0xED0882A3)
 
 } /* namespace Steinberg */
 

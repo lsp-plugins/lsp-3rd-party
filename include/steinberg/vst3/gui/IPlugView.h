@@ -153,11 +153,9 @@ namespace Steinberg
             virtual tresult PLUGIN_API checkSizeConstraint(ViewRect *rect) = 0;
 
         public:
-            static const FUID iid;
+            static const TUID iid;
     };
     #include <steinberg/vst3/base/WarningsPop.h>
-
-    DECLARE_CLASS_IID (IPlugView, 0x5BC32507, 0xD06049EA, 0xA6151B52, 0x2B755B29)
 
 } /* namespace Steinberg */
 

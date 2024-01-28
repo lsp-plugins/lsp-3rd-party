@@ -140,11 +140,9 @@ namespace Steinberg
                 virtual tresult PLUGIN_API getXmlRepresentationStream(RepresentationInfo & info /*in*/, IBStream *stream /*out*/) = 0;
 
             public:
-                static const FUID iid;
+                static const TUID iid;
         };
         #include <steinberg/vst3/base/WarningsPop.h>
-
-        DECLARE_CLASS_IID (IXmlRepresentationController, 0xA81A0471, 0x48C34DC4, 0xAC30C9E1, 0x3C8393D5)
 
     } /* namespace Vst */
 } /* namespace Steinberg */

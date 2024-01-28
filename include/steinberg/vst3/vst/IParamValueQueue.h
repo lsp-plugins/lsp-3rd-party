@@ -92,16 +92,11 @@ namespace Steinberg
                  */
                 virtual tresult PLUGIN_API addPoint (int32 sampleOffset, ParamValue value, int32 & index /*out*/) = 0;
 
-                static const FUID iid;
+                static const TUID iid;
         };
         #include <steinberg/vst3/base/WarningsPop.h>
 
-        DECLARE_CLASS_IID (IParamValueQueue, 0x01263A18, 0xED074F6F, 0x98C9D356, 0x4686F9BA)
-
-    } // namespace Vst
-} // namespace Steinberg
-
-
-
+    } /* namespace Vst */
+} /* namespace Steinberg */
 
 #endif /* _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_IPARAMVALUEQUEUE_H_ */

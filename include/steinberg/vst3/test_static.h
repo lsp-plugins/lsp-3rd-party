@@ -16,24 +16,20 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_STATIC_H_
-#define _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_STATIC_H_
+#ifndef _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_TEST_H_
+#define _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_TEST_H_
 
 #include <steinberg/vst3/test.h>
 
 namespace Steinberg
 {
-    namespace Vst
-    {
+    DEF_CLASS_IID(ITest, 0xFE64FC19, 0x95684F53, 0xAAA78DC8, 0x7228338E)
+    DEF_CLASS_IID(ITestFactory, 0xAB483D3A, 0x15264650, 0xBF86EEF6, 0x9A327A93)
+    DEF_CLASS_IID(ITestResult, 0x69796279, 0xF651418B, 0xB24D79B7, 0xD7C527F4)
+    DEF_CLASS_IID(ITestSuite, 0x5CA7106F, 0x98784AA5, 0xB4D30D71, 0x2F5F1498)
 
-        DEF_CLASS_IID (ITest)
-        DEF_CLASS_IID (ITestFactory)
-        DEF_CLASS_IID (ITestResult)
-        DEF_CLASS_IID (ITestSuite)
-
-    } /* namespace Vst */
 } /* namespace Steinberg */
 
 
 
-#endif /* _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_STATIC_H_ */
+#endif /* _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_TEST_H_ */

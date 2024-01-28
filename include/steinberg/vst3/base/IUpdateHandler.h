@@ -65,11 +65,9 @@ namespace Steinberg
             virtual tresult PLUGIN_API deferUpdates (FUnknown* object, int32 message) = 0;
 
         public:
-            static const FUID iid;
+            static const TUID iid;
     };
     #include <steinberg/vst3/base/WarningsPop.h>
-
-    DECLARE_CLASS_IID (IUpdateHandler, 0xF5246D56, 0x86544d60, 0xB026AFB5, 0x7B697B37)
 
 } /* namespace Steinberg */
 

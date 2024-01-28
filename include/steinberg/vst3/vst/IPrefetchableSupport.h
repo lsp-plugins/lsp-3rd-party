@@ -59,11 +59,9 @@ namespace Steinberg
                 virtual tresult PLUGIN_API getPrefetchableSupport(PrefetchableSupport & prefetchable /*out*/) = 0;
 
             public:
-                static const FUID iid;
+                static const TUID iid;
         };
         #include <steinberg/vst3/base/WarningsPop.h>
-
-        DECLARE_CLASS_IID (IPrefetchableSupport, 0x8AE54FDA, 0xE93046B9, 0xA28555BC, 0xDC98E21E)
 
     } /* namespace Vst */
 } /* namespace Steinberg */

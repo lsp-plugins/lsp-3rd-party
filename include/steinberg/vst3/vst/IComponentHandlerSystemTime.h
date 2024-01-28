@@ -40,11 +40,9 @@ namespace Steinberg
                 virtual tresult PLUGIN_API getSystemTime(int64 & systemTime) = 0;
 
             public:
-                static const FUID iid;
+                static const TUID iid;
         };
         #include <steinberg/vst3/base/WarningsPop.h>
-
-        DECLARE_CLASS_IID (IComponentHandlerSystemTime, 0xF9E53056, 0xD1554CD5, 0xB7695E1B, 0x7B0F7745)
 
     } /* namespace Vst */
 } /* namespace Steinberg */

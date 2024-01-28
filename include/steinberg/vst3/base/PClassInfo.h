@@ -20,7 +20,7 @@
 #define _3RD_PARTY_INCLUDE_STEINBERG_VST3_BASE_PCLASSINFO_H_
 
 #include <steinberg/vst3/base/Platform.h>
-#include <steinberg/vst3/base/FUID.h>
+#include <steinberg/vst3/base/TUID.h>
 
 namespace Steinberg
 {

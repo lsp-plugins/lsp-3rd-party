@@ -58,11 +58,9 @@ namespace Steinberg
                                                                      int32 memberBeginChannel,
                                                                      int32 memberEndChannel) = 0;
             public:
-                static const FUID iid;
+                static const TUID iid;
         };
         #include <steinberg/vst3/base/WarningsPop.h>
-
-        DECLARE_CLASS_IID (IVst3WrapperMPESupport, 0x44149067, 0x42CF4BF9, 0x8800B750, 0xF7359FE3)
 
     } /* namespace Vst */
 } /* namespace Steinberg */

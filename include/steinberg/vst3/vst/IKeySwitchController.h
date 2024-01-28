@@ -35,7 +35,7 @@ namespace Steinberg
          * create VST Expression Map (allowing to associated symbol to a given articulation / key switch).
          */
         #include <steinberg/vst3/base/WarningsPush.h>
-        class IKeyswitchController : public FUnknown
+        class IKeyswitchController: public FUnknown
         {
         public:
             /**
@@ -48,11 +48,9 @@ namespace Steinberg
              */
             virtual tresult PLUGIN_API getKeyswitchInfo (int32 busIndex, int16 channel, int32 keySwitchIndex, KeyswitchInfo & info /*out*/) = 0;
 
-            static const FUID iid;
+            static const TUID iid;
         };
         #include <steinberg/vst3/base/WarningsPop.h>
-
-        DECLARE_CLASS_IID (IKeyswitchController, 0x1F2F76D3, 0xBFFB4B96, 0xB99527A5, 0x5EBCCEF4)
 
     } /* namespace Vst */
 } /* namespace Steinberg */

@@ -57,11 +57,9 @@ namespace Steinberg
                 virtual tresult PLUGIN_API isPlugInterfaceSupported(const TUID _iid) = 0;
 
             public:
-                static const FUID iid;
+                static const TUID iid;
         };
         #include <steinberg/vst3/base/WarningsPop.h>
-
-        DECLARE_CLASS_IID (IPlugInterfaceSupport, 0x4FB58B9E, 0x9EAA4E0F, 0xAB361C1C, 0xCCB56FEA)
 
     } /* namespace Vst */
 } /* namespace Steinberg */

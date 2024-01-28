@@ -58,11 +58,9 @@ namespace Steinberg
             virtual tresult PLUGIN_API setContentScaleFactor(ScaleFactor factor) = 0;
 
         public:
-            static const FUID iid;
+            static const TUID iid;
     };
     #include <steinberg/vst3/base/WarningsPop.h>
-
-    DECLARE_CLASS_IID (IPlugViewContentScaleSupport, 0x65ED9690, 0x8AC44525, 0x8AADEF7A, 0x72EA703F)
 
 } /* namespace Steinberg */
 

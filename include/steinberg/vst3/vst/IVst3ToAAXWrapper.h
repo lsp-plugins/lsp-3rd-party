@@ -34,11 +34,9 @@ namespace Steinberg
         class IVst3ToAAXWrapper: public FUnknown
         {
             public:
-                static const FUID iid;
+                static const TUID iid;
         };
         #include <steinberg/vst3/base/WarningsPop.h>
-
-        DECLARE_CLASS_IID (IVst3ToAAXWrapper, 0x6D319DC6, 0x60C56242, 0xB32C951B, 0x93BEF4C6)
 
     } /* namespace Vst */
 } /* namespace Steinberg */

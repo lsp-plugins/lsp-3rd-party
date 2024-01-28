@@ -143,11 +143,9 @@ namespace Steinberg
                     virtual tresult PLUGIN_API setChannelContextInfos (IAttributeList* list) = 0;
 
                 public:
-                    static const FUID iid;
+                    static const TUID iid;
             };
             #include <steinberg/vst3/base/WarningsPop.h>
-
-            DECLARE_CLASS_IID (IInfoListener, 0x0F194781, 0x8D984ADA, 0xBBA0C1EF, 0xC011D8D0)
 
         } /* namespace ChannelContext */
     } /* namespace Vst */

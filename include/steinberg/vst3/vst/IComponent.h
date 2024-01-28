@@ -95,11 +95,9 @@ namespace Steinberg
                 virtual tresult PLUGIN_API getState(IBStream *state) = 0;
 
             public:
-                static const FUID iid;
+                static const TUID iid;
         };
         #include <steinberg/vst3/base/WarningsPop.h>
-
-        DECLARE_CLASS_IID (IComponent, 0xE831FF31, 0xF2D54301, 0x928EBBEE, 0x25697802)
 
     } /* namespace Vst */
 } /* namespace Steinberg */

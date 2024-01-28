@@ -23,13 +23,16 @@
 
 namespace Steinberg
 {
-    DEF_CLASS_IID(IPlugView)
-    DEF_CLASS_IID(IPlugFrame)
-    DEF_CLASS_IID(IPlugViewContentScaleSupport)
+    DEF_CLASS_IID(IPlugView, 0x5BC32507, 0xD06049EA, 0xA6151B52, 0x2B755B29)
+    DEF_CLASS_IID(IPlugFrame, 0x367FAF01, 0xAFA94693, 0x8D4DA2A0, 0xED0882A3)
+    DEF_CLASS_IID(IPlugViewContentScaleSupport, 0x65ED9690, 0x8AC44525, 0x8AADEF7A, 0x72EA703F)
 
-    DEF_CLASS_IID(IEventHandler)
-    DEF_CLASS_IID(ITimerHandler)
-    DEF_CLASS_IID(IRunLoop)
+    namespace Linux
+    {
+        DEF_CLASS_IID(IEventHandler, 0x561E65C9, 0x13A0496F, 0x813A2C35, 0x654D7983)
+        DEF_CLASS_IID(ITimerHandler, 0x10BDD94F, 0x41424774, 0x821FAD8F, 0xECA72CA9)
+        DEF_CLASS_IID(IRunLoop, 0x18C35366, 0x97764F1A, 0x9C5B8385, 0x7A871389)
+    } /* namespace Linux */
 } /* namespace Steinberg */
 
 #endif /* _3RD_PARTY_INCLUDE_STEINBERG_VST3_GUI_STATIC_H_ */

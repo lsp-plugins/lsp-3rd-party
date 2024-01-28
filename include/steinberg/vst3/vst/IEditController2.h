@@ -62,11 +62,9 @@ namespace Steinberg
                 virtual tresult PLUGIN_API openAboutBox(TBool onlyCheck) = 0;
 
             public:
-                static const FUID iid;
+                static const TUID iid;
         };
         #include <steinberg/vst3/base/WarningsPop.h>
-
-        DECLARE_CLASS_IID (IEditController2, 0x7F4EFE59, 0xF3204967, 0xAC27A3AE, 0xAFB63038)
 
     } /* namespace Vst */
 } /* namespace Steinberg */

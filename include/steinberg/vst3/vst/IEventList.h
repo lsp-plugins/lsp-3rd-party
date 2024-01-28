@@ -31,7 +31,7 @@ namespace Steinberg
          * @see ProcessData, Event
          */
         #include <steinberg/vst3/base/WarningsPush.h>
-        class IEventList : public FUnknown
+        class IEventList: public FUnknown
         {
             public:
                 /**
@@ -50,11 +50,9 @@ namespace Steinberg
                 virtual tresult PLUGIN_API addEvent (Event & e /*in*/) = 0;
 
             public:
-                static const FUID iid;
+                static const TUID iid;
         };
         #include <steinberg/vst3/base/WarningsPop.h>
-
-        DECLARE_CLASS_IID (IEventList, 0x3A2C4214, 0x346349FE, 0xB2C4F397, 0xB9695A44)
 
     } /* namespace Vst */
 } /* namespace Steinberg */

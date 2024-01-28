@@ -35,18 +35,16 @@ namespace Steinberg
             /**
              * Return the stream size
              */
-            virtual tresult PLUGIN_API getStreamSize (int64& size) = 0;
+            virtual tresult PLUGIN_API getStreamSize(int64 & size) = 0;
 
             /**
              * Set the steam size. File streams can only be resized if they are write enabled.
              */
-            virtual tresult PLUGIN_API setStreamSize (int64 size) = 0;
+            virtual tresult PLUGIN_API setStreamSize(int64 size) = 0;
 
-            static const FUID iid;
+            static const TUID iid;
     };
     #include <steinberg/vst3/base/WarningsPop.h>
-
-    DECLARE_CLASS_IID (ISizeableStream, 0x04F9549E, 0xE02F4E6E, 0x87E86A87, 0x47F4E17F)
 
 } /* namespace Steinberg */
 

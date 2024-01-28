@@ -41,11 +41,9 @@ namespace Steinberg
             virtual tresult PLUGIN_API createTests(FUnknown *context, ITestSuite *parentSuite) = 0;
 
         public:
-            static const FUID iid;
+            static const TUID iid;
     };
     #include <steinberg/vst3/base/WarningsPop.h>
-
-    DECLARE_CLASS_IID (ITestFactory, 0xAB483D3A, 0x15264650, 0xBF86EEF6, 0x9A327A93)
 
 } /* namespace Steinberg */
 

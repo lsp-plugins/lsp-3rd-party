@@ -46,11 +46,9 @@ namespace Steinberg
             virtual void PLUGIN_API addMessage(const char16 *msg) = 0;
 
         public:
-            static const FUID iid;
+            static const TUID iid;
     };
     #include <steinberg/vst3/base/WarningsPop.h>
-
-    DECLARE_CLASS_IID (ITestResult, 0x69796279, 0xF651418B, 0xB24D79B7, 0xD7C527F4)
 
 } /* namespace Steinberg */
 

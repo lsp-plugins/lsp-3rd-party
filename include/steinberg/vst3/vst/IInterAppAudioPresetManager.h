@@ -53,11 +53,9 @@ namespace Steinberg
                 virtual tresult PLUGIN_API loadPreviousPreset() = 0;
 
             public:
-                static const FUID iid;
+                static const TUID iid;
         };
         #include <steinberg/vst3/base/WarningsPop.h>
-
-        DECLARE_CLASS_IID (IInterAppAudioPresetManager, 0xADE6FCC4, 0x46C94E1D, 0xB3B49A80, 0xC93FEFDD)
 
     } /* namespace Vst */
 } /* namespace Steinberg */

@@ -26,13 +26,7 @@
 #include <steinberg/vst3/base/Types.h>
 #include <steinberg/vst3/base/TypeSizeCheck.h>
 
-// Smart pointers
-#include <steinberg/vst3/base/IPtr.h>
-#include <steinberg/vst3/base/OPtr.h>
-#include <steinberg/vst3/base/FUnknownPtr.h>
-
 // Miscellaneous data structures
-#include <steinberg/vst3/base/FUID.h>
 #include <steinberg/vst3/base/PFactoryInfo.h>
 #include <steinberg/vst3/base/PClassInfo.h>
 #include <steinberg/vst3/base/PClassInfo2.h>
@@ -56,5 +50,6 @@
 // Utility funcitons
 #include <steinberg/vst3/base/GetPluginFactory.h>
 #include <steinberg/vst3/base/StrDefs.h>
+#include <steinberg/vst3/base/TUID.h>
 
 #endif /* _3RD_PARTY_INCLUDE_STEINBERG_VST3_BASE_H_ */

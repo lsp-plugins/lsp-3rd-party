@@ -54,11 +54,9 @@ namespace Steinberg
                 virtual tresult PLUGIN_API setProgramData(ProgramListID listId, int32 programIndex, IBStream* data) = 0;
 
             public:
-                static const FUID iid;
+                static const TUID iid;
         };
         #include <steinberg/vst3/base/WarningsPop.h>
-
-        DECLARE_CLASS_IID(IProgramListData, 0x8683B01F, 0x7B354F70, 0xA2651DEC, 0x353AF4FF)
 
     } /* namespace Vst */
 } /* namespace Steinberg */

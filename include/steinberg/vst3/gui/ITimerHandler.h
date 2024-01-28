@@ -23,25 +23,26 @@
 
 namespace Steinberg
 {
-    typedef uint64      TimerInterval;
-
-    /**
-     * Linux timer handler interface
-     * @see IRunLoop
-     */
-    #include <steinberg/vst3/base/WarningsPush.h>
-    class ITimerHandler: public FUnknown
+    namespace Linux
     {
-        public:
-            virtual void PLUGIN_API onTimer() = 0;
+        typedef uint64      TimerInterval;
 
-        public:
-            static const FUID iid;
-    };
-    #include <steinberg/vst3/base/WarningsPop.h>
+        /**
+         * Linux timer handler interface
+         * @see IRunLoop
+         */
+        #include <steinberg/vst3/base/WarningsPush.h>
+        class ITimerHandler: public FUnknown
+        {
+            public:
+                virtual void PLUGIN_API onTimer() = 0;
 
-    DECLARE_CLASS_IID (ITimerHandler, 0x10BDD94F, 0x41424774, 0x821FAD8F, 0xECA72CA9)
+            public:
+                static const TUID iid;
+        };
+        #include <steinberg/vst3/base/WarningsPop.h>
 
+    } /* namespace Linux */
 } /* namespace Steinberg */
 
 #endif /* _3RD_PARTY_INCLUDE_STEINBERG_VST3_GUI_ITIMERHANDLER_H_ */

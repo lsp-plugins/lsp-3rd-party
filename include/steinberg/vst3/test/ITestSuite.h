@@ -45,11 +45,9 @@ namespace Steinberg
             virtual tresult PLUGIN_API setEnvironment(ITest *environment) = 0;
 
         public:
-            static const FUID iid;
+            static const TUID iid;
     };
     #include <steinberg/vst3/base/WarningsPop.h>
-
-    DECLARE_CLASS_IID (ITestSuite, 0x5CA7106F, 0x98784AA5, 0xB4D30D71, 0x2F5F1498)
 
 } /* namespace Steinberg */
 

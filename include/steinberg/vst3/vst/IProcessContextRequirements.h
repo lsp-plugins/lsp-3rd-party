@@ -107,11 +107,9 @@ namespace Steinberg
                 virtual uint32 PLUGIN_API getProcessContextRequirements() = 0;
 
             public:
-                static const FUID iid;
+                static const TUID iid;
         };
         #include <steinberg/vst3/base/WarningsPop.h>
-
-        DECLARE_CLASS_IID(IProcessContextRequirements, 0x2A654303, 0xEF764E3D, 0x95B5FE83, 0x730EF6D0)
 
     } /* namespace Vst */
 } /* namespace Steinberg */

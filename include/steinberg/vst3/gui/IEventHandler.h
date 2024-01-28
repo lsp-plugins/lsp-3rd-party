@@ -23,25 +23,27 @@
 
 namespace Steinberg
 {
-    typedef int         FileDescriptor;
-
-    /**
-     * Linux event handler interface
-     * @see IRunLoop
-     */
-    #include <steinberg/vst3/base/WarningsPush.h>
-    class IEventHandler: public FUnknown
+    namespace Linux
     {
-        public:
-            virtual void PLUGIN_API onFDIsSet (FileDescriptor fd) = 0;
+        typedef int         FileDescriptor;
 
-        public:
-            static const FUID iid;
-    };
-    #include <steinberg/vst3/base/WarningsPop.h>
+        /**
+         * Linux event handler interface
+         * @see IRunLoop
+         */
+        #include <steinberg/vst3/base/WarningsPush.h>
+        class IEventHandler: public FUnknown
+        {
+            public:
+                virtual void PLUGIN_API onFDIsSet(FileDescriptor fd) = 0;
 
-    DECLARE_CLASS_IID (IEventHandler, 0x561E65C9, 0x13A0496F, 0x813A2C35, 0x654D7983)
+            public:
+                static const TUID iid;
+        };
+        #include <steinberg/vst3/base/WarningsPop.h>
 
+
+    } /* namespace Linux */
 } /* namespace Steinberg */
 
 #endif /* _3RD_PARTY_INCLUDE_STEINBERG_VST3_GUI_IEVENTHANDLER_H_ */

@@ -57,14 +57,12 @@ namespace Steinberg
                  */
                 virtual IParamValueQueue* PLUGIN_API addParameterData (const ParamID& id, int32& index /*out*/) = 0;
 
-                static const FUID iid;
+                static const TUID iid;
         };
         #include <steinberg/vst3/base/WarningsPop.h>
 
-        DECLARE_CLASS_IID (IParameterChanges, 0xA4779663, 0x0BB64A56, 0xB44384A8, 0x466FEB9D)
-
-    } // namespace Vst
-} // namespace Steinberg
+    } /* namespace Vst */
+} /* namespace Steinberg */
 
 
 #endif /* _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_IPARAMETERCHANGES_H_ */

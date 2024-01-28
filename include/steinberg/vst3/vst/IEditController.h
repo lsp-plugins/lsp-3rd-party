@@ -117,11 +117,9 @@ namespace Steinberg
                 virtual IPlugView* PLUGIN_API createView(FIDString name) = 0;
 
             public:
-                static const FUID iid;
+                static const TUID iid;
         };
         #include <steinberg/vst3/base/WarningsPop.h>
-
-        DECLARE_CLASS_IID (IEditController, 0xDCD7BBE3, 0x7742448D, 0xA874AACC, 0x979C759E)
 
     } /* namespace Vst */
 } /* namespace Steinberg */

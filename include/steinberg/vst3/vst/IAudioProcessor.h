@@ -132,11 +132,9 @@ namespace Steinberg
                 virtual uint32 PLUGIN_API getTailSamples() = 0;
 
             public:
-                static const FUID iid;
+                static const TUID iid;
         };
         #include <steinberg/vst3/base/WarningsPop.h>
-
-        DECLARE_CLASS_IID (IAudioProcessor, 0x42043F99, 0xB7DA453C, 0xA569E79D, 0x9AAEC33D)
 
     } /* namespace Vst */
 } /* namespace Steinberg */

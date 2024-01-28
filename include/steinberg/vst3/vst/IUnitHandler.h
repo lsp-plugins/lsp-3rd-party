@@ -51,11 +51,9 @@ namespace Steinberg
                 virtual tresult PLUGIN_API notifyProgramListChange(ProgramListID listId, int32 programIndex) = 0;
 
             public:
-                static const FUID iid;
+                static const TUID iid;
         };
         #include <steinberg/vst3/base/WarningsPop.h>
-
-        DECLARE_CLASS_IID (IUnitHandler, 0x4B5147F8, 0x4654486B, 0x8DAB30BA, 0x163A3C56)
 
     } /* namespace Vst */
 } /* namespace Steinberg */

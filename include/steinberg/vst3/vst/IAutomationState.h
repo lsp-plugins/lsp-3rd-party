@@ -48,11 +48,9 @@ namespace Steinberg
                 virtual tresult PLUGIN_API setAutomationState (int32 state) = 0;
 
             public:
-                static const FUID iid;
+                static const TUID iid;
         };
         #include <steinberg/vst3/base/WarningsPop.h>
-
-        DECLARE_CLASS_IID (IAutomationState, 0xB4E8287F, 0x1BB346AA, 0x83A46667, 0x68937BAB)
 
     } /* namespace Vst */
 } /* namespace Steinberg */

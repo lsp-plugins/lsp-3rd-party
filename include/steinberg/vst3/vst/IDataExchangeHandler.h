@@ -126,11 +126,9 @@ namespace Steinberg
                                                      TBool sendToController) = 0;
 
             public:
-                static const FUID iid;
+                static const TUID iid;
         };
         #include <steinberg/vst3/base/WarningsPop.h>
-
-        DECLARE_CLASS_IID (IDataExchangeHandler, 0x36D551BD, 0x6FF54F08, 0xB48E830D, 0x8BD5A03B)
 
     } /* namespace Vst */
 } /* namespace Steinberg */

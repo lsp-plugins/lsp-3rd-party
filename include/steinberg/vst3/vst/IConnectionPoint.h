@@ -54,11 +54,9 @@ namespace Steinberg
                 virtual tresult PLUGIN_API notify(IMessage *message) = 0;
 
             public:
-                static const FUID iid;
+                static const TUID iid;
         };
         #include <steinberg/vst3/base/WarningsPop.h>
-
-        DECLARE_CLASS_IID(IConnectionPoint, 0x70A4156F, 0x6E6E4026, 0x989148BF, 0xAA60D8D1)
 
     } /* namespace Vst */
 } /* namespace Steinberg */

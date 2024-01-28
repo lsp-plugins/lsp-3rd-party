@@ -59,11 +59,9 @@ namespace Steinberg
                 virtual tresult PLUGIN_API endEditFromHost(ParamID paramID) = 0;
 
             public:
-                static const FUID iid;
+                static const TUID iid;
         };
         #include <steinberg/vst3/base/WarningsPop.h>
-
-        DECLARE_CLASS_IID (IEditControllerHostEditing, 0xC1271208, 0x70594098, 0xB9DD34B3, 0x6BB0195E)
 
     } /* namespace Vst */
 } /* namespace Steinberg */

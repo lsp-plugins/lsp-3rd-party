@@ -105,11 +105,9 @@ namespace Steinberg
                 virtual tresult PLUGIN_API getParameterIDFromFunctionName(UnitID unitID, FIDString functionName, ParamID & paramID) = 0;
 
             public:
-                static const FUID iid;
+                static const TUID iid;
         };
         #include <steinberg/vst3/base/WarningsPop.h>
-
-        DECLARE_CLASS_IID (IParameterFunctionName, 0x6D21E1DC, 0x91199D4B, 0xA2A02FEF, 0x6C1AE55C)
 
     } /* namespace Vst */
 } /* namespace Steinberg */

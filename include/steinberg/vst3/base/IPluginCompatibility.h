@@ -110,11 +110,9 @@ namespace Steinberg
             virtual tresult PLUGIN_API getCompatibilityJSON(IBStream *stream) = 0;
 
         public:
-            static const FUID iid;
+            static const TUID iid;
     };
     #include <steinberg/vst3/base/WarningsPop.h>
-
-    DECLARE_CLASS_IID (IPluginCompatibility, 0x4AFD4B6A, 0x35D7C240, 0xA5C31414, 0xFB7D15E6)
 
 } /* namespace Steinberg */
 

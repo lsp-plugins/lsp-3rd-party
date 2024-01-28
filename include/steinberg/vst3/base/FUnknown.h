@@ -19,9 +19,8 @@
 #ifndef _3RDPARTY_STEINBERG_VST3_BASE_FUNKNOWN_H_
 #define _3RDPARTY_STEINBERG_VST3_BASE_FUNKNOWN_H_
 
-#include <steinberg/vst3/base/FUID.h>
-#include <steinberg/vst3/base/IPtr.h>
 #include <steinberg/vst3/base/Platform.h>
+#include <steinberg/vst3/base/TUID.h>
 #include <steinberg/vst3/base/Types.h>
 
 #include <cstring>
@@ -127,66 +126,9 @@ namespace Steinberg
             virtual uint32 PLUGIN_API release() = 0;
 
         public:
-            static const FUID iid;
+            static const TUID iid;
     };
     #include <steinberg/vst3/base/WarningsPop.h>
-
-    DECLARE_CLASS_IID (FUnknown, 0x00000000, 0x00000000, 0xC0000000, 0x00000046)
-
-    #if SMTG_CPP11_STDLIBSUPPORT
-
-        namespace FUnknownPrivate
-        {
-            template <typename T>
-            struct Void : std::false_type
-            {
-                using Type = void;
-            };
-
-            template <typename T>
-            using VoidT = typename Void<T>::Type;
-
-            /**
-             *  This type trait detects if a class has an @c iid member variable. It is used to detect if
-             *  the FUID and DECLARE_CLASS_IID method or the U::UID method is used.
-             */
-            template <typename T, typename U = void>
-            struct HasIIDType : std::false_type
-            {
-            };
-
-            template <typename T>
-            struct HasIIDType<T, FUnknownPrivate::VoidT<typename T::IID>> : std::true_type
-            {
-            };
-
-        } /* namespace FUnknownPrivate */
-
-        /** @return the TUID for an interface which uses the U::UID method. */
-        template <typename T,
-                  typename std::enable_if<FUnknownPrivate::HasIIDType<T>::value>::type* = nullptr>
-        const TUID& getTUID ()
-        {
-            return T::IID::toTUID ();
-        }
-
-        /** @return the TUID for an interface which uses the FUID and DECLARE_CLASS_IID method. */
-        template <typename T,
-                  typename std::enable_if<!FUnknownPrivate::HasIIDType<T>::value>::type* = nullptr>
-        const TUID& getTUID ()
-        {
-            return T::iid.toTUID ();
-        }
-
-    #else /* SMTG_CPP11_STDLIBSUPPORT */
-
-        template<typename T>
-        const TUID& getTUID ()
-        {
-            return T::iid.toTUID ();
-        }
-
-    #endif /* SMTG_CPP11_STDLIBSUPPORT */
 
 } /* namespace Steinberg */
 

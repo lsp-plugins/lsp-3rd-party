@@ -91,11 +91,9 @@ namespace Steinberg
                 virtual tresult PLUGIN_API showSettingsView() = 0;
 
             public:
-                static const FUID iid;
+                static const TUID iid;
         };
         #include <steinberg/vst3/base/WarningsPop.h>
-
-        DECLARE_CLASS_IID (IInterAppAudioHost, 0x0CE5743D, 0x68DF415E, 0xAE285BD4, 0xE2CDC8FD)
 
     } /* namespace Vst */
 } /* namespace Steinberg */

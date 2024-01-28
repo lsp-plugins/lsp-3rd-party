@@ -120,11 +120,9 @@ namespace Steinberg
                 virtual IContextMenu * PLUGIN_API createContextMenu(IPlugView *plugView, const ParamID *paramID) = 0;
 
             public:
-                static const FUID iid;
+                static const TUID iid;
         };
         #include <steinberg/vst3/base/WarningsPop.h>
-
-        DECLARE_CLASS_IID (IComponentHandler3, 0x69F11617, 0xD26B400D, 0xA4B6B964, 0x7B6EBBAB)
 
     } /* namespace Vst */
 } /* namespace Steinberg */

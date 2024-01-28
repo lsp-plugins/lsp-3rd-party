@@ -64,11 +64,9 @@ namespace Steinberg
              */
             virtual tresult PLUGIN_API getNoteExpressionValueByString(int32 busIndex, int16 channel, NoteExpressionTypeID id, const TChar* string /*in*/, NoteExpressionValue& valueNormalized /*out*/) = 0;
 
-            static const FUID iid;
+            static const TUID iid;
         };
         #include <steinberg/vst3/base/WarningsPop.h>
-
-        DECLARE_CLASS_IID (INoteExpressionController, 0xB7F8F859, 0x41234872, 0x91169581, 0x4F3721A3)
 
     } /* namespace Vst */
 } /* namespace Steinberg */

@@ -81,11 +81,9 @@ namespace Steinberg
                                                                      TBool onBackgroundThread) = 0;
 
             public:
-                static const FUID iid;
+                static const TUID iid;
         };
         #include <steinberg/vst3/base/WarningsPop.h>
-
-        DECLARE_CLASS_IID (IDataExchangeReceiver, 0x45A759DC, 0x84FA4907, 0xABCB6175, 0x2FC786B6)
 
     } /* namespace Vst */
 } /* namespace Steinberg */

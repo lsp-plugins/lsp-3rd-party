@@ -60,11 +60,9 @@ namespace Steinberg
             virtual tresult PLUGIN_API createInstance(FIDString cid, FIDString _iid, void **obj) = 0;
 
         public:
-            static const FUID iid;
+            static const TUID iid;
     };
     #include <steinberg/vst3/base/WarningsPop.h>
-
-    DECLARE_CLASS_IID (IPluginFactory, 0x7A4D811C, 0x52114A1F, 0xAED9D2EE, 0x0B43BF9F)
 
 } /* namespace Steinberg */
 
