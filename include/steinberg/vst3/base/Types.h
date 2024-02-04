@@ -14,7 +14,7 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+ */
 
 #ifndef _3RDPARTY_STEINBERG_VST3_BASE_FTYPES_H_
 #define _3RDPARTY_STEINBERG_VST3_BASE_FTYPES_H_

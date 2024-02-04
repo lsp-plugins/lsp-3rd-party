@@ -14,7 +14,8 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+ */
+
 #ifndef _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_INOTEEXPRESSIONCONTROLLER_H_
 #define _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_INOTEEXPRESSIONCONTROLLER_H_
 
