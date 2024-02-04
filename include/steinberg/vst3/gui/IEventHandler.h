@@ -16,8 +16,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef _3RD_PARTY_INCLUDE_STEINBERG_VST3_GUI_IEVENTHANDLER_H_
-#define _3RD_PARTY_INCLUDE_STEINBERG_VST3_GUI_IEVENTHANDLER_H_
+#ifndef _3RD_PARTY_STEINBERG_VST3_GUI_IEVENTHANDLER_H_
+#define _3RD_PARTY_STEINBERG_VST3_GUI_IEVENTHANDLER_H_
 
 #include <steinberg/vst3/base/FUnknown.h>
 
@@ -46,4 +46,4 @@ namespace Steinberg
     } /* namespace Linux */
 } /* namespace Steinberg */
 
-#endif /* _3RD_PARTY_INCLUDE_STEINBERG_VST3_GUI_IEVENTHANDLER_H_ */
+#endif /* _3RD_PARTY_STEINBERG_VST3_GUI_IEVENTHANDLER_H_ */

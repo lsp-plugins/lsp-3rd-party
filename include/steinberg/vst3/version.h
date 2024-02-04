@@ -16,8 +16,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef _3RD_PARTY_INCLUDE_STEINBERG_VST3_VERSION_H_
-#define _3RD_PARTY_INCLUDE_STEINBERG_VST3_VERSION_H_
+#ifndef _3RD_PARTY_STEINBERG_VST3_VERSION_H_
+#define _3RD_PARTY_STEINBERG_VST3_VERSION_H_
 
 // The compatibility version of official VST3 SDK
 #define VST3_VERSION_MAJOR      3
@@ -32,4 +32,4 @@
                                 VST3_STRINGIFY(VST3_VERSION_MINOR) "." \
                                 VST3_STRINGIFY(VST3_VERSION_MICRO)
 
-#endif /* _3RD_PARTY_INCLUDE_STEINBERG_VST3_VERSION_H_ */
+#endif /* _3RD_PARTY_STEINBERG_VST3_VERSION_H_ */

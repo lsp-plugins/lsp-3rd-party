@@ -16,8 +16,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef _3RD_PARTY_INCLUDE_STEINBERG_VST3_BASE_GETPLUGINFACTORY_H_
-#define _3RD_PARTY_INCLUDE_STEINBERG_VST3_BASE_GETPLUGINFACTORY_H_
+#ifndef _3RD_PARTY_STEINBERG_VST3_BASE_GETPLUGINFACTORY_H_
+#define _3RD_PARTY_STEINBERG_VST3_BASE_GETPLUGINFACTORY_H_
 
 #include <steinberg/vst3/base/Platform.h>
 #include <steinberg/vst3/base/IPluginFactory.h>
@@ -90,4 +90,4 @@ namespace Steinberg
     typedef IPluginFactory * (PLUGIN_API *GetFactoryProc)();
 } /* namespace Steinberg */
 
-#endif /* _3RD_PARTY_INCLUDE_STEINBERG_VST3_BASE_GETPLUGINFACTORY_H_ */
+#endif /* _3RD_PARTY_STEINBERG_VST3_BASE_GETPLUGINFACTORY_H_ */

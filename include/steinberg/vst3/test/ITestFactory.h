@@ -16,8 +16,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef _3RD_PARTY_INCLUDE_STEINBERG_VST3_TEST_ITESTFACTORY_H_
-#define _3RD_PARTY_INCLUDE_STEINBERG_VST3_TEST_ITESTFACTORY_H_
+#ifndef _3RD_PARTY_STEINBERG_VST3_TEST_ITESTFACTORY_H_
+#define _3RD_PARTY_STEINBERG_VST3_TEST_ITESTFACTORY_H_
 
 #include <steinberg/vst3/base/FUnknown.h>
 #include <steinberg/vst3/test/ITestSuite.h>
@@ -46,4 +46,4 @@ namespace Steinberg
 
 } /* namespace Steinberg */
 
-#endif /* _3RD_PARTY_INCLUDE_STEINBERG_VST3_TEST_ITESTFACTORY_H_ */
+#endif /* _3RD_PARTY_STEINBERG_VST3_TEST_ITESTFACTORY_H_ */

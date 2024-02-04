@@ -16,8 +16,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_PHYSICALUIMAPLIST_H_
-#define _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_PHYSICALUIMAPLIST_H_
+#ifndef _3RD_PARTY_STEINBERG_VST3_VST_PHYSICALUIMAPLIST_H_
+#define _3RD_PARTY_STEINBERG_VST3_VST_PHYSICALUIMAPLIST_H_
 
 #include <steinberg/vst3/vst/NoteExpression.h>
 
@@ -108,4 +108,4 @@ namespace Steinberg
 
 #include <steinberg/vst3/base/AlignPop.h>
 
-#endif /* _3RD_PARTY_INCLUDE_STEINBERG_VST3_VST_PHYSICALUIMAPLIST_H_ */
+#endif /* _3RD_PARTY_STEINBERG_VST3_VST_PHYSICALUIMAPLIST_H_ */

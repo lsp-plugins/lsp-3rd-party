@@ -16,8 +16,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef _3RD_PARTY_INCLUDE_STEINBERG_VST3_BASE_TUID_H_
-#define _3RD_PARTY_INCLUDE_STEINBERG_VST3_BASE_TUID_H_
+#ifndef _3RD_PARTY_STEINBERG_VST3_BASE_TUID_H_
+#define _3RD_PARTY_STEINBERG_VST3_BASE_TUID_H_
 
 #include <steinberg/vst3/base/Platform.h>
 #include <steinberg/vst3/base/Types.h>
@@ -122,4 +122,4 @@ namespace Steinberg
 
 
 
-#endif /* _3RD_PARTY_INCLUDE_STEINBERG_VST3_BASE_TUID_H_ */
+#endif /* _3RD_PARTY_STEINBERG_VST3_BASE_TUID_H_ */

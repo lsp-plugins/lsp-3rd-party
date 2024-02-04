@@ -16,8 +16,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef _3RD_PARTY_INCLUDE_STEINBERG_VST3_BASE_TYPESIZECHECK_H_
-#define _3RD_PARTY_INCLUDE_STEINBERG_VST3_BASE_TYPESIZECHECK_H_
+#ifndef _3RD_PARTY_STEINBERG_VST3_BASE_TYPESIZECHECK_H_
+#define _3RD_PARTY_STEINBERG_VST3_BASE_TYPESIZECHECK_H_
 
 #include <steinberg/vst3/base/Types.h>
 
@@ -58,4 +58,4 @@
     #define SMTG_TYPE_SIZE_CHECK(Type, Platform64Size, MacOS32Size, Win32Size, Linux32Size)
 #endif /* SMTG_CPP11 */
 
-#endif /* MODULES_LSP_3RD_PARTY_INCLUDE_STEINBERG_VST3_BASE_TYPESIZECHECK_H_ */
+#endif /* MODULES_LSP_3RD_PARTY_STEINBERG_VST3_BASE_TYPESIZECHECK_H_ */
