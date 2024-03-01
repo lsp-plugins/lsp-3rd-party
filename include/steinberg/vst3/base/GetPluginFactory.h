@@ -29,10 +29,6 @@
     #define STMG_FINI_FUNCTION  \
         SMTG_EXPORT_SYMBOL bool ExitDll()
 
-    #if defined(__GNUC__) || defined(__GNUC__) || defined(__clang__) || defined(__CLANG__)
-        #define STMG_MAIN_FUNCTION_ATTRIBUTES __attribute__ ((alias ("GetPluginFactory")))
-    #endif
-
 #elif SMTG_OS_MACOS || SMTG_OS_IOS || SMTG_OS_OSX
 
     #include <CoreFoundation/CoreFoundation.h>
@@ -50,10 +46,6 @@
         SMTG_EXPORT_SYMBOL bool ModuleExit (void)
 
 #endif
-
-#ifndef STMG_MAIN_FUNCTION_ATTRIBUTES
-    #define STMG_MAIN_FUNCTION_ATTRIBUTES
-#endif /* STMG_MAIN_FUNCTION_ATTRIBUTES */
 
 /**
  *  Plug-in entry point.
@@ -91,7 +83,7 @@
  * }
  */
 #define STMG_GET_PLUGIN_FACTORY_FUNCTION \
-    SMTG_EXPORT_SYMBOL ::Steinberg::IPluginFactory* PLUGIN_API STMG_MAIN_FUNCTION_ATTRIBUTES GetPluginFactory()
+    SMTG_EXPORT_SYMBOL ::Steinberg::IPluginFactory* PLUGIN_API GetPluginFactory()
 
 namespace Steinberg
 {
