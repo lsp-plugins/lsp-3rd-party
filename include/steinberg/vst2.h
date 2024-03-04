@@ -1,5 +1,5 @@
 /*
-  Copyright 2017 Linux Studio Plugins Project <lsp.plugin@gmail.com>
+  Copyright 2024 Linux Studio Plugins Project <lsp.plugin@gmail.com>
 
   Permission to use, copy, modify, and/or distribute this software for any
   purpose with or without fee is hereby granted, provided that the above
@@ -1059,7 +1059,7 @@ enum AudioMasterOpcodes
     audioMasterGetDirectory,
 
     /** No arguments
-     *
+     * Something has changed in plug-in, request an update display like program (MIDI too) and parameters list in Host.
      */
     audioMasterUpdateDisplay,
 
