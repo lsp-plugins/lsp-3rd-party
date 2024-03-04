@@ -244,7 +244,6 @@ enum
     #endif
     #define SMTG_CPU_ARM_64EC 0
 
-    #include <endian.h>
     #if __BYTE_ORDER == __LITTLE_ENDIAN
         #define BYTEORDER           kLittleEndian
         #define VST3_BYTEORDER      kLittleEndian
