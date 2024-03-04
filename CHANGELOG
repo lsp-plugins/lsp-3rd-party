@@ -6,6 +6,7 @@
 * Added VST3 3.7.9 SDK interface definitions.
 * Updated CLAP headers to 1.2.0.
 * Updated build scripts.
+* Updated module versions in dependencies.
 
 === 1.0.14 ===
 * Updated build scripts.
