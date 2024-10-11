@@ -22,7 +22,7 @@
 // The compatibility version of official VST3 SDK
 #define VST3_VERSION_MAJOR      3
 #define VST3_VERSION_MINOR      7
-#define VST3_VERSION_MICRO      9
+#define VST3_VERSION_MICRO      12
 
 #define VST3_STRINGIFY1(x)      #x
 #define VST3_STRINGIFY(x)       VST3_STRINGIFY1(x)
