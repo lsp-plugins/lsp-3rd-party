@@ -24,6 +24,7 @@
 #include <steinberg/vst3/vst/Types.h>
 #include <steinberg/vst3/vst/ParameterInfo.h>
 #include <steinberg/vst3/gui/IPlugView.h>
+#include <steinberg/vst3/base/AlignPush.h>
 
 /**
  * Class Category Name for Controller Component
@@ -123,5 +124,7 @@ namespace Steinberg
 
     } /* namespace Vst */
 } /* namespace Steinberg */
+
+#include <steinberg/vst3/base/AlignPop.h>
 
 #endif /* _3RD_PARTY_STEINBERG_VST3_VST_IEDITCONTROLLER_H_ */

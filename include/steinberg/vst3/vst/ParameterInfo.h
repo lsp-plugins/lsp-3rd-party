@@ -45,18 +45,47 @@ namespace Steinberg
             int32 flags;            ///< ParameterFlags (see below)
             enum ParameterFlags
             {
-                kNoFlags         = 0,       ///< no flags wanted
-                kCanAutomate     = 1 << 0,  ///< parameter can be automated
-                kIsReadOnly      = 1 << 1,  ///< parameter cannot be changed from outside the plug-in (implies that kCanAutomate is NOT set)
-                kIsWrapAround    = 1 << 2,  ///< attempts to set the parameter value out of the limits will result in a wrap around [SDK 3.0.2]
-                kIsList          = 1 << 3,  ///< parameter should be displayed as list in generic editor or automation editing [SDK 3.1.0]
-                kIsHidden        = 1 << 4,  ///< parameter should be NOT displayed and cannot be changed from outside the plug-in
-                                            ///< (implies that kCanAutomate is NOT set and kIsReadOnly is set) [SDK 3.7.0]
+                /**
+                 * No flags wanted (SDK 3.0.0)
+                 */
+                kNoFlags = 0,
 
-                kIsProgramChange = 1 << 15, ///< parameter is a program change (unitId gives info about associated unit
-                                            ///< - see \ref vst3ProgramLists)
-                kIsBypass        = 1 << 16  ///< special bypass parameter (only one allowed): plug-in can handle bypass
-                                            ///< (highly recommended to export a bypass parameter for effect plug-in)
+                /**
+                 * Parameter can be automated (SDK 3.0.0)
+                 */
+                kCanAutomate = 1 << 0,
+
+                /**
+                 * Parameter cannot be changed from outside the plug-in, implies that kCanAutomate is NOT set (SDK 3.0.0)
+                 */
+                kIsReadOnly = 1 << 1,
+
+                /**
+                 * Attempts to set the parameter value out of the limits will result in a wrap around (SDK 3.0.2)
+                 */
+                kIsWrapAround = 1 << 2,
+
+                /**
+                 * Parameter should be displayed as list in generic editor or automation editing (SDK 3.1.0)
+                 */
+                kIsList = 1 << 3,
+
+                /**
+                 * Parameter should be NOT displayed and cannot be changed from outside the plug-in.
+                 * It implies that kCanAutomate is NOT set and kIsReadOnly is set (SDK 3.7.0)
+                 */
+                kIsHidden = 1 << 4,
+
+                /**
+                 * Parameter is a program change (unitId gives info about associated unit - see \ref vst3ProgramLists) (SDK 3.0.0)
+                 */
+                kIsProgramChange = 1 << 15,
+
+                /**
+                 * Special bypass parameter (only one allowed): plug-in can handle bypass.
+                 * Highly recommended to export a bypass parameter for effect plug-in. (SDK 3.0.0)
+                 */
+                kIsBypass = 1 << 16
             };
         };
 
@@ -71,7 +100,7 @@ namespace Steinberg
         /**
          * Flags used for IComponentHandler::restartComponent
          */
-        enum RestartFlags
+        enum RestartFlags : int32
         {
             /**
              * The Component should be reloaded
@@ -156,7 +185,7 @@ namespace Steinberg
              * The plug-in informs the host that its internal routing (relation of an event-input-channel to an audio-output-bus)
              * has changed. The host ask the plug-in for the new routing with IComponent::getRoutingInfo, @ref vst3Routing
              *
-             * @ee IComponent
+             * @see IComponent
              */
             kRoutingInfoChanged         = 1 << 9,
 
@@ -167,23 +196,37 @@ namespace Steinberg
              * The host invalidates all caches of Key switches infos and asks the edit controller (IKeyswitchController) for the
              * current ones.
              *
-             * @ee IKeyswitchController
+             * @see IKeyswitchController
              */
-             kKeyswitchChanged          = 1 << 10
-        };
+             kKeyswitchChanged          = 1 << 10,
 
-        /** Knob Mode */
-        enum KnobModes
-        {
-            kCircularMode = 0,      ///< Circular with jump to clicked position
-            kRelativCircularMode,   ///< Circular without jump to clicked position
-            kLinearMode             ///< Linear: depending on vertical movement
+             /**
+              * Mapping of ParamID has changed
+              *
+              * The Plug-in informs the host that its parameters ID has changed. This has to be called by the
+              * edit controller in the method setComponentState or setState (during projects loading) when the
+              * plug-in detects that the given state was associated to an older version of the plug-in, or to a
+              * plug-in to replace (for ex. migrating VST2 => VST3), with a different set of parameter IDs, then
+              * the host could remap any used parameters like automation by asking the IRemapParamID interface
+              * (which extends IEditController).
+              *
+              * @see IRemapParamID (SDK 3.7.11)
+              */
+             kParamIDMappingChanged      = 1 << 11
         };
 
         /**
          * Knob Mode Type
          */
-        typedef int32 KnobMode;
+        using KnobMode = int32;
+
+        /** Knob Mode */
+        enum KnobModes : KnobMode
+        {
+            kCircularMode = 0,      ///< Circular with jump to clicked position
+            kRelativCircularMode,   ///< Circular without jump to clicked position
+            kLinearMode             ///< Linear: depending on vertical movement
+        };
 
     } /* namespace Vst */
 } /* namespace Steinberg */

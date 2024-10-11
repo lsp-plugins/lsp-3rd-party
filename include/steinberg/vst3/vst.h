@@ -95,5 +95,6 @@
 #include <steinberg/vst3/vst/INoteExpressionPhysicalUIMapping.h>
 #include <steinberg/vst3/vst/ITestPlugProvider.h>
 #include <steinberg/vst3/vst/ITestPlugProvider2.h>
+#include <steinberg/vst3/vst/IRemapParamID.h>
 
 #endif /* _3RD_PARTY_STEINBERG_VST3_VST_H_ */

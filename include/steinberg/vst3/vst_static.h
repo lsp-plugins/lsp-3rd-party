@@ -108,6 +108,9 @@ namespace Steinberg
         DEF_CLASS_IID(IDataExchangeHandler, 0x36D551BD, 0x6FF54F08, 0xB48E830D, 0x8BD5A03B)
         DEF_CLASS_IID(IDataExchangeReceiver, 0x45A759DC, 0x84FA4907, 0xABCB6175, 0x2FC786B6)
 
+        // VST 3.7.11
+        DEF_CLASS_IID(IRemapParamID, 0x2B88021E, 0x6286B646, 0xB49DF76A, 0x5663061C)
+
     } /* namespace Vst */
 } /* namespace Steinberg */
 

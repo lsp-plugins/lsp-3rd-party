@@ -43,6 +43,9 @@ namespace Steinberg
 
     // Versions History which allows to write such code:
     // #if VST_VERSION >= VST_3_6_5_VERSION
+    #define VST_3_7_12_VERSION  0x03070C
+    #define VST_3_7_11_VERSION  0x03070B
+    #define VST_3_7_10_VERSION  0x03070A
     #define VST_3_7_9_VERSION   0x030709
     #define VST_3_7_8_VERSION   0x030708
     #define VST_3_7_7_VERSION   0x030707
@@ -79,7 +82,8 @@ namespace Steinberg
         typedef int32 IoMode;           ///< I/O mode (see @ref vst3IoMode)
         typedef int32 UnitID;           ///< unit identifier
         typedef double ParamValue;      ///< parameter value type
-        typedef uint32 ParamID;         ///< parameter identifier
+        typedef uint32 ParamID;         ///< parameter identifier: value in range [0, 0x7FFFFFFF].
+                                        ///  The range [0x80000000, 0xFFFFFFFF], is reserved for host application.
         typedef int32 ProgramListID;    ///< program list identifier
         typedef int16 CtrlNumber;       ///< MIDI controller number (see \ref ControllerNumbers for allowed values)
 
@@ -88,7 +92,9 @@ namespace Steinberg
 
         typedef uint32 ColorSpec;       ///< color defining by 4 component ARGB value (Alpha/Red/Green/Blue)
 
-        static const ParamID kNoParamId = 0xffffffff;   ///< default for uninitialized parameter ID
+        static SMTG_CONSTEXPR const ParamID kNoParamId = 0xffffffff;   ///< default for uninitialized parameter ID
+        static SMTG_CONSTEXPR const ParamID kMinParamId = 0;           ///< value min for a parameter ID
+        static SMTG_CONSTEXPR const ParamID kMaxParamId = 0x7fffffff;  ///< value max for a parameter ID
 
         typedef float Sample32;             ///< 32-bit precision audio sample
         typedef double Sample64;            ///< 64-bit precision audio sample
@@ -108,6 +114,9 @@ namespace Steinberg
 
         // Versions History which allows to write such code:
         // if constexpr (SDKVersion >= SDKVersion_3_6_5) { ... }
+        static SMTG_CONSTEXPR const uint32 SDKVersion_3_7_12    = VST_3_7_12_VERSION;
+        static SMTG_CONSTEXPR const uint32 SDKVersion_3_7_11    = VST_3_7_11_VERSION;
+        static SMTG_CONSTEXPR const uint32 SDKVersion_3_7_10    = VST_3_7_10_VERSION;
         static SMTG_CONSTEXPR const uint32 SDKVersion_3_7_9     = VST_3_7_9_VERSION;
         static SMTG_CONSTEXPR const uint32 SDKVersion_3_7_8     = VST_3_7_8_VERSION;
         static SMTG_CONSTEXPR const uint32 SDKVersion_3_7_7     = VST_3_7_7_VERSION;

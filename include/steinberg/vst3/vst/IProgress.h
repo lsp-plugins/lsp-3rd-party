@@ -64,8 +64,15 @@ namespace Steinberg
             public:
                 enum ProgressType: uint32
                 {
-                    AsyncStateRestoration = 0,  ///< plug-in state is restored async (in a background Thread)
-                    UIBackgroundTask            ///< a plug-in task triggered by a UI action
+                    /**
+                     * plug-in state is restored async (in a background Thread)
+                     */
+                    AsyncStateRestoration = 0,
+
+                    /**
+                     * a plug-in task triggered by a UI action
+                     */
+                    UIBackgroundTask
                 };
 
                 typedef uint64 ID;
