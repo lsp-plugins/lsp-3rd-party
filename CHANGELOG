@@ -2,6 +2,9 @@
 * RECENT CHANGES
 *******************************************************************************
 
+=== 1.0.20 ===
+
+
 === 1.0.19 ===
 * Updated CLAP headers to 1.2.2.
 * Updated VST3 headers to match the 3.7.12 SDK.
