@@ -6,6 +6,7 @@
 * Updated CLAP headers to 1.2.2.
 * Updated VST3 headers to match the 3.7.12 SDK.
 * Updated build scripts.
+* Updated module versions in dependencies.
 
 === 1.0.18 ===
 * Updated build scripts.
