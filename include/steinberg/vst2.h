@@ -1,5 +1,5 @@
 /*
-  Copyright 2024 Linux Studio Plugins Project <lsp.plugin@gmail.com>
+  Copyright 2025 Linux Studio Plugins Project <lsp.plugin@gmail.com>
 
   Permission to use, copy, modify, and/or distribute this software for any
   purpose with or without fee is hereby granted, provided that the above
@@ -101,7 +101,7 @@
 #endif /* __GNUC__ */
 
 #if TARGET_API_MAC_CARBON
-    #ifdef (__LP64__) || (__ppc64__)
+    #if defined(__LP64__) || defined(__ppc64__)
         #pragma options align=power
     #else
         #pragma options align=mac68k
@@ -112,7 +112,7 @@
 #elif defined(__GNUC__)
     #pragma pack(push, 8)
     #define VSTCALLBACK __cdecl
-#elif defined(WIN32) || defined(__FLAT__) || defined CBUILDER
+#elif defined(WIN32) || defined(__FLAT__) || defined(CBUILDER)
     #pragma pack(push)
     #pragma pack(8)
     #define VSTCALLBACK __cdecl
