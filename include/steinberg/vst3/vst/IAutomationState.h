@@ -33,7 +33,7 @@ namespace Steinberg
         class IAutomationState: public FUnknown
         {
             public:
-                enum AutomationStates
+                enum AutomationStates : int32
                 {
                     kNoAutomation   = 0,      ///< Not Read and not Write
                     kReadState      = 1 << 0,    ///< Read state
