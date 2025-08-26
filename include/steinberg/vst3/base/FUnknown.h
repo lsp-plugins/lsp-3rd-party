@@ -68,7 +68,13 @@
 
 //------------------------------------------------------------------------
 #define FUNKNOWN_CTOR   { __funknownRefCount = 1; }
-#define FUNKNOWN_DTOR   {}
+
+#if defined(SMTG_FUNKNOWN_DTOR_ASSERT) && SMTG_FUNKNOWN_DTOR_ASSERT
+    #include <cassert>
+    #define FUNKNOWN_DTOR { assert (__funknownRefCount == 0); }
+#else
+    #define FUNKNOWN_DTOR
+#endif
 
 #define QUERY_INTERFACE(iid, obj, InterfaceIID, InterfaceName)  \
     if (::Steinberg::FUnknownPrivate::iidEqual (iid, InterfaceIID)) \

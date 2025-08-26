@@ -96,13 +96,14 @@ enum
     #endif
 
     #ifdef _MSC_VER
-        #pragma warning (disable : 4244) //! @brief warning C4244: Conversion from 'type1' to 'type2', possible loss of data.
-        #pragma warning (disable : 4250) //! @brief warning C4250: Inheritance via dominance is allowed
-        #pragma warning (disable : 4996) //! @brief warning C4996: deprecated functions
+        #if !defined (SMTG_DISABLE_DEFAULT_DIAGNOSTICS)
+            #pragma warning (disable : 4244) //! @brief warning C4244: Conversion from 'type1' to 'type2', possible loss of data.
+            #pragma warning (disable : 4250) //! @brief warning C4250: Inheritance via dominance is allowed
 
-        #pragma warning (3 : 4189) //! @brief warning C4189: local variable is initialized but not referenced
-        #pragma warning (3 : 4238) //! @brief warning C4238: nonstandard extension used : class rvalue used as lvalue
-    #endif
+            #pragma warning (3 : 4189) //! @brief warning C4189: local variable is initialized but not referenced
+            #pragma warning (3 : 4238) //! @brief warning C4238: nonstandard extension used: class rvalue used as lvalue
+        #endif
+    #endif /* _MSC_VER */
 
     #if defined (_WIN64) || defined (_M_ARM64)
         #define SMTG_PLATFORM_64 1
@@ -121,12 +122,12 @@ enum
         #define SMTG_CPP17 (__cplusplus >= 201703L || ((_MSC_FULL_VER >= 190024210L) && (_MSVC_LANG >= 201703L)))
         #define SMTG_CPP20 (__cplusplus >= 202002L)
         #define SMTG_HAS_NOEXCEPT ((_MSC_FULL_VER >= 190023026L) || (SMTG_INTEL_CXX11_MODE && SMTG_INTEL_COMPILER >= 1300))
-        #if ((_MSC_FULL_VER >= 190024210L) || (SMTG_INTEL_CXX11_MODE && SMTG_INTEL_COMPILER >= 1500) || (defined(__MINGW32__) && SMTG_CPP11))
+        #if ((_MSC_FULL_VER >= 190024210L) || (SMTG_INTEL_CXX11_MODE && SMTG_INTEL_COMPILER >= 1500) || (defined (__MINGW32__) && SMTG_CPP11))
             #define SMTG_HAS_CPP11_CONSTEXPR 1
         #else
             #define SMTG_HAS_CPP11_CONSTEXPR 0
         #endif
-        #if (((_MSC_VER >= 1915L) && (_MSVC_LANG >= 201402L)) || (SMTG_INTEL_CXX11_MODE && SMTG_INTEL_COMPILER > 1700) || (defined(__MINGW32__) && SMTG_CPP14))
+        #if (((_MSC_VER >= 1915L) && (_MSVC_LANG >= 201402L)) || (SMTG_INTEL_CXX11_MODE && SMTG_INTEL_COMPILER > 1700) || (defined (__MINGW32__) && SMTG_CPP14))
             #define SMTG_HAS_CPP14_CONSTEXPR 1
         #else
             #define SMTG_HAS_CPP14_CONSTEXPR 0
@@ -218,7 +219,7 @@ enum
     #endif /* __cplusplus */
 #else
     // Definitions for Linux and other POSIX platforms
-    #if __gnu_linux__ || __linux__
+    #if (defined(__gnu_linux__) && __gnu_linux__) || (defined(__linux__) && __linux__)
         #define SMTG_OS_LINUX       1
     #else
         #define SMTG_OS_LINUX       0

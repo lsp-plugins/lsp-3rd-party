@@ -1,6 +1,6 @@
 /*
- * Copyright 2023, Steinberg Media Technologies GmbH, All Rights Reserved
- * Copyright 2023 Linux Studio Plugins Project <lsp.plugin@gmail.com>
+ * Copyright 2025, Steinberg Media Technologies GmbH, All Rights Reserved
+ * Copyright 2025 Linux Studio Plugins Project <lsp.plugin@gmail.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,5 +21,7 @@
 #elif defined __BORLANDC__
     #pragma -a-
 #elif SMTG_OS_WINDOWS
+    #pragma pack(pop)
+#elif SMTG_OS_LINUX
     #pragma pack(pop)
 #endif

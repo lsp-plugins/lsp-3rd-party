@@ -43,6 +43,8 @@ namespace Steinberg
 
     // Versions History which allows to write such code:
     // #if VST_VERSION >= VST_3_6_5_VERSION
+    #define VST_3_7_14_VERSION  0x03070E
+    #define VST_3_7_13_VERSION  0x03070D
     #define VST_3_7_12_VERSION  0x03070C
     #define VST_3_7_11_VERSION  0x03070B
     #define VST_3_7_10_VERSION  0x03070A
@@ -114,6 +116,8 @@ namespace Steinberg
 
         // Versions History which allows to write such code:
         // if constexpr (SDKVersion >= SDKVersion_3_6_5) { ... }
+        static SMTG_CONSTEXPR const uint32 SDKVersion_3_7_14    = VST_3_7_14_VERSION;
+        static SMTG_CONSTEXPR const uint32 SDKVersion_3_7_13    = VST_3_7_13_VERSION;
         static SMTG_CONSTEXPR const uint32 SDKVersion_3_7_12    = VST_3_7_12_VERSION;
         static SMTG_CONSTEXPR const uint32 SDKVersion_3_7_11    = VST_3_7_11_VERSION;
         static SMTG_CONSTEXPR const uint32 SDKVersion_3_7_10    = VST_3_7_10_VERSION;

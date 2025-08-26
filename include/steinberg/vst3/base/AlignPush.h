@@ -1,6 +1,6 @@
 /*
- * Copyright 2023, Steinberg Media Technologies GmbH, All Rights Reserved
- * Copyright 2023 Linux Studio Plugins Project <lsp.plugin@gmail.com>
+ * Copyright 2025, Steinberg Media Technologies GmbH, All Rights Reserved
+ * Copyright 2025 Linux Studio Plugins Project <lsp.plugin@gmail.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -36,6 +36,12 @@
         #pragma pack(16)
     #else
         #pragma pack(8)
+    #endif
+#elif SMTG_OS_LINUX
+    #if SMTG_PLATFORM_64
+        #pragma pack(push, 16)
+    #else
+        #pragma pack(push, 8)
     #endif
 #endif
 
