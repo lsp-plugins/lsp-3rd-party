@@ -1,6 +1,6 @@
 /*
- * Copyright 2023, Steinberg Media Technologies GmbH, All Rights Reserved
- * Copyright 2023 Linux Studio Plugins Project <lsp.plugin@gmail.com>
+ * Copyright 2025, Steinberg Media Technologies GmbH, All Rights Reserved
+ * Copyright 2025 Linux Studio Plugins Project <lsp.plugin@gmail.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -31,7 +31,7 @@ namespace Steinberg
          *
          * If this interface is implemented by the edit controller, the host will call this method whenever
          * there is live MIDI-CC input for the plug-in. This way, the plug-in can change its MIDI-CC parameter
-         * mapping and inform the host via the IComponentHandler::restartComponent with the
+         * mapping and notify the host using the IComponentHandler::restartComponent with the
          * kMidiCCAssignmentChanged flag.
          *
          * Use this if you want to implement custom MIDI-Learn functionality in your plug-in.
@@ -91,8 +91,7 @@ namespace Steinberg
                 /**
                  * Called on live input MIDI-CC change associated to a given bus index and MIDI channel
                  */
-                virtual tresult PLUGIN_API onLiveMIDIControllerInput(int32 busIndex, int16 channel,
-                                                                     CtrlNumber midiCC) = 0;
+                virtual tresult PLUGIN_API onLiveMIDIControllerInput(int32 busIndex, int16 channel, CtrlNumber midiCC) = 0;
 
             public:
                 static const TUID iid;

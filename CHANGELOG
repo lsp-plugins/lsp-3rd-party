@@ -3,7 +3,7 @@
 *******************************************************************************
 
 === 1.0.24 ===
-
+* Updated VST3 SDK headers to support version 3.8.0.
 
 === 1.0.23 ===
 * Updated VST3 SDK headers to support version 3.7.14.

@@ -1,6 +1,6 @@
 /*
- * Copyright 2023, Steinberg Media Technologies GmbH, All Rights Reserved
- * Copyright 2023 Linux Studio Plugins Project <lsp.plugin@gmail.com>
+ * Copyright 2025, Steinberg Media Technologies GmbH, All Rights Reserved
+ * Copyright 2025 Linux Studio Plugins Project <lsp.plugin@gmail.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -102,6 +102,19 @@ namespace Steinberg
             int32 noteId;                   ///< associated note identifier to apply the change
 
             NoteExpressionValue value;      ///< normalized value [0.0, 1.0].
+        };
+
+        /**
+         * Note Expression Int event. Used in @ref Event (union)
+         * Same as NoteExpressionValueEvent but use a uint64 instead of a NoteExpressionValue (double)
+         * @since 3.8.0
+         */
+        struct NoteExpressionIntValueEvent
+        {
+            NoteExpressionTypeID typeId;    ///< see @ref NoteExpressionTypeID
+            int32 noteId;                   ///< associated note identifier to apply the change
+
+            uint64 value;
         };
 
         /**

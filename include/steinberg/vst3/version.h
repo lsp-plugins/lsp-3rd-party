@@ -1,6 +1,6 @@
 /*
- * Copyright 2023, Steinberg Media Technologies GmbH, All Rights Reserved
- * Copyright 2023 Linux Studio Plugins Project <lsp.plugin@gmail.com>
+ * Copyright 2025, Steinberg Media Technologies GmbH, All Rights Reserved
+ * Copyright 2025 Linux Studio Plugins Project <lsp.plugin@gmail.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,8 +21,8 @@
 
 // The compatibility version of official VST3 SDK
 #define VST3_VERSION_MAJOR      3
-#define VST3_VERSION_MINOR      7
-#define VST3_VERSION_MICRO      14
+#define VST3_VERSION_MINOR      8
+#define VST3_VERSION_MICRO      0
 
 #define VST3_STRINGIFY1(x)      #x
 #define VST3_STRINGIFY(x)       VST3_STRINGIFY1(x)

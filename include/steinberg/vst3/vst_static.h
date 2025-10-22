@@ -1,6 +1,6 @@
 /*
- * Copyright 2023, Steinberg Media Technologies GmbH, All Rights Reserved
- * Copyright 2023 Linux Studio Plugins Project <lsp.plugin@gmail.com>
+ * Copyright 2025, Steinberg Media Technologies GmbH, All Rights Reserved
+ * Copyright 2025 Linux Studio Plugins Project <lsp.plugin@gmail.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -110,6 +110,10 @@ namespace Steinberg
 
         // VST 3.7.11
         DEF_CLASS_IID(IRemapParamID, 0x2B88021E, 0x6286B646, 0xB49DF76A, 0x5663061C)
+
+        // VST 3.8.0
+        DEF_CLASS_IID(IMidiMapping2, 0x6DE14B88, 0x03F94F09, 0xA2552F0F, 0x9326593E)
+        DEF_CLASS_IID(IMidiLearn2, 0xF07E498A, 0x78864327, 0x8B431CED, 0xA3C553FC)
 
     } /* namespace Vst */
 } /* namespace Steinberg */

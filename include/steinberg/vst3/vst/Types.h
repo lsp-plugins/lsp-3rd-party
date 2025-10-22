@@ -1,6 +1,6 @@
 /*
- * Copyright 2023, Steinberg Media Technologies GmbH, All Rights Reserved
- * Copyright 2023 Linux Studio Plugins Project <lsp.plugin@gmail.com>
+ * Copyright 2025, Steinberg Media Technologies GmbH, All Rights Reserved
+ * Copyright 2025 Linux Studio Plugins Project <lsp.plugin@gmail.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -43,6 +43,7 @@ namespace Steinberg
 
     // Versions History which allows to write such code:
     // #if VST_VERSION >= VST_3_6_5_VERSION
+    #define VST_3_8_0_VERSION   0x030800
     #define VST_3_7_14_VERSION  0x03070E
     #define VST_3_7_13_VERSION  0x03070D
     #define VST_3_7_12_VERSION  0x03070C
@@ -115,7 +116,8 @@ namespace Steinberg
             ((SDKVersionMajor << 16) | (SDKVersionMinor << 8) | SDKVersionSub);
 
         // Versions History which allows to write such code:
-        // if constexpr (SDKVersion >= SDKVersion_3_6_5) { ... }
+        // if constexpr (SDKVersion >= SDKVersion_3_8_0) { ... }
+        static SMTG_CONSTEXPR const uint32 SDKVersion_3_8_0     = VST_3_8_0_VERSION;
         static SMTG_CONSTEXPR const uint32 SDKVersion_3_7_14    = VST_3_7_14_VERSION;
         static SMTG_CONSTEXPR const uint32 SDKVersion_3_7_13    = VST_3_7_13_VERSION;
         static SMTG_CONSTEXPR const uint32 SDKVersion_3_7_12    = VST_3_7_12_VERSION;
