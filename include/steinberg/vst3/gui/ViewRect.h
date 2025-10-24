@@ -1,6 +1,6 @@
 /*
- * Copyright 2023, Steinberg Media Technologies GmbH, All Rights Reserved
- * Copyright 2023 Linux Studio Plugins Project <lsp.plugin@gmail.com>
+ * Copyright 2025, Steinberg Media Technologies GmbH, All Rights Reserved
+ * Copyright 2025 Linux Studio Plugins Project <lsp.plugin@gmail.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -73,6 +73,15 @@ namespace Steinberg
      * See https://standards.freedesktop.org/xembed-spec/xembed-spec-latest.html
      */
     const FIDString kPlatformTypeX11EmbedWindowID = "X11EmbedWindowID";
+
+    /**
+     * The parent parameter in IPlugView::attached() is a wl_surface pointer.
+     * The plug-in should create a wl_surface and attach it to the parent surface as a wl_subsurface.
+     * The plug-in should not connect to the system compositor to do so, but use
+     * IWaylandHost::openWaylandConnection().
+     * See https://wayland.freedesktop.org/docs/html
+     */
+    const FIDString kPlatformTypeWaylandSurfaceID = "WaylandSurfaceID";
 
 } /* namespace Steinberg */
 

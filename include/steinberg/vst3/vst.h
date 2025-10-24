@@ -1,6 +1,6 @@
 /*
- * Copyright 2023, Steinberg Media Technologies GmbH, All Rights Reserved
- * Copyright 2023 Linux Studio Plugins Project <lsp.plugin@gmail.com>
+ * Copyright 2025, Steinberg Media Technologies GmbH, All Rights Reserved
+ * Copyright 2025 Linux Studio Plugins Project <lsp.plugin@gmail.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -41,6 +41,7 @@
 #include <steinberg/vst3/vst/ChannelContext.h>
 #include <steinberg/vst3/vst/PrefetchableSupport.h>
 #include <steinberg/vst3/vst/PhysicalUIMapList.h>
+#include <steinberg/vst3/vst/Midi2.h>
 
 // Interfaces
 #include <steinberg/vst3/vst/IComponent.h>
@@ -65,6 +66,7 @@
 #include <steinberg/vst3/vst/IEditController.h>
 #include <steinberg/vst3/vst/IEditController2.h>
 #include <steinberg/vst3/vst/IMidiMapping.h>
+#include <steinberg/vst3/vst/IMidiMapping2.h>
 #include <steinberg/vst3/vst/IEditControllerHostEditing.h>
 #include <steinberg/vst3/vst/IComponentHandlerSystemTime.h>
 #include <steinberg/vst3/vst/IUnitHandler.h>
@@ -88,6 +90,7 @@
 #include <steinberg/vst3/vst/IInterAppAudioHost.h>
 #include <steinberg/vst3/vst/IInterAppAudioConnectionNotification.h>
 #include <steinberg/vst3/vst/IMidiLearn.h>
+#include <steinberg/vst3/vst/IMidiLearn2.h>
 #include <steinberg/vst3/vst/IParameterFunctionName.h>
 #include <steinberg/vst3/vst/IInfoListener.h>
 #include <steinberg/vst3/vst/IPrefetchableSupport.h>

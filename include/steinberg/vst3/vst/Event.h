@@ -1,6 +1,6 @@
 /*
- * Copyright 2023, Steinberg Media Technologies GmbH, All Rights Reserved
- * Copyright 2023 Linux Studio Plugins Project <lsp.plugin@gmail.com>
+ * Copyright 2025, Steinberg Media Technologies GmbH, All Rights Reserved
+ * Copyright 2025 Linux Studio Plugins Project <lsp.plugin@gmail.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -34,93 +34,103 @@ namespace Steinberg
          */
         enum ControllerNumbers
         {
-            kCtrlBankSelectMSB      =   0,      ///< Bank Select MSB
-            kCtrlModWheel           =   1,      ///< Modulation Wheel
-            kCtrlBreath             =   2,      ///< Breath controller
+            kCtrlBankSelectMSB          =   0,      ///< Bank Select MSB
+            kCtrlModWheel               =   1,      ///< Modulation Wheel
+            kCtrlBreath                 =   2,      ///< Breath controller
 
-            kCtrlFoot               =   4,      ///< Foot Controller
-            kCtrlPortaTime          =   5,      ///< Portamento Time
-            kCtrlDataEntryMSB       =   6,      ///< Data Entry MSB
-            kCtrlVolume             =   7,      ///< Channel Volume (formerly Main Volume)
-            kCtrlBalance            =   8,      ///< Balance
+            kCtrlFoot                   =   4,      ///< Foot Controller
+            kCtrlPortaTime              =   5,      ///< Portamento Time
+            kCtrlDataEntryMSB           =   6,      ///< Data Entry MSB
+            kCtrlVolume                 =   7,      ///< Channel Volume (formerly Main Volume)
+            kCtrlBalance                =   8,      ///< Balance
 
-            kCtrlPan                =   10,     ///< Pan
-            kCtrlExpression         =   11,     ///< Expression
-            kCtrlEffect1            =   12,     ///< Effect Control 1
-            kCtrlEffect2            =   13,     ///< Effect Control 2
+            kCtrlPan                    =   10,     ///< Pan
+            kCtrlExpression             =   11,     ///< Expression
+            kCtrlEffect1                =   12,     ///< Effect Control 1
+            kCtrlEffect2                =   13,     ///< Effect Control 2
 
             // General Purpose Controllers #1 to #4
-            kCtrlGPC1               =   16,     ///< General Purpose Controller #1
-            kCtrlGPC2               =   17,     ///< General Purpose Controller #2
-            kCtrlGPC3               =   18,     ///< General Purpose Controller #3
-            kCtrlGPC4               =   19,     ///< General Purpose Controller #4
+            kCtrlGPC1                   =   16,     ///< General Purpose Controller #1
+            kCtrlGPC2                   =   17,     ///< General Purpose Controller #2
+            kCtrlGPC3                   =   18,     ///< General Purpose Controller #3
+            kCtrlGPC4                   =   19,     ///< General Purpose Controller #4
 
-            kCtrlBankSelectLSB      =   32,     ///< Bank Select LSB
+            kCtrlBankSelectLSB          =   32,     ///< Bank Select LSB
 
-            kCtrlDataEntryLSB       =   38,     ///< Data Entry LSB
+            kCtrlDataEntryLSB           =   38,     ///< Data Entry LSB
 
-            kCtrlSustainOnOff       =   64,     ///< Damper Pedal On/Off (Sustain)
-            kCtrlPortaOnOff         =   65,     ///< Portamento On/Off
-            kCtrlSustenutoOnOff     =   66,     ///< Sustenuto On/Off
-            kCtrlSoftPedalOnOff     =   67,     ///< Soft Pedal On/Off
-            kCtrlLegatoFootSwOnOff  =   68,     ///< Legato Footswitch On/Off
-            kCtrlHold2OnOff         =   69,     ///< Hold 2 On/Off
+            kCtrlSustainOnOff           =   64,     ///< Damper Pedal On/Off (Sustain)
+            kCtrlPortaOnOff             =   65,     ///< Portamento On/Off
+            kCtrlSustenutoOnOff         =   66,     ///< Sustenuto On/Off
+            kCtrlSoftPedalOnOff         =   67,     ///< Soft Pedal On/Off
+            kCtrlLegatoFootSwOnOff      =   68,     ///< Legato Footswitch On/Off
+            kCtrlHold2OnOff             =   69,     ///< Hold 2 On/Off
 
             // Sound Controllers #1 to #10
-            kCtrlSoundVariation     =   70,     ///< Sound Variation
-            kCtrlFilterCutoff       =   71,     ///< Filter Cutoff (Timbre/Harmonic Intensity)
-            kCtrlReleaseTime        =   72,     ///< Release Time
-            kCtrlAttackTime         =   73,     ///< Attack Time
-            kCtrlFilterResonance    =   74,     ///< Filter Resonance (Brightness)
-            kCtrlDecayTime          =   75,     ///< Decay Time
-            kCtrlVibratoRate        =   76,     ///< Vibrato Rate
-            kCtrlVibratoDepth       =   77,     ///< Vibrato Depth
-            kCtrlVibratoDelay       =   78,     ///< Vibrato Delay
-            kCtrlSoundCtrler10      =   79,     ///< undefined
+            kCtrlSoundVariation         =   70,     ///< Sound Variation
+            kCtrlFilterCutoff           =   71,     ///< Filter Cutoff (Timbre/Harmonic Intensity)
+            kCtrlReleaseTime            =   72,     ///< Release Time
+            kCtrlAttackTime             =   73,     ///< Attack Time
+            kCtrlFilterResonance        =   74,     ///< Filter Resonance (Brightness)
+            kCtrlDecayTime              =   75,     ///< Decay Time
+            kCtrlVibratoRate            =   76,     ///< Vibrato Rate
+            kCtrlVibratoDepth           =   77,     ///< Vibrato Depth
+            kCtrlVibratoDelay           =   78,     ///< Vibrato Delay
+            kCtrlSoundCtrler10          =   79,     ///< undefined
 
             // General Purpose Controllers #5 to #8
-            kCtrlGPC5               =   80,     ///< General Purpose Controller #5
-            kCtrlGPC6               =   81,     ///< General Purpose Controller #6
-            kCtrlGPC7               =   82,     ///< General Purpose Controller #7
-            kCtrlGPC8               =   83,     ///< General Purpose Controller #8
+            kCtrlGPC5                   =   80,     ///< General Purpose Controller #5
+            kCtrlGPC6                   =   81,     ///< General Purpose Controller #6
+            kCtrlGPC7                   =   82,     ///< General Purpose Controller #7
+            kCtrlGPC8                   =   83,     ///< General Purpose Controller #8
 
-            kCtrlPortaControl       =   84,     ///< Portamento Control
+            kCtrlPortaControl           =   84,     ///< Portamento Control
 
             // Effect Controllers
-            kCtrlEff1Depth          =   91,     ///< Effect 1 Depth (Reverb Send Level)
-            kCtrlEff2Depth          =   92,     ///< Effect 2 Depth (Tremolo Level)
-            kCtrlEff3Depth          =   93,     ///< Effect 3 Depth (Chorus Send Level)
-            kCtrlEff4Depth          =   94,     ///< Effect 4 Depth (Delay/Variation/Detune Level)
-            kCtrlEff5Depth          =   95,     ///< Effect 5 Depth (Phaser Level)
+            kCtrlEff1Depth              =   91,     ///< Effect 1 Depth (Reverb Send Level)
+            kCtrlEff2Depth              =   92,     ///< Effect 2 Depth (Tremolo Level)
+            kCtrlEff3Depth              =   93,     ///< Effect 3 Depth (Chorus Send Level)
+            kCtrlEff4Depth              =   94,     ///< Effect 4 Depth (Delay/Variation/Detune Level)
+            kCtrlEff5Depth              =   95,     ///< Effect 5 Depth (Phaser Level)
 
-            kCtrlDataIncrement      =   96,     ///< Data Increment (+1)
-            kCtrlDataDecrement      =   97,     ///< Data Decrement (-1)
-            kCtrlNRPNSelectLSB      =   98,     ///< NRPN Select LSB
-            kCtrlNRPNSelectMSB      =   99,     ///< NRPN Select MSB
-            kCtrlRPNSelectLSB       =   100,    ///< RPN Select LSB
-            kCtrlRPNSelectMSB       =   101,    ///< RPN Select MSB
+            kCtrlDataIncrement          =   96,     ///< Data Increment (+1)
+            kCtrlDataDecrement          =   97,     ///< Data Decrement (-1)
+            kCtrlNRPNSelectLSB          =   98,     ///< NRPN Select LSB
+            kCtrlNRPNSelectMSB          =   99,     ///< NRPN Select MSB
+            kCtrlRPNSelectLSB           =   100,    ///< RPN Select LSB
+            kCtrlRPNSelectMSB           =   101,    ///< RPN Select MSB
 
             // Other Channel Mode Messages
-            kCtrlAllSoundsOff       =   120,    ///< All Sounds Off
-            kCtrlResetAllCtrlers    =   121,    ///< Reset All Controllers
-            kCtrlLocalCtrlOnOff     =   122,    ///< Local Control On/Off
-            kCtrlAllNotesOff        =   123,    ///< All Notes Off
-            kCtrlOmniModeOff        =   124,    ///< Omni Mode Off + All Notes Off
-            kCtrlOmniModeOn         =   125,    ///< Omni Mode On  + All Notes Off
-            kCtrlPolyModeOnOff      =   126,    ///< Poly Mode On/Off + All Sounds Off
-            kCtrlPolyModeOn         =   127,    ///< Poly Mode On
+            kCtrlAllSoundsOff           =   120,    ///< All Sounds Off
+            kCtrlResetAllCtrlers        =   121,    ///< Reset All Controllers
+            kCtrlLocalCtrlOnOff         =   122,    ///< Local Control On/Off
+            kCtrlAllNotesOff            =   123,    ///< All Notes Off
+            kCtrlOmniModeOff            =   124,    ///< Omni Mode Off + All Notes Off
+            kCtrlOmniModeOn             =   125,    ///< Omni Mode On  + All Notes Off
+            kCtrlPolyModeOnOff          =   126,    ///< Poly Mode On/Off + All Sounds Off
+            kCtrlPolyModeOn             =   127,    ///< Poly Mode On
 
             // Extra
-            kAfterTouch             =   128,    ///< After Touch (associated to Channel Pressure)
-            kPitchBend              =   129,    ///< Pitch Bend Change
+            kAfterTouch                 =   128,    ///< After Touch (associated to Channel Pressure)
+            kPitchBend                  =   129,    ///< Pitch Bend Change
 
             kCountCtrlNumber,                   ///< Count of Controller Number
 
             // Extra for kLegacyMIDICCOutEvent
-            kCtrlProgramChange      =   130,    ///< Program Change (use LegacyMIDICCOutEvent.value only)
-            kCtrlPolyPressure       =   131,    ///< Polyphonic Key Pressure (use LegacyMIDICCOutEvent.value for pitch and
-                                                /// LegacyMIDICCOutEvent.value2 for pressure)
-            kCtrlQuarterFrame       =   132     ///< Quarter Frame ((use LegacyMIDICCOutEvent.value only)
+            kCtrlProgramChange          =   130,    ///< Program Change (use LegacyMIDICCOutEvent.value only)
+            kCtrlPolyPressure           =   131,    ///< Polyphonic Key Pressure (use LegacyMIDICCOutEvent.value for pitch and
+                                                    /// LegacyMIDICCOutEvent.value2 for pressure)
+            kCtrlQuarterFrame           =   132,    ///< Quarter Frame ((use LegacyMIDICCOutEvent.value only)
+
+            kSystemSongSelect           =   133,    ///< Song Select (use LegacyMIDICCOutEvent.value only)
+            kSystemSongPointer          =   134,    ///< Song Pointer (use LegacyMIDICCOutEvent.value for LSB and
+                                                    /// LegacyMIDICCOutEvent.value2 for MSB)
+            kSystemCableSelect          =   135,    ///< Cable Select (use LegacyMIDICCOutEvent.value only)
+            kSystemTuneRequest          =   136,    ///< Tune Request (use LegacyMIDICCOutEvent.value only)
+            kSystemMidiClockStart       =   137,    ///< Midi Clock Start (use LegacyMIDICCOutEvent.value only)
+            kSystemMidiClockContinue    =   138,    ///< Midi Clock Continue (use LegacyMIDICCOutEvent.value only)
+            kSystemMidiClockStop        =   139,    ///< Midi Clock Stop (use LegacyMIDICCOutEvent.value only)
+            kSystemActiveSensing        =   140,    ///< Active Sensing (use LegacyMIDICCOutEvent.value only)
         };
 
         /**
@@ -243,10 +253,10 @@ namespace Steinberg
              */
             enum EventFlags
             {
-                kIsLive = 1 << 0,           ///< indicates that the event is played live (directly from keyboard)
+                kIsLive                         = 1 << 0,           ///< indicates that the event is played live (directly from keyboard)
 
-                kUserReserved1 = 1 << 14,   ///< reserved for user (for internal use)
-                kUserReserved2 = 1 << 15    ///< reserved for user (for internal use)
+                kUserReserved1                  = 1 << 14,          ///< reserved for user (for internal use)
+                kUserReserved2                  = 1 << 15           ///< reserved for user (for internal use)
             };
 
             /**
@@ -254,29 +264,31 @@ namespace Steinberg
              */
             enum EventTypes
             {
-                kNoteOnEvent       = 0,         ///< is @ref NoteOnEvent
-                kNoteOffEvent      = 1,         ///< is @ref NoteOffEvent
-                kDataEvent         = 2,         ///< is @ref DataEvent
-                kPolyPressureEvent = 3,         ///< is @ref PolyPressureEvent
-                kNoteExpressionValueEvent = 4,  ///< is @ref NoteExpressionValueEvent
-                kNoteExpressionTextEvent  = 5,  ///< is @ref NoteExpressionTextEvent
-                kChordEvent        = 6,         ///< is @ref ChordEvent
-                kScaleEvent        = 7,         ///< is @ref ScaleEvent
-                kLegacyMIDICCOutEvent = 65535   ///< is @ref LegacyMIDICCOutEvent
+                kNoteOnEvent                    = 0,                ///< is @ref NoteOnEvent
+                kNoteOffEvent                   = 1,                ///< is @ref NoteOffEvent
+                kDataEvent                      = 2,                ///< is @ref DataEvent
+                kPolyPressureEvent              = 3,                ///< is @ref PolyPressureEvent
+                kNoteExpressionValueEvent       = 4,                ///< is @ref NoteExpressionValueEvent
+                kNoteExpressionTextEvent        = 5,                ///< is @ref NoteExpressionTextEvent
+                kChordEvent                     = 6,                ///< is @ref ChordEvent
+                kScaleEvent                     = 7,                ///< is @ref ScaleEvent
+                kNoteExpressionIntValueEvent    = 8,                ///< is \ref NoteExpressionIntValueEvent
+                kLegacyMIDICCOutEvent           = 65535             ///< is @ref LegacyMIDICCOutEvent
             };
 
             uint16 type;                ///< a value from \ref EventTypes
             union
             {
-                NoteOnEvent noteOn;                             ///< type == kNoteOnEvent
-                NoteOffEvent noteOff;                           ///< type == kNoteOffEvent
-                DataEvent data;                                 ///< type == kDataEvent
-                PolyPressureEvent polyPressure;                 ///< type == kPolyPressureEvent
-                NoteExpressionValueEvent noteExpressionValue;   ///< type == kNoteExpressionValueEvent
-                NoteExpressionTextEvent noteExpressionText;     ///< type == kNoteExpressionTextEvent
-                ChordEvent chord;                               ///< type == kChordEvent
-                ScaleEvent scale;                               ///< type == kScaleEvent
-                LegacyMIDICCOutEvent midiCCOut;                 ///< type == kLegacyMIDICCOutEvent
+                NoteOnEvent noteOn;                                 ///< type == kNoteOnEvent
+                NoteOffEvent noteOff;                               ///< type == kNoteOffEvent
+                DataEvent data;                                     ///< type == kDataEvent
+                PolyPressureEvent polyPressure;                     ///< type == kPolyPressureEvent
+                NoteExpressionValueEvent noteExpressionValue;       ///< type == kNoteExpressionValueEvent
+                NoteExpressionTextEvent noteExpressionText;         ///< type == kNoteExpressionTextEvent
+                NoteExpressionIntValueEvent noteExpressionIntValue; ///< type == kNoteExpressionIntValueEvent
+                ChordEvent chord;                                   ///< type == kChordEvent
+                ScaleEvent scale;                                   ///< type == kScaleEvent
+                LegacyMIDICCOutEvent midiCCOut;                     ///< type == kLegacyMIDICCOutEvent
             };
         };
 

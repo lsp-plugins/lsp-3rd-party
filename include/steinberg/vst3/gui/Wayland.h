@@ -16,19 +16,13 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef _3RD_PARTY_STEINBERG_VST3_GUI_H_
-#define _3RD_PARTY_STEINBERG_VST3_GUI_H_
+#ifndef _3RD_PARTY_STEINBERG_VST3_GUI_WAYLAND_H_
+#define _3RD_PARTY_STEINBERG_VST3_GUI_WAYLAND_H_
 
-#include <steinberg/vst3/version.h>
+// Forward declarations for Wayland
+struct wl_display;
+struct wl_surface;
+struct xdg_surface;
+struct xdg_toplevel;
 
-#include <steinberg/vst3/gui/ViewRect.h>
-#include <steinberg/vst3/gui/IPlugFrame.h>
-#include <steinberg/vst3/gui/IPlugView.h>
-#include <steinberg/vst3/gui/IPlugViewContentScaleSupport.h>
-#include <steinberg/vst3/gui/IEventHandler.h>
-#include <steinberg/vst3/gui/ITimerHandler.h>
-#include <steinberg/vst3/gui/IRunLoop.h>
-#include <steinberg/vst3/gui/IWaylandHost.h>
-#include <steinberg/vst3/gui/IWaylandFrame.h>
-
-#endif /* _3RD_PARTY_STEINBERG_VST3_VST_H_ */
+#endif /* _3RD_PARTY_STEINBERG_VST3_GUI_WAYLAND_H_ */
