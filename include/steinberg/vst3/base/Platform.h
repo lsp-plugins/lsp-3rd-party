@@ -19,14 +19,9 @@
 #ifndef _3RDPARTY_STEINBERG_VST3_BASE_FLPATFORM_H_
 #define _3RDPARTY_STEINBERG_VST3_BASE_FLPATFORM_H_
 
-/**
- * Byte ordering definition
- */
-enum
-{
-    kLittleEndian   = 0,
-    kBigEndian      = 1
-};
+// Byte ordering definition
+#define kLittleEndian               0
+#define kBigEndian                  1
 
 #ifdef PLUGIN_API
     #undef PLUGIN_API
