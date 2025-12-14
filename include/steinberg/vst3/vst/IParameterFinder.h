@@ -43,7 +43,7 @@ namespace Steinberg
              */
             virtual tresult PLUGIN_API findParameter (int32 xPos, int32 yPos, ParamID & resultTag /*out*/) = 0;
 
-            static const TUID iid;
+            static const FUID iid;
         };
         #include <steinberg/vst3/base/WarningsPop.h>
 

@@ -88,7 +88,7 @@ namespace Steinberg
                 virtual tresult PLUGIN_API getMidiControllerAssignment(int32 busIndex, int16 channel, CtrlNumber midiControllerNumber, ParamID & id /*out*/) = 0;
 
             public:
-                static const TUID iid;
+                static const FUID iid;
         };
         #include <steinberg/vst3/base/WarningsPop.h>
 

@@ -50,7 +50,7 @@ namespace Steinberg
             virtual void PLUGIN_API update(FUnknown *changedUnknown, int32 message) = 0;
 
         public:
-            static const TUID iid;
+            static const FUID iid;
     };
     #include <steinberg/vst3/base/WarningsPop.h>
 

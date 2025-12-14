@@ -20,7 +20,7 @@
 #define _3RDPARTY_STEINBERG_VST3_BASE_FUNKNOWN_H_
 
 #include <steinberg/vst3/base/Platform.h>
-#include <steinberg/vst3/base/TUID.h>
+#include <steinberg/vst3/base/FUID.h>
 #include <steinberg/vst3/base/Types.h>
 
 #include <cstring>
@@ -132,7 +132,7 @@ namespace Steinberg
             virtual uint32 PLUGIN_API release() = 0;
 
         public:
-            static const TUID iid;
+            static const FUID iid;
     };
     #include <steinberg/vst3/base/WarningsPop.h>
 

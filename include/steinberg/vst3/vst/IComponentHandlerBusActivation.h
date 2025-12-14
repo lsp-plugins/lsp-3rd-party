@@ -54,7 +54,7 @@ namespace Steinberg
                 virtual tresult PLUGIN_API requestBusActivation (MediaType type, BusDirection dir, int32 index, TBool state) = 0;
 
             public:
-                static const TUID iid;
+                static const FUID iid;
         };
         #include <steinberg/vst3/base/WarningsPop.h>
 

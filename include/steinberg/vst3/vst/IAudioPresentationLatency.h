@@ -61,7 +61,7 @@ namespace Steinberg
              */
             virtual tresult PLUGIN_API setAudioPresentationLatencySamples(BusDirection dir, int32 busIndex, uint32 latencyInSamples) = 0;
 
-            static const TUID iid;
+            static const FUID iid;
         };
         #include <steinberg/vst3/base/WarningsPop.h>
 

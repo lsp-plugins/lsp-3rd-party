@@ -48,7 +48,7 @@ namespace Steinberg
                 virtual IPluginFactory * PLUGIN_API getPluginFactory() = 0;
 
             public:
-                static const TUID iid;
+                static const FUID iid;
         };
         #include <steinberg/vst3/base/WarningsPop.h>
 

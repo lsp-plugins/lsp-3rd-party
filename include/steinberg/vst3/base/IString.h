@@ -66,7 +66,7 @@ namespace Steinberg
             virtual bool PLUGIN_API isWideString() const = 0;
 
         public:
-            static const TUID iid;
+            static const FUID iid;
     };
     #include <steinberg/vst3/base/WarningsPop.h>
 

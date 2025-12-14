@@ -94,7 +94,7 @@ namespace Steinberg
                 virtual tresult PLUGIN_API onLiveMIDIControllerInput(int32 busIndex, int16 channel, CtrlNumber midiCC) = 0;
 
             public:
-                static const TUID iid;
+                static const FUID iid;
         };
         #include <steinberg/vst3/base/WarningsPop.h>
 

@@ -58,7 +58,7 @@ namespace Steinberg
                                                                      int32 memberBeginChannel,
                                                                      int32 memberEndChannel) = 0;
             public:
-                static const TUID iid;
+                static const FUID iid;
         };
         #include <steinberg/vst3/base/WarningsPop.h>
 

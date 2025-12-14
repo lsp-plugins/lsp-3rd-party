@@ -42,7 +42,7 @@ namespace Steinberg
              */
             virtual tresult PLUGIN_API setStreamSize(int64 size) = 0;
 
-            static const TUID iid;
+            static const FUID iid;
     };
     #include <steinberg/vst3/base/WarningsPop.h>
 

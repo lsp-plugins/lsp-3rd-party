@@ -68,7 +68,7 @@ namespace Steinberg
             virtual xdg_toplevel * PLUGIN_API getParentToplevel(wl_display* display) = 0;
 
         public:
-            static const TUID iid;
+            static const FUID iid;
     };
     #include <steinberg/vst3/base/WarningsPop.h>
 
