@@ -6,6 +6,7 @@
 * Fixed improper char8 to char16 string conversion for VST SDK3.
 * Fixes in VST3 SDK headers: FUID has virtual destructor and can yield to
   improper addressing FUnknown::iid value in debug compilation.
+* Updated module versions in dependencies.
 
 === 1.0.24 ===
 * Updated VST3 SDK headers to support version 3.8.0.
