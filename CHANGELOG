@@ -2,6 +2,9 @@
 * RECENT CHANGES
 *******************************************************************************
 
+=== 1.0.26 ===
+
+
 === 1.0.25 ===
 * Fixed improper char8 to char16 string conversion for VST SDK3.
 * Fixes in VST3 SDK headers: FUID has virtual destructor and can yield to
