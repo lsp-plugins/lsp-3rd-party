@@ -48,7 +48,7 @@ namespace Steinberg
              */
             virtual tresult PLUGIN_API getKeyswitchInfo (int32 busIndex, int16 channel, int32 keySwitchIndex, KeyswitchInfo & info /*out*/) = 0;
 
-            static const TUID iid;
+            static const FUID iid;
         };
         #include <steinberg/vst3/base/WarningsPop.h>
 

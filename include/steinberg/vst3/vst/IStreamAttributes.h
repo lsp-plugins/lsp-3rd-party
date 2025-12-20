@@ -91,7 +91,7 @@ namespace Steinberg
                 virtual IAttributeList* PLUGIN_API getAttributes () = 0;
 
             public:
-                static const TUID iid;
+                static const FUID iid;
         };
         #include <steinberg/vst3/base/WarningsPop.h>
 

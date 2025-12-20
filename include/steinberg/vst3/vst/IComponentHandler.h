@@ -63,7 +63,7 @@ namespace Steinberg
                 virtual tresult PLUGIN_API restartComponent(int32 flags) = 0;
 
             public:
-                static const TUID iid;
+                static const FUID iid;
         };
         #include <steinberg/vst3/base/WarningsPop.h>
 

@@ -70,7 +70,7 @@ namespace Steinberg
             virtual tresult PLUGIN_API tell(int64* pos) = 0;
 
         public:
-            static const TUID iid;
+            static const FUID iid;
     };
     #include <steinberg/vst3/base/WarningsPop.h>
 

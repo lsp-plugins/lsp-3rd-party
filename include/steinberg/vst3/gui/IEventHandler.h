@@ -38,7 +38,7 @@ namespace Steinberg
                 virtual void PLUGIN_API onFDIsSet(FileDescriptor fd) = 0;
 
             public:
-                static const TUID iid;
+                static const FUID iid;
         };
         #include <steinberg/vst3/base/WarningsPop.h>
 

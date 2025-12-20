@@ -57,7 +57,7 @@
     }
 #endif
 
-#define DEF_CLASS_IID(ClassName, l1, l2, l3, l4) const ::Steinberg::TUID ClassName::iid = INLINE_UID (l1, l2, l3, l4);
+#define DEF_CLASS_IID(ClassName, l1, l2, l3, l4) const ::Steinberg::FUID ClassName::iid(l1, l2, l3, l4);
 
 namespace Steinberg
 {
@@ -115,6 +115,11 @@ namespace Steinberg
         const uint64* p1 = reinterpret_cast<const uint64*> (iid1);
         const uint64* p2 = reinterpret_cast<const uint64*> (iid2);
         return p1[0] == p2[0] && p1[1] == p2[1];
+    }
+
+    SMTG_ALWAYS_INLINE static uint32 makeLong(uint8 b1, uint8 b2, uint8 b3, uint8 b4)
+    {
+        return (uint32 (b1) << 24) | (uint32 (b2) << 16) | (uint32 (b3) << 8) | uint32 (b4);
     }
 
 } /* namespace Steinberg */

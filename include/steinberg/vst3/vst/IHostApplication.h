@@ -44,7 +44,7 @@ namespace Steinberg
                 virtual tresult PLUGIN_API createInstance(TUID cid, TUID _iid, void** obj) = 0;
 
             public:
-                static const TUID iid;
+                static const FUID iid;
         };
         #include <steinberg/vst3/base/WarningsPop.h>
 

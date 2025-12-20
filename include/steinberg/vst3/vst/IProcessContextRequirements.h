@@ -107,7 +107,7 @@ namespace Steinberg
                 virtual uint32 PLUGIN_API getProcessContextRequirements() = 0;
 
             public:
-                static const TUID iid;
+                static const FUID iid;
         };
         #include <steinberg/vst3/base/WarningsPop.h>
 

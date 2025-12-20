@@ -38,7 +38,7 @@ namespace Steinberg
             virtual void PLUGIN_API setText(const char8 *text) = 0;
 
         public:
-            static const TUID iid;
+            static const FUID iid;
     };
     #include <steinberg/vst3/base/WarningsPop.h>
 

@@ -1,6 +1,6 @@
 /*
- * Copyright 2023, Steinberg Media Technologies GmbH, All Rights Reserved
- * Copyright 2023 Linux Studio Plugins Project <lsp.plugin@gmail.com>
+ * Copyright 2025, Steinberg Media Technologies GmbH, All Rights Reserved
+ * Copyright 2025 Linux Studio Plugins Project <lsp.plugin@gmail.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,8 +16,10 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#pragma once
+#ifndef _3RD_PARTY_STEINBERG_VST3_BASE_STDDEFS_H_
+#define _3RD_PARTY_STEINBERG_VST3_BASE_STDDEFS_H_
 
+#include <steinberg/vst3/base/Platform.h>
 #include <steinberg/vst3/base/Types.h>
 
 //----------------------------------------------------------------------------
@@ -291,3 +293,5 @@ inline const char16* wscast (const wchar_t* s) { static_assert (sizeof (wchar_t)
 
 //------------------------------------------------------------------------
 } // namespace Steinberg
+
+#endif /* _3RD_PARTY_STEINBERG_VST3_BASE_STDDEFS_H_ */

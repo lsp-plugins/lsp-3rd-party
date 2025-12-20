@@ -82,7 +82,7 @@ namespace Steinberg
                 virtual tresult PLUGIN_API getBinary(AttrID id, const void *& data, uint32& sizeInBytes) = 0;
 
             public:
-                static const TUID iid;
+                static const FUID iid;
         };
         #include <steinberg/vst3/base/WarningsPop.h>
 
