@@ -1,5 +1,5 @@
 /*
-  Copyright 2025 Linux Studio Plugins Project <lsp.plugin@gmail.com>
+  Copyright 2026 Linux Studio Plugins Project <lsp.plugin@gmail.com>
 
   Permission to use, copy, modify, and/or distribute this software for any
   purpose with or without fee is hereby granted, provided that the above
@@ -109,7 +109,7 @@
     #define VSTCALLBACK
 #elif defined __BORLANDC__
     #pragma -a8
-#elif defined(__GNUC__)
+#elif defined(__GNUC__) || defined(__clang__)
     #pragma pack(push, 8)
     #define VSTCALLBACK __cdecl
 #elif defined(WIN32) || defined(__FLAT__) || defined(CBUILDER)
