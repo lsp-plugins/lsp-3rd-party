@@ -2,6 +2,9 @@
 * RECENT CHANGES
 *******************************************************************************
 
+=== 1.0.29 ===
+
+
 === 1.0.28 ===
 * Added PipeWire 1.6.4 headers to fix build on rare systems.
 * Updated build system: ASAN, CROSS_COMPILE, DEBUG, DEVEL, PROFILE, STRICT,
