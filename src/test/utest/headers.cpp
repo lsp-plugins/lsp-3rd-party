@@ -24,6 +24,7 @@
 #include <ladspa/ladspa.h>
 #include <lv2/core/lv2.h>
 #include <steinberg/vst2.h>
+#include <pw-headers/pipewire/version.h>
 
 #include <lsp-plug.in/test-fw/utest.h>
 
