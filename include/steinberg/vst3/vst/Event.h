@@ -1,6 +1,6 @@
 /*
- * Copyright 2025, Steinberg Media Technologies GmbH, All Rights Reserved
- * Copyright 2025 Linux Studio Plugins Project <lsp.plugin@gmail.com>
+ * Copyright 2026, Steinberg Media Technologies GmbH, All Rights Reserved
+ * Copyright 2026 Linux Studio Plugins Project <lsp.plugin@gmail.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -125,12 +125,12 @@ namespace Steinberg
             kSystemSongSelect           =   133,    ///< Song Select (use LegacyMIDICCOutEvent.value only)
             kSystemSongPointer          =   134,    ///< Song Pointer (use LegacyMIDICCOutEvent.value for LSB and
                                                     /// LegacyMIDICCOutEvent.value2 for MSB)
-            kSystemCableSelect          =   135,    ///< Cable Select (use LegacyMIDICCOutEvent.value only)
-            kSystemTuneRequest          =   136,    ///< Tune Request (use LegacyMIDICCOutEvent.value only)
-            kSystemMidiClockStart       =   137,    ///< Midi Clock Start (use LegacyMIDICCOutEvent.value only)
-            kSystemMidiClockContinue    =   138,    ///< Midi Clock Continue (use LegacyMIDICCOutEvent.value only)
-            kSystemMidiClockStop        =   139,    ///< Midi Clock Stop (use LegacyMIDICCOutEvent.value only)
-            kSystemActiveSensing        =   140,    ///< Active Sensing (use LegacyMIDICCOutEvent.value only)
+            kSystemCableSelect          =   135,    ///< MIDI1: 0xF5 undefined (single byte)
+            kSystemTuneRequest          =   136,    ///< MIDI1: 0xF6 Tune Request (single byte)
+            kSystemMidiClockStart       =   137,    ///< MIDI1: 0xFA Start (single byte)
+            kSystemMidiClockContinue    =   138,    ///< MIDI1: 0xFB Continue (single byte)
+            kSystemMidiClockStop        =   139,    ///< MIDI1: 0xFC Stop (single byte)
+            kSystemActiveSensing        =   140,    ///< MIDI1: 0xFE Active Sensing (single byte)
         };
 
         /**

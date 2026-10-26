@@ -1,6 +1,6 @@
 /*
- * Copyright 2025, Steinberg Media Technologies GmbH, All Rights Reserved
- * Copyright 2025 Linux Studio Plugins Project <lsp.plugin@gmail.com>
+ * Copyright 2026, Steinberg Media Technologies GmbH, All Rights Reserved
+ * Copyright 2026 Linux Studio Plugins Project <lsp.plugin@gmail.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -114,6 +114,13 @@ namespace Steinberg
         // VST 3.8.0
         DEF_CLASS_IID(IMidiMapping2, 0x6DE14B88, 0x03F94F09, 0xA2552F0F, 0x9326593E)
         DEF_CLASS_IID(IMidiLearn2, 0xF07E498A, 0x78864327, 0x8B431CED, 0xA3C553FC)
+
+        // VST 3.8.1
+        DEF_CLASS_IID(ITransportControl, 0xD752F52D, 0x004348A0, 0xB431B045, 0xF0DCA49C)
+        namespace NoteOnOrchestralArticulation
+        {
+            DEF_CLASS_IID(IInfo, 0x7D34A9B4, 0x89CA45F4, 0x9284A9FD, 0x4DD9C906)
+        } /* namespace NoteOnOrchestralArticulation */
 
     } /* namespace Vst */
 } /* namespace Steinberg */

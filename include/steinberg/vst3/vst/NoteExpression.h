@@ -1,6 +1,6 @@
 /*
- * Copyright 2025, Steinberg Media Technologies GmbH, All Rights Reserved
- * Copyright 2025 Linux Studio Plugins Project <lsp.plugin@gmail.com>
+ * Copyright 2026, Steinberg Media Technologies GmbH, All Rights Reserved
+ * Copyright 2026 Linux Studio Plugins Project <lsp.plugin@gmail.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -59,7 +59,36 @@ namespace Steinberg
             kCustomStart = 100000,  ///< start of custom note expression type ids
             kCustomEnd   = 200000,  ///< end of custom note expression type ids
 
-            kInvalidTypeID = 0xFFFFFFFF ///< indicates an invalid note expression type
+            //--- Dedicated for MIDI 2.0 Note Expression Type IDs --------
+            //--- Reserved for Assignable Per Note Controller --------
+            kMidi2AssignablePerNoteControllerStart = 201000,
+            kMidi2AssignablePerNoteControllerEnd = 201255,
+
+            //--- Reserved for Registered Per Note Controller --------
+            kMidi2RegisteredPerNoteControllerStart = 202000,
+
+            kMidi2RegisteredPerNoteControllerPlayingPosition = kMidi2RegisteredPerNoteControllerStart + 0x0C,
+
+            kMidi2RegisteredPerNoteControllerEnd = 202255,
+
+            //--- Reserved for Note On Attribute ---------------------
+            kMidi2NoteOnAttributeStart = 203000,
+
+            /** Orchestral Profile Specific */
+            kMidi2NoteOnOrchestralArticulationStart = kMidi2NoteOnAttributeStart + 0x10,
+            kMidi2NoteOnOrchestralArticulationEnd = kMidi2NoteOnAttributeStart + 0x1f,
+
+            kMidi2NoteOnAttributeEnd = 203255,
+
+            //--- Reserved for Note Off Attribute --------------------
+            kMidi2NoteOffAttributeStart = 204000,
+
+            /** Orchestral Profile Specific */
+            kMidi2NoteOffOrchestralArticulation = kMidi2NoteOffAttributeStart + 0x10,
+
+            kMidi2NoteOffAttributeEnd = 204255,
+
+            kInvalidTypeID = 0xffffffff ///< indicates an invalid note expression type
         };
 
         /**

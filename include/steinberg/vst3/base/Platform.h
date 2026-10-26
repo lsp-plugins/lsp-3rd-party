@@ -228,8 +228,16 @@
     #define SMTG_OS_IOS         0
     #define SMTG_OS_OSX         0
 
-    #define SMTG_CPU_X86    __i386__
-    #define SMTG_CPU_X86_64 __x86_64__
+    #if defined (__i386__)
+        #define SMTG_CPU_X86    __i386__
+    #else
+        #define SMTG_CPU_X86    0
+    #endif
+    #if defined (__x86_64__)
+        #define SMTG_CPU_X86_64 __x86_64__
+    #else
+        #define SMTG_CPU_X86_64 0
+    #endif
     #if defined(__arm__)
         #define SMTG_CPU_ARM    __arm__
     #else
@@ -272,18 +280,14 @@
         #define SMTG_CPP17 (__cplusplus >= 201703L)
         #define SMTG_CPP20 (__cplusplus >= 202002L)
         #define SMTG_CPP23 (__cplusplus >= 202302L)
-        #if defined(__GNUG__) && __GNUG__ < 8
-            #define SMTG_CPP11_STDLIBSUPPORT 0
-        #else
-            #define SMTG_CPP11_STDLIBSUPPORT 1
-        #endif
+        #define SMTG_CPP11_STDLIBSUPPORT SMTG_CPP11
         #define SMTG_HAS_NOEXCEPT 1
         #define SMTG_HAS_CPP11_CONSTEXPR SMTG_CPP11
         #define SMTG_HAS_CPP14_CONSTEXPR SMTG_CPP14
     #endif /* __cplusplus */
 #endif
 
-#if !SMTG_RENAME_ASSERT
+#if !defined(SMTG_RENAME_ASSERT) || !SMTG_RENAME_ASSERT
     #undef WINDOWS
     #undef MAC
     #undef PTHREADS
