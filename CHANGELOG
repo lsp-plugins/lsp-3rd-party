@@ -6,6 +6,7 @@
 * Updated VST3 SDK headers to support version 3.8.1.
 * Updated CLAP headers to support version 1.2.10.
 * Updated build scripts.
+* Updated module versions in dependencies.
 
 === 1.0.30 ===
 * Updated build scripts.
