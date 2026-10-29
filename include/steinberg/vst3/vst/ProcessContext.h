@@ -114,7 +114,7 @@ namespace Steinberg
 
                 kProjectTimeMusicValid = 1 << 9,///< projectTimeMusic contains valid information
                 kBarPositionValid = 1 << 11,    ///< barPositionMusic contains valid information
-                kCycleValid       = 1 << 12,    ///< cycleStartMusic and barPositionMusic contain valid information
+                kCycleValid       = 1 << 12,    ///< cycleStartMusic and cycleEndMusic contain valid information
 
                 kTempoValid       = 1 << 10,    ///< tempo contains valid information
                 kTimeSigValid     = 1 << 13,    ///< timeSigNumerator and timeSigDenominator contain valid information

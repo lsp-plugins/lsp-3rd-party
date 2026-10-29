@@ -60,7 +60,7 @@ namespace Steinberg
             virtual tresult PLUGIN_API triggerUpdates (FUnknown *object, int32 message) = 0;
 
             /**
-             * Same as triggerUpdates, but delivered in idle (usefull to collect updates).
+             * Same as triggerUpdates, but delivered in idle (useful to collect updates).
              */
             virtual tresult PLUGIN_API deferUpdates (FUnknown* object, int32 message) = 0;
 
